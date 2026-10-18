@@ -22,6 +22,8 @@ namespace HollowChains.Gameplay.Input
 
         public bool SprintHeld => _sprint != null && _sprint.action.IsPressed();
 
+        public bool LookFromPointer => _look != null && _look.action.activeControl?.device is Pointer;
+
         public event Action InteractPressed;
 
         private void OnEnable()

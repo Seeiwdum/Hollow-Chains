@@ -12,6 +12,9 @@ namespace HollowChains.Gameplay.Input
 
         bool SprintHeld { get; }
 
+        /// <summary>True when Look comes from a mouse/pointer (per-frame delta) rather than a stick (rate).</summary>
+        bool LookFromPointer { get; }
+
         event Action InteractPressed;
     }
 }
