@@ -78,6 +78,57 @@ MonoBehaviour:
     m_Localized: Child
     m_Metadata:
       m_Items: []
+  - m_Id: 20259379937280
+    m_Localized: Elena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20260764057600
+    m_Localized: Stay back!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20262445973504
+    m_Localized: Don't come near me! That soul-draining power...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20263100284928
+    m_Localized: You're a monster, just like your father!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20263859453952
+    m_Localized: All this time you pretended to be kind so you could kill me, didn't
+      you?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20264534736896
+    m_Localized: Run... the seal is about to break.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20502792175616
+    m_Localized: ???
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20502796369920
+    m_Localized: ...Amid contemptuous eyes and a darkened world,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20503723311104
+    m_Localized: "I still had her in this world \u2014 'Elena', the only girl in
+      the village who never despised me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20504021106688
+    m_Localized: She ignored everyone's stares to run and laugh with a powerless
+      child like me...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20504360845312
+    m_Localized: She was my light, and the only reason I still wanted to live...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20504784470016
+    m_Localized: "Aaah\u2014! Help!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

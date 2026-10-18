@@ -119,6 +119,22 @@ MonoBehaviour:
     m_Key: hud_saved
     m_Metadata:
       m_Items: []
+  - m_Id: 68877398900736
+    m_Key: beat_hug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68877512146944
+    m_Key: beat_roots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68877512146945
+    m_Key: beat_reach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69123105423360
+    m_Key: comic_skip
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

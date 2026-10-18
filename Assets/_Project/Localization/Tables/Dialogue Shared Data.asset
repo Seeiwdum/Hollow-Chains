@@ -75,6 +75,54 @@ MonoBehaviour:
     m_Key: speaker_child
     m_Metadata:
       m_Items: []
+  - m_Id: 20259379937280
+    m_Key: speaker_elena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20260764057600
+    m_Key: SC04_Elena_Cry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20262445973504
+    m_Key: SC06_Elena_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20263100284928
+    m_Key: SC06_Elena_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20263859453952
+    m_Key: SC06_Elena_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20264534736896
+    m_Key: SC06_Father
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20502792175616
+    m_Key: speaker_unknown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20502796369920
+    m_Key: SC00_Narration_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20503723311104
+    m_Key: SC00_Narration_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20504021106688
+    m_Key: SC00_Narration_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20504360845312
+    m_Key: SC00_Narration_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20504784470016
+    m_Key: SC03_Scream
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

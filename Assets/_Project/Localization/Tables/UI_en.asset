@@ -122,6 +122,22 @@ MonoBehaviour:
     m_Localized: Progress saved
     m_Metadata:
       m_Items: []
+  - m_Id: 68877398900736
+    m_Localized: Run and shield her
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68877512146944
+    m_Localized: Hold to release the roots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68877512146945
+    m_Localized: Reach out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69123105423360
+    m_Localized: Hold [E] to skip
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
