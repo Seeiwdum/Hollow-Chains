@@ -164,3 +164,14 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 📦 **Asset Request:** เสียง Freesound ชุดแนะนำ 4 ตัว (เจ้าของโหลด) · ฟอนต์ ✅ ครบ · โมเดลยังไม่ต้อง (D-023)
 🔀 **Git:** `phase/P3-core-systems` · tag `p3-done` · `main` ยังเป็น Initial commit → แนะนำเปิด PR ครั้งเดียวจาก `phase/P3-core-systems` (มี P0–P3 ครบ) แบบ merge commit
 ▶️ **ถัดไป:** P5 Vertical Slice — Scene 0–6 (Comic placeholder, ฉากเวทน้ำ, Awakening, Cliffhanger) ตาม D-001
+
+---
+
+## P5 — Vertical Slice (เริ่ม 2026-10-18)
+| Sub-phase | ผลลัพธ์ | สถานะ |
+|---|---|---|
+| P5.0 | Skills #19 Timeline/Cutscene + #42 Game Feel · custom Timeline tracks 5 แบบ + CutscenePlayer + InteractiveBeatRunner · PlayerStoryHooks (ล็อกผู้เล่น/โดนกัด HP 1/Soul Drain) · ScreenFlashView | ✅ |
+| P5.1 | ComicPlayer + IComicPage + SubtitleComicPage · ฉาก `S00_ComicIntro_Placeholder` (narration CANON, กดค้าง E ข้าม) · เกมใหม่เริ่ม S00 → S01 (D-041) · play-test: 4 บรรทัด → โหลด S01 ✓ | ✅ |
+| P5.2 | S03 เสียงกรีด (LineTriggerZone, [PROPOSAL]) | ✅ |
+| P5.4-6 | Climax timeline SC-04→06 (36.6 วิ, 28 tracks, กล้อง 6 ตัว): เวทน้ำล้มเหลว → beat กอด → โดนกัด HP 1 + จอแดง → **กดค้าง** ปล่อยราก → Soul Drain HP เต็ม / Humanity −15 → แฟลชความทรงจำ ×3 → quest P4→P5 → beat ยื่นมือ → เอเลน่า 3 ประโยค (CANON) → วิ่งหนี → หยดสีดำ + ข้อความพ่อ → เข็มนาฬิกาเดิน → ซูมออก → จอจบ (D-040) · **แก้บั๊ก:** beat วนซ้ำหลังกด (Pause/Resume รีเซ็ต clip) → เปลี่ยนเป็นแช่ graph · prompt "[E]" ซ้ำ 2 ครั้ง · play-test ทั้งฉากผ่าน | ✅ |
+| P5.7 | AudioMixer + ambience (รอไฟล์ Freesound จากเจ้าของ) · ปรับจังหวะตาม feedback | ⏳ |
