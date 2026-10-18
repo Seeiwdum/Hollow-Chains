@@ -384,6 +384,109 @@ classDiagram
 ```
 UI ฟัง Event Channel เท่านั้น — ไม่อ้างอิง `PlayerController` / `QuestService` ตรง ๆ (UI กับ Gameplay เปลี่ยนแยกกันได้)
 
+## 6b. ✅ มีโค้ดแล้วใน P2.0b–P2.4 (Flow / Triggers / Camera / Interaction / UI)
+> แทนที่ส่วน Interaction ใน §3 และ SceneFlow ใน §4 (ส่วน Health/Quest/Save ใน §3–4 ยังเป็นแผนของ P3)
+```mermaid
+classDiagram
+    class ISceneFlowService {
+        <<interface>>
+        +bool IsLoading
+        +string CurrentScene
+        +event SceneLoaded
+        +Load(string sceneName) void
+    }
+    class IService {
+        <<interface>>
+    }
+    IService <|-- ISceneFlowService
+    class SceneFlowService {
+        -CanvasGroup _fade
+        +Load(string sceneName) void
+        +Adopt(Scene scene) void
+    }
+    ISceneFlowService <|.. SceneFlowService
+    class GameBootstrapper {
+        -SceneFlowService _sceneFlow
+        -string _firstScene
+    }
+    class BootSceneLoader {
+        <<static>>
+    }
+    GameBootstrapper o-- SceneFlowService
+    BootSceneLoader ..> GameBootstrapper : loads _Boot
+
+    class PlayerTriggerZone {
+        <<abstract>>
+        -bool _once
+        #OnPlayerEnter(PlayerController p)* void
+        #OnPlayerExit(PlayerController p) void
+    }
+    class SceneTransitionTrigger {
+        -string _targetScene
+    }
+    class SprintZone
+    class EventTriggerZone {
+        -VoidEventChannelSO _onEnter
+    }
+    PlayerTriggerZone <|-- SceneTransitionTrigger
+    PlayerTriggerZone <|-- SprintZone
+    PlayerTriggerZone <|-- EventTriggerZone
+    SceneTransitionTrigger ..> ISceneFlowService
+
+    class OrbitLookInput {
+        -PlayerController _player
+        -CinemachineOrbitalFollow _orbit
+    }
+    class SprintCameraEffect {
+        -float _sprintFovBonus
+    }
+
+    class IInteractable {
+        <<interface>>
+        +string Prompt
+        +Vector3 Position
+        +CanInteract(Interactor who) bool
+        +Interact(Interactor who) void
+    }
+    class InteractableBase {
+        <<abstract>>
+        -string _prompt
+        -VoidEventChannelSO _onInteracted
+        +Interact(Interactor who) void
+        #OnInteract(Interactor who)* void
+    }
+    class PickupInteractable {
+        -string _itemId
+    }
+    class InspectInteractable {
+        -string _thought
+        -StringEventChannelSO _onThought
+    }
+    class Interactor {
+        -StringEventChannelSO _onPromptChanged
+        +IInteractable Focused
+        +TryInteract() void
+    }
+    IInteractable <|.. InteractableBase
+    InteractableBase <|-- PickupInteractable
+    InteractableBase <|-- InspectInteractable
+    Interactor o-- IInteractable
+
+    class UIView {
+        <<abstract>>
+        +Show() void
+        +Hide() void
+    }
+    class StringChannelTextView {
+        -StringEventChannelSO _channel
+        -float _autoHideSeconds
+    }
+    UIView <|-- StringChannelTextView
+    Interactor ..> StringChannelTextView : EVT_InteractPrompt (event channel)
+    InspectInteractable ..> StringChannelTextView : EVT_Thought (event channel)
+```
+`ScriptedInteractable` (กอด/ยื่นมือ) เลื่อนไป P5 พร้อม Timeline · ข้อความทั้งหมดยังเป็น placeholder อังกฤษ `[PH]` จนกว่าจะมีฟอนต์ไทย + Localization (P3.3)
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
