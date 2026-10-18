@@ -7,6 +7,20 @@ description: Thai text in Hollow Chains — TextMeshPro Thai font assets (Dynami
 
 Demo locale = **th** (D-025); `en` is added later. Acceptance AC-02: tone marks/vowels must not overlap.
 
+## Project facts (P3.3, verified)
+- Fonts in use (D-033): `Sarabun-Regular SDF` (body/subtitles/prompts; Italic + SemiBold in its weight table),
+  `Mali-Regular SDF` (headings, quest tracker), `AmaticSC-Bold SDF` (English logo, falls back to Mali for Thai).
+  Assets in `Assets/_Project/UI/Fonts/`; TTF + OFL in `Assets/ThirdParty/Fonts/`. TMP Settings default = Sarabun, fallback = Mali.
+- **TMP in Unity 6000.3 does not import GPOS mark-to-base/mark-to-mark for dynamic fonts** (the define
+  `TEXTCORE_FONT_ENGINE_1_5_OR_NEWER` is off and the FontEngine calls are internal). Without a fix, tone marks vanish
+  into upper vowels (ที่ → ทีี, ปู่ → ปู). Every TMP text that can show Thai **must have `ThaiMarkPositioner`**
+  (UI assembly) — it fixes marks on the final vertices. Rules live in `ThaiMarkRules` (unit-tested).
+- Known gap: ญ/ฐ + lower vowel still keep their tail (needs GSUB) — avoid in short UI strings or report.
+- Visual check: `Assets/_Project/Scenes/Test_ThaiFont.unity` + render-to-PNG (see Docs/P3/img before/after).
+- Locales: `th` (startup, SpecificLocaleSelector) and `en`. Tables: `UI`, `Dialogue`, `Quests`.
+  Data uses `LocalizedString` + dev fallback string, resolved by `HollowChains.Data.Localization.LocalizedText`.
+- Assigning a LocalizedString from an editor script: `serializedProperty.boxedValue = new LocalizedString(table, key)`.
+
 ## Fonts
 - Use the owner-supplied fonts (UI-001 heading, UI-002 body). Verify license (OFL or equivalent) before import (D-004).
 - Create TMP Font Assets with Atlas Population Mode **Dynamic**, sampling ~90, padding ~9, atlas 2048.
