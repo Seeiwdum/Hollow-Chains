@@ -34848,6 +34848,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Look at the marks
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: aea1308e8c993cf4a84b79f43dc7d948, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -173536,6 +173538,75 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1877471410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877471413}
+  - component: {fileID: 1877471412}
+  - component: {fileID: 1877471411}
+  m_Layer: 0
+  m_Name: DropBucket (D-015, at the scream)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1877471411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877471410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad78673eb6cacd4aa9017fd6e49764f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.DropCarriedItemZone
+  _once: 1
+  _onItemDropped: {fileID: 11400000, guid: 73ca2cc4beeb8c44b8eeaad683db4700, type: 2}
+  _forwardImpulse: 2.5
+--- !u!65 &1877471412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877471410}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 4, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1877471413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877471410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 2, z: 53.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1877847954
 Mesh:
   m_ObjectHideFlags: 0
@@ -207947,3 +208018,4 @@ SceneRoots:
   - {fileID: 35946254}
   - {fileID: 1533254922}
   - {fileID: 826837640}
+  - {fileID: 1877471413}

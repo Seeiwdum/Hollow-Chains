@@ -895,6 +895,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Look at the torn painting
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: df9d438e71741294d875188329e4b36a, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -6508,6 +6510,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Look at the flower
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: 7ed02de11dfd3d64b8bf928ce33ddeef, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -6868,7 +6872,10 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Pick up the bucket
   _onInteracted: {fileID: 11400000, guid: 2cb1b0dc9046c60488280a12fc41f376, type: 2}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _itemId: ITEM_BUCKET
+  _onPickedUp: {fileID: 11400000, guid: 94d72aadfbe668841917d3d236ba3793, type: 2}
   references:
     version: 2
     RefIds: []
@@ -7227,6 +7234,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Look at the pocket watch
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: 2bed196062cd03a4cae5e64a53a5dddb, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -8343,6 +8352,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Look under the bed
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: 539c829d3233843479192bb069c67489, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:

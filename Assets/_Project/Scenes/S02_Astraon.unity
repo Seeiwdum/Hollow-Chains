@@ -483,6 +483,75 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5100703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5100706}
+  - component: {fileID: 5100705}
+  - component: {fileID: 5100704}
+  m_Layer: 0
+  m_Name: Checkpoint CP_02 (village gate)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &5100704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d9265cd1b0f040bcc421c37aa1a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.CheckpointTrigger
+  _once: 1
+  _checkpointId: CP_02
+  _resumeScene: S03_Forest
+--- !u!65 &5100705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100703}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &5100706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100703}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 90.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &13143399
 GameObject:
   m_ObjectHideFlags: 0
@@ -12506,6 +12575,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Ask the shopkeeper
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: 772040d4dba4c9a4abdf57d10a0e9af9, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -25610,6 +25681,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Knock
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 8300000, guid: 0d3a8da65ce7c224d92c1202ff121b49, type: 3}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: a491d00beeb72db409ccc029e87c0b1a, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -27773,6 +27846,75 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1235956409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235956412}
+  - component: {fileID: 1235956411}
+  - component: {fileID: 1235956410}
+  m_Layer: 0
+  m_Name: Checkpoint CP_01 (left the bedroom)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1235956410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235956409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d9265cd1b0f040bcc421c37aa1a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.CheckpointTrigger
+  _once: 1
+  _checkpointId: CP_01
+  _resumeScene: S02_Astraon
+--- !u!65 &1235956411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235956409}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1235956412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235956409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239353542
 GameObject:
   m_ObjectHideFlags: 0
@@ -30941,6 +31083,8 @@ MonoBehaviour:
     m_LocalVariables: []
   _prompt: Read the old notice
   _onInteracted: {fileID: 0}
+  _sfx: {fileID: 0}
+  _sfxVolume: 0.8
   _line: {fileID: 11400000, guid: de7ad95e99a475e40b69b0cd50873302, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   references:
@@ -46002,3 +46146,5 @@ SceneRoots:
   - {fileID: 1445019061}
   - {fileID: 637404487}
   - {fileID: 1656779599}
+  - {fileID: 1235956412}
+  - {fileID: 5100706}
