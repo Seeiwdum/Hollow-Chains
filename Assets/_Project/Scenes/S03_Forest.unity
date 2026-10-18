@@ -34837,12 +34837,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67745752952bff43a89837e9b9c370a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
+  _localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: prompt_look_marks
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _prompt: Look at the marks
   _onInteracted: {fileID: 0}
   _line: {fileID: 11400000, guid: aea1308e8c993cf4a84b79f43dc7d948, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
-  _thought: '[PH] Claw marks... too big for any wolf.'
-  _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!64 &351816025
 MeshCollider:
   m_ObjectHideFlags: 0

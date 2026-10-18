@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 512811122}
   - component: {fileID: 512811124}
   - component: {fileID: 512811123}
+  - component: {fileID: 512811125}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -353,8 +354,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 507a49aa5355755498e263f3ddc645ec, type: 2}
+  m_sharedMaterial: {fileID: -9156621037899632890, guid: 507a49aa5355755498e263f3ddc645ec, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -431,6 +432,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512811121}
   m_CullTransparentMesh: 1
+--- !u!114 &512811125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512811121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb76d266324e5549a1cde3d1bfb6e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Thai.ThaiMarkPositioner
+  _stackGap: 0.04
+  _tallShift: 0.32
 --- !u!1 &816215329
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +457,7 @@ GameObject:
   - component: {fileID: 816215330}
   - component: {fileID: 816215332}
   - component: {fileID: 816215331}
+  - component: {fileID: 816215333}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -490,8 +506,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 507a49aa5355755498e263f3ddc645ec, type: 2}
+  m_sharedMaterial: {fileID: -9156621037899632890, guid: 507a49aa5355755498e263f3ddc645ec, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -568,6 +584,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816215329}
   m_CullTransparentMesh: 1
+--- !u!114 &816215333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816215329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb76d266324e5549a1cde3d1bfb6e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Thai.ThaiMarkPositioner
+  _stackGap: 0.04
+  _tallShift: 0.32
 --- !u!1 &1083869597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1032,7 @@ GameObject:
   - component: {fileID: 1873285546}
   - component: {fileID: 1873285548}
   - component: {fileID: 1873285547}
+  - component: {fileID: 1873285549}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -1050,8 +1081,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb907d6c51422f447a36157a4df7a0d3, type: 2}
+  m_sharedMaterial: {fileID: 4481044411206046770, guid: fb907d6c51422f447a36157a4df7a0d3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1128,6 +1159,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873285545}
   m_CullTransparentMesh: 1
+--- !u!114 &1873285549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873285545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb76d266324e5549a1cde3d1bfb6e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Thai.ThaiMarkPositioner
+  _stackGap: 0.04
+  _tallShift: 0.32
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

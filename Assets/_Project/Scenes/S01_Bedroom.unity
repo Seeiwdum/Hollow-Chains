@@ -884,12 +884,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67745752952bff43a89837e9b9c370a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
+  _localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: prompt_look_painting
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _prompt: Look at the torn painting
   _onInteracted: {fileID: 0}
   _line: {fileID: 11400000, guid: df9d438e71741294d875188329e4b36a, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
-  _thought: '[PH] Father''s face... torn out. I hid it again.'
-  _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!64 &221985417
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6487,12 +6497,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67745752952bff43a89837e9b9c370a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
+  _localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: prompt_look_flower
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _prompt: Look at the flower
   _onInteracted: {fileID: 0}
   _line: {fileID: 11400000, guid: 7ed02de11dfd3d64b8bf928ce33ddeef, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
-  _thought: '[PH] Elena gave me this. It''s still alive.'
-  _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!64 &1645675367
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6837,9 +6857,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def917dca2774da42944748e1a97ff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.PickupInteractable
+  _localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: prompt_pickup_bucket
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _prompt: Pick up the bucket
   _onInteracted: {fileID: 11400000, guid: 2cb1b0dc9046c60488280a12fc41f376, type: 2}
   _itemId: ITEM_BUCKET
+  references:
+    version: 2
+    RefIds: []
 --- !u!64 &1901192644
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7184,12 +7216,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67745752952bff43a89837e9b9c370a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
+  _localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: prompt_look_watch
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _prompt: Look at the pocket watch
   _onInteracted: {fileID: 0}
   _line: {fileID: 11400000, guid: 2bed196062cd03a4cae5e64a53a5dddb, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
-  _thought: '[PH] It has never ticked. Not once. ...Still, I can''t throw it away.'
-  _onThought: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
 --- !u!64 &1936704558
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8290,12 +8332,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67745752952bff43a89837e9b9c370a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
+  _localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: prompt_look_under_bed
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _prompt: Look under the bed
   _onInteracted: {fileID: 0}
   _line: {fileID: 11400000, guid: 539c829d3233843479192bb069c67489, type: 2}
   _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
-  _thought: '[PH] An old chain... why do I keep this?'
-  _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!64 &2080846262
 MeshCollider:
   m_ObjectHideFlags: 0
