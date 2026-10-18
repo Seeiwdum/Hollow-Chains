@@ -21,6 +21,22 @@ sprawl. These rules make that concrete so every system plugs together the same w
 | `HollowChains.Tests.*` | as needed | EditMode / PlayMode tests |
 Dependencies point toward Core only. UI never references Gameplay directly; it listens to events.
 
+## OOP & SOLID (owner requirement, D-020)
+The owner wants clean, object-oriented code that is easy to read and extend. Apply the four pillars deliberately,
+and remember Unity is component-based, so **composition first, inheritance only where there is a real "is-a"**.
+- **Encapsulation** — state is `[SerializeField] private`; expose read-only properties and intent-revealing methods
+  (`health.TakeDamage(1)`, not `health.current = 1`). No public mutable fields.
+- **Abstraction** — systems talk through interfaces (`IInteractable`, `IState`, `ISaveable`, `IDamageable`,
+  `IComicPage`, `IService`). Callers never type-check concrete classes.
+- **Inheritance** — shallow (≤ 2 levels under Unity's base types) and only for shared behaviour + template methods
+  (`InteractableBase`, `UIView`, `EventChannelSO<T>`, `PlayerState`). Prefer adding a component over a subclass.
+- **Polymorphism** — new behaviour = new class implementing an interface/overriding an abstract method, not a new
+  `switch`/`if` on a type or enum. (Open/Closed)
+- SOLID: one reason to change per class (split input, movement, animation); depend on abstractions; small
+  interfaces; subclasses must work anywhere the base works.
+- Keep `Docs/P1/CLASS_DIAGRAM.md` (Mermaid) in sync: any new public type, interface or relationship gets added to the
+  diagram in the same commit.
+
 ## Communication
 - **Event channels**: `ScriptableObject` assets (`VoidEventChannelSO`, `IntEventChannelSO`, `QuestEventChannelSO`…)
   stored in `Data/Events/`. Raisers and listeners reference the asset, not each other. Unsubscribe in `OnDisable`.
