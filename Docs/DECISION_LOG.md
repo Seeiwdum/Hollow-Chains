@@ -47,6 +47,9 @@
 | D-034 | 2026-10-18 | P3 | **วิธีแก้วรรณยุกต์ซ้อน (R1):** TMP ใน Unity 6.3 ไม่ดึงข้อมูล GPOS mark-to-base/mark-to-mark ให้ dynamic font (`TEXTCORE_FONT_ENGINE_1_5_OR_NEWER` ไม่ถูก define, API ของ FontEngine เป็น internal) → ทีมเขียน `ThaiMarkPositioner` (ปรับ vertex หลัง TMP วาง glyph: ยกวรรณยุกต์เหนือสระบน/ำ, หลบหาง ป ฝ ฟ ฬ, สระล่างใต้ ฎ ฏ) + `ThaiMarkRules` (มี unit test). ใส่ในทุก TMP ที่แสดงไทย | L4 | ณิชา/ธีร์ | Tech §6, skill #28 |
 | D-035 | 2026-10-18 | P3 | บทไทยของความคิด/เสียงกระซิบ/prompt/objective เขียนโดยทีม (อ.รัตติกาล) = **[PROPOSAL]** — เจ้าของแก้ได้ทุกบรรทัด (Q-018) · objective Q001-P1 ใช้ข้อความ CANON จาก `06` SC-01 ตรงตัว | L4 | อ.รัตติกาล | Localization tables |
 
+| D-036 | 2026-10-18 | P3 | **Game flow + เมนู:** state machine Title → Playing ⇄ Paused → End ใน `GameFlowService`; เมนูคุยผ่าน event channel เท่านั้น (`ChannelButton`, `GameStateView`); กด Play จาก `_Boot` = เข้าหน้า Title / กด Play ในฉากเนื้อหา = ข้าม Title (เทสเร็ว). Pause = Esc / Start. ปุ่ม "เล่นต่อ" (Continue) ที่หน้า Title จะเพิ่มพร้อมระบบ Save ใน P3.4 | L4 | กานต์/มีนา/ณิชา | GDD §6, skill #31 |
+| D-037 | 2026-10-18 | P3 | **เสียง:** ทีมคัดเสียง CC0 ชุดที่ 1 (`Docs/P3/AUDIO_CANDIDATES.md`) ให้เจ้าของเลือก — ยังไม่ดาวน์โหลด (Freesound ต้องล็อกอิน) | L4 | ภีม/แพรว | Asset Tracker AUD-014/015/017 |
+
 ## PENDING — รอเจ้าของตอบ (ดู STUDIO_LOG › คำถามค้าง)
 | ID | หัวข้อ | ค่า default ของทีม |
 |---|---|---|
@@ -58,3 +61,4 @@
 | ~~Q-016~~ | → D-032 | — |
 | Q-017 | 🟡 ภายหลัง (ไม่ block เดโม): ประชุมออกแบบตระกูลฝั่งแม่ + จังหวะเปิดเผยสายเลือด Aeterna ในเกมเต็ม | นัดหลังเดโม |
 | Q-018 | 🟡 L3 ตรวจบทภาษาไทย (Dialogue 15 + Quests 6 + UI 9 รายการ) — อยากปรับน้ำเสียงตรงไหนบอกได้ | ใช้ตามที่ทีมเขียน |
+| Q-019 | 🟠 L2 เลือกเสียง CC0 (ดู AUDIO_CANDIDATES.md) + ใครดาวน์โหลด (เจ้าของโหลดจาก Freesound เอง / อนุญาตทีมโหลด Kenney RPG Audio) | ชุดแนะนำ 5 ตัว · ทีมโหลด Kenney |
