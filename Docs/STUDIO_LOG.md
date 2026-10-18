@@ -88,7 +88,14 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | Sub-phase | ผลลัพธ์ | สถานะ |
 |---|---|---|
 | P1.0 | Skills #43, #49, #1, #2, #47 ใน `.claude/skills/` | ✅ |
-| P1.1 | `Docs/P1/GDD_DEMO.md` (freeze candidate) | ⏳ |
+| P1.1 | `Docs/P1/GDD_DEMO.md` v0.9 (freeze candidate) | ✅ รอเจ้าของอนุมัติ |
 | P1.2 | `Docs/P1/TECH_SPEC.md` (Package, โฟลเดอร์, asmdef, Event Bus) | ⏳ |
 | P1.3 | Unity init + `.gitattributes`/LFS + Force Text + `tools/gitbatch.sh` + ลบ template + spike ฟอนต์ไทย | ⏳ |
 | P1.4 | Art Bible สั้น · Backlog · Risk Register · Asset Request ชุดแรก | ⏳ |
+
+### ⚠️ P1 — สิ่งที่พบ
+- **R8 (L1 ก่อน P1.3):** Unity Editor ที่ MCP ต่ออยู่เปิดโปรเจกต์ `D:/project for unity/Hollow Chains` (ไม่มี git, ไม่มี URP/Input System, มี `com.unity.ai.assistant`) — **ไม่ใช่** repo `D:\Git\Hollow-Chains` (ซึ่งไม่มี `com.unity.ai.assistant`). ก่อน P1.3 ต้องให้เจ้าของเปิด repo ใน Unity และเพิ่ม package `com.unity.ai.assistant` เพื่อเปิด MCP Server ในโปรเจกต์นี้
+- Q-004–Q-008 (L2/L3) อยู่ใน `Docs/P1/GDD_DEMO.md` §9
+
+### 🔀 Git (P1)
+- `phase/P1-preproduction` · P1.0 `84f63fe` skills · P1.1 GDD — push แล้ว
