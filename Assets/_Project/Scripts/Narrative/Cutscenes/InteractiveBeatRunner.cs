@@ -1,4 +1,5 @@
 using HollowChains.Core.Events;
+using HollowChains.Core.Settings;
 using HollowChains.Data.Localization;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace HollowChains.Narrative.Cutscenes
     /// <summary>
     /// Runs interactive beats for a PlayableDirector: freezes it, shows the prompt (EVT_InteractPrompt), waits for
     /// press / hold of the Interact action, then resumes. Hold progress is published 0–1 for an optional UI ring.
+    /// With GameSettings.PressInsteadOfHold a hold beat completes on a single press (accessibility, skill #33).
     /// Setup: on the same GameObject as the PlayableDirector; assign the Interact action and the prompt channel.
     /// </summary>
     [RequireComponent(typeof(PlayableDirector))]
@@ -22,6 +24,7 @@ namespace HollowChains.Narrative.Cutscenes
 
         private PlayableDirector _director;
         private InteractiveBeatClip _active;
+        private BeatKind _kind;
         private float _held;
 
         public bool IsWaiting => _active != null;
@@ -37,8 +40,11 @@ namespace HollowChains.Narrative.Cutscenes
         {
             _active = clip;
             _held = 0f;
+            bool holdAsPress = clip.Kind == BeatKind.Hold && GameSettings.Current.PressInsteadOfHold;
+            _kind = holdAsPress ? BeatKind.Press : clip.Kind;
             SetSpeed(0d);
-            var text = LocalizedText.Resolve(clip.Prompt, clip.PromptFallback);
+            var prompt = holdAsPress && !clip.PressPrompt.IsEmpty ? clip.PressPrompt : clip.Prompt;
+            var text = LocalizedText.Resolve(prompt, clip.PromptFallback);
             if (_onPrompt != null) _onPrompt.Raise(string.Format(_promptFormat, text));
             Progress(0f);
         }
@@ -64,7 +70,7 @@ namespace HollowChains.Narrative.Cutscenes
             if (_active == null || _interact == null) return;
             if (Time.timeScale <= 0f) return; // pause menu open: E must not complete the beat behind it
             var action = _interact.action;
-            if (_active.Kind == BeatKind.Press)
+            if (_kind == BeatKind.Press)
             {
                 if (action.WasPressedThisFrame()) Complete();
                 return;

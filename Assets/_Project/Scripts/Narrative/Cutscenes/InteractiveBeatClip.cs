@@ -17,6 +17,8 @@ namespace HollowChains.Narrative.Cutscenes
         public LocalizedString Prompt = new LocalizedString();
         [Tooltip("Dev fallback when no table entry is set.")]
         public string PromptFallback = "...";
+        [Tooltip("Hold beats only: prompt shown when the player chose \"press instead of hold\" (empty = use Prompt).")]
+        public LocalizedString PressPrompt = new LocalizedString();
 
         public ClipCaps clipCaps => ClipCaps.None;
 

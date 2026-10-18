@@ -4,7 +4,8 @@ using UnityEngine;
 namespace HollowChains.Core.Settings
 {
     /// <summary>
-    /// Player options (demo minimum, GDD §6): volumes, subtitle size, camera invert. Persisted in PlayerPrefs.
+    /// Player options (demo minimum, GDD §6 + accessibility B-603): volumes, subtitle size, camera invert,
+    /// softer screen flashes, press instead of hold for hold beats. Persisted in PlayerPrefs.
     /// Read anywhere through <see cref="Current"/>; the Settings menu calls <see cref="Save"/>, which raises
     /// <see cref="Changed"/> so listeners (audio, subtitles, camera) update immediately.
     /// </summary>
@@ -18,6 +19,8 @@ namespace HollowChains.Core.Settings
         public float SfxVolume = 1f;
         public float SubtitleScale = 1f;
         public bool InvertCameraY;
+        public bool ReduceFlashes;
+        public bool PressInsteadOfHold;
 
         private static GameSettings s_current;
 

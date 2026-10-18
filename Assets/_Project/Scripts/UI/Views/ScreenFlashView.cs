@@ -1,4 +1,5 @@
 using HollowChains.Core.Events;
+using HollowChains.Core.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ namespace HollowChains.UI.Views
 {
     /// <summary>
     /// Full-screen flash that fades out (SC-05 flashback: the wolf's last memories hitting Phineas, skill #42).
+    /// Softer when GameSettings.ReduceFlashes is on (skill #33).
     /// Setup: a full-screen Image (raycastTarget off) on top of the HUD; assign EVT_Flash.
     /// </summary>
     [RequireComponent(typeof(Image))]
@@ -14,6 +16,8 @@ namespace HollowChains.UI.Views
         [SerializeField] private VoidEventChannelSO _onFlash;
         [SerializeField] private Color _color = new Color(0.85f, 0.75f, 0.95f, 0.85f);
         [SerializeField, Min(0.05f)] private float _fadeSeconds = 0.45f;
+        [Tooltip("Flash strength when the player turned on \"reduce flashes\" (accessibility).")]
+        [SerializeField, Range(0f, 1f)] private float _reducedStrength = 0.25f;
 
         private Image _image;
         private float _alpha;
@@ -41,7 +45,7 @@ namespace HollowChains.UI.Views
             Apply(Mathf.Max(0f, _alpha - Time.unscaledDeltaTime / _fadeSeconds));
         }
 
-        private void Flash() => Apply(1f);
+        private void Flash() => Apply(GameSettings.Current.ReduceFlashes ? _reducedStrength : 1f);
 
         private void Apply(float alpha)
         {

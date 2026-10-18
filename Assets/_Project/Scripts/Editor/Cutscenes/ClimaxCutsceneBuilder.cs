@@ -278,6 +278,7 @@ namespace HollowChains.Editor.Cutscenes
             Entry(dlg, "speaker_elena", "เอเลนา", "Elena");
             Entry(ui, "beat_hug", "วิ่งเข้าไปกอด", "Run and shield her");
             Entry(ui, "beat_roots", "กดค้างเพื่อปล่อยราก", "Hold to release the roots");
+            Entry(ui, "beat_roots_press", "กดเพื่อปล่อยราก", "Press to release the roots");
             Entry(ui, "beat_reach", "ยื่นมือ", "Reach out");
 
             // [PROPOSAL] team line (D-035) + CANON lines copied verbatim from 06 SC-06 (split only at the original punctuation)
@@ -353,6 +354,7 @@ namespace HollowChains.Editor.Cutscenes
             clip.start = at; clip.duration = 0.1; clip.displayName = kind + ": " + fallback;
             var beat = (InteractiveBeatClip)clip.asset;
             beat.Kind = kind; beat.HoldSeconds = 1.5f; beat.Prompt = new LocalizedString("UI", key); beat.PromptFallback = fallback;
+            if (kind == BeatKind.Hold) beat.PressPrompt = new LocalizedString("UI", key + "_press"); // "press instead of hold" option
         }
 
         private static void Line(LineTrack track, DialogueLineSO line, DialogueLineEventChannelSO channel, float at)

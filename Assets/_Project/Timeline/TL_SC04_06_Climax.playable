@@ -4602,6 +4602,15 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   PromptFallback: "\u0E22\u0E37\u0E48\u0E19\u0E21\u0E37\u0E2D"
+  PressPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []
@@ -4629,6 +4638,15 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   PromptFallback: "\u0E01\u0E14\u0E04\u0E49\u0E32\u0E07\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E23\u0E32\u0E01"
+  PressPrompt:
+    m_TableReference:
+      m_TableCollectionName: UI
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: beat_roots_press
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []
@@ -6126,6 +6144,15 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   PromptFallback: "\u0E27\u0E34\u0E48\u0E07\u0E40\u0E02\u0E49\u0E32\u0E44\u0E1B\u0E01\u0E2D\u0E14"
+  PressPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []
