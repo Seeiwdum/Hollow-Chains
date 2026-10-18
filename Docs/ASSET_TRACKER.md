@@ -5,6 +5,8 @@
 > สถานะ: Requested → Received → Integrated (หรือ Rejected) · **License check บังคับก่อนนำเข้า (D-004)**: บันทึก URL แหล่ง, ชื่อ license, ใช้เชิงพาณิชย์/แจกใน build ได้ไหม, ข้อความ credit, วันที่ตรวจ, ผู้ตรวจ — อ่านจากหน้า license จริงของแหล่งเสมอ
 > สเกล 1 unit = 1 m · สไตล์ตาม Art Bible (รอ Q-011; ค่าเริ่ม semi-stylized painterly) · อ้างอิงคือคำบรรยาย/keyword เท่านั้น ห้ามคัดลอก asset จากเกมอื่น
 
+> **อัปเดต 2026-10-18 (D-023):** ระหว่างนี้ใช้ ProBuilder blocking + capsule และยังไม่ทำ animation → ไม่ต้องรีบหา AST-001–004, AST-010–012, AST-020–023 จนถึง P5; ที่ช่วยได้ตอนนี้คือ **ฟอนต์ไทย UI-001/002** (ใช้ใน P3.3) และเสียง (P5)
+
 ## ชุดที่ 1 — ส่งเมื่อจบ P1 (2026-10-18)
 
 ### 3D Character / Animation
@@ -37,7 +39,7 @@
 | VFX-003 | Soul Drain | พลังชีวิตไหลจากหมาป่าเข้าราก | VFX Graph | P0 | SC-05 | trail ม่วง |
 | VFX-004 | Mummify Dissolve | ร่างแห้งเหี่ยว (shader dissolve/shrink) | Shader Graph | P0 | SC-05 | scale ลด |
 | VFX-005 | Elena Water Magic | สายน้ำจากลำธารพุ่ง → ถูกไอดำกลืน/ระเหย (D-003) | VFX Graph, สี Stream palette | P0 | SC-04 | particle ฟ้า |
-| VFX-006 | Black Ichor Letters | น้ำเหลืองดำหยด → ก่อตัวอักษร "Flee... the seal is about to break" (ข้อความอังกฤษรอ Q-009) | Decal/shader reveal | P0 | SC-06 | ข้อความ UI |
+| VFX-006 | Black Ichor Letters | น้ำเหลืองดำหยด → ก่อตัวอักษร "จงหนีไป... ผนึกกำลังจะแตกแล้ว" (ภาษาไทย D-025) | Decal/shader reveal | P0 | SC-06 | ข้อความ UI |
 | VFX-007 | Critical HP Overlay | vignette เลือด | Post/UI | P0 | SC-04 | Volume vignette |
 | VFX-008 | Forest ambience | หมอก ฝุ่น ลำแสง | Particle + volumetric-ish | P2 | SC-03 | Fog URP |
 
@@ -61,11 +63,10 @@
 ### UI / Font
 | ID | ประเภท | ชื่อ | คำอธิบาย | สเปก | ความสำคัญ | สถานะ | License check |
 |---|---|---|---|---|---|---|---|
-| UI-001 | Font | Title/heading serif (EN) | serif คลาสสิกดาร์ก (เช่น ตระกูล Cormorant) | TTF/OTF, ต้องเป็น OFL หรือเทียบเท่า | P0 | Requested | ทีมตรวจ license ให้ได้ถ้าเจ้าของชี้แหล่ง |
-| UI-002 | Font | Body/subtitle sans (EN) | อ่านง่ายขนาดเล็ก (เช่น Source Sans 3) | TTF/OTF, OFL | P0 | Requested | 〃 |
+| UI-001 | Font | Thai heading font | ฟอนต์ไทยหัวข้อ มีคาแรกเตอร์ดาร์ก + ละตินในตัว | TTF/OTF, OFL หรือเทียบเท่า | P0 | Requested | ทีมตรวจ license ให้ได้ถ้าเจ้าของชี้แหล่ง |
+| UI-002 | Font | Thai body/subtitle font | ฟอนต์ไทยอ่านง่ายขนาดเล็ก (มีหัว/ไม่มีหัว — ทีมเสนอแบบมีหัวสำหรับซับ) + ละติน | TTF/OTF, OFL | P0 | Requested | 〃 |
 | UI-003 | UI Art | Title logo "Hollow Chains" | โลโก้ + โซ่/ช่องว่าง | PNG โปร่ง 4K + SVG | P1 | Requested | — |
 | UI-004 | UI Art | Icons | quest, interact, ปุ่ม KB/M + gamepad | PNG/SVG 256 | P1 | Requested | — |
-| UI-005 | Font | Thai font (ภายหลัง — D-017) | — | — | P2 | ไม่ขอตอนนี้ | — |
 
 ### Comic (P7 — ยังไม่ขอ)
 Panel 2D ชุดหม่น 6–10 ภาพ + ชุดสีนวล (เอเลนา)
