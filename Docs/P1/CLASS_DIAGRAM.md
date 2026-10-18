@@ -862,6 +862,16 @@ classDiagram
     class ScreenFlashView {
         -VoidEventChannelSO _onFlash
     }
+    class HintTriggerZone {
+        -LocalizedString _hint
+        -StringEventChannelSO _onHint
+    }
+    class VolumeBlendZone {
+        -Volume _volume
+        -float _holdSeconds
+    }
+    PlayerTriggerZone <|-- HintTriggerZone
+    PlayerTriggerZone <|-- VolumeBlendZone
 
     class IComicPage {
         <<interface>>

@@ -55,6 +55,7 @@
 
 | D-040 | 2026-10-18 | P5 | **Cutscene = Timeline + event channel:** custom tracks (ChannelEvent, Line, TransformTween, VolumeWeight, InteractiveBeat) · climax SC-04→06 เป็น timeline เดียว 36.6 วิ ใน S04 สร้างด้วย `ClimaxCutsceneBuilder` (ปรับเวลาแล้วสร้างใหม่ได้) · beat โต้ตอบ 3 จุด: กด E วิ่งเข้าไปกอด / **กดค้าง E** ปล่อยราก / กด E ยื่นมือ — ผลลัพธ์ล็อกตามบท ไม่มีแพ้ · CinemachineBrain ผูกตอน runtime (อยู่ใน _Boot) | L4 | ธีร์/กานต์ | `06` SC-04..06, skill #19 |
 | D-041 | 2026-10-18 | P5 | **S00 Comic placeholder:** จอดำ + narration CANON จาก `02` §4 (แบ่ง 4 บรรทัดตามช่องว่างเดิม ไม่แก้คำ) · กดค้าง E = ข้าม · เกมใหม่เริ่มที่ S00 → S01 · หน้า comic จริง (ภาพ) ต่อเข้า `IComicPage` ใน P7 | L4 | อ.รัตติกาล/กานต์ | `06` SC-00 |
+| D-043 | 2026-10-19 | P5 | SC-01..03 [IMPL] ที่เหลือ: คำใบ้ปุ่มแบบ trigger (ไม่มีหน้าจอสอนแยก) · โทนอุ่นชั่วคราวใน S02 ใช้ Volume priority 10 ทับ VP_S02_Astraon_Cold · ไอดำ = particle placeholder (texture วงกลมนุ่มที่ทีมสร้างเอง ไม่มี license ต้องเช็ก) · ข้อความคำใบ้ 2 อัน = [PROPOSAL] (Q-018) | L4 | กานต์/ไฟ/ฟ้าใส | `06` SC-01..03 |
 | D-042 | 2026-10-18 | P5 | บทใหม่ที่ทีมเขียน = **[PROPOSAL]**: เสียงกรีด S03 "กรี๊ด—! ช่วยด้วย!", เอเลน่าตะโกน SC-04 "อย่าเข้ามานะ!", prompt beat 3 อัน, "กด [E] ค้างไว้เพื่อข้าม" · บท Elena SC-06 3 ประโยค + ข้อความพ่อ = **CANON** ตรงตัว | L4 | อ.รัตติกาล | Q-018 |
 
 ## PENDING — รอเจ้าของตอบ (ดู STUDIO_LOG › คำถามค้าง)
