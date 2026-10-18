@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using HollowChains.Data.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace HollowChains.Data.Quests
 {
@@ -7,10 +9,12 @@ namespace HollowChains.Data.Quests
     [CreateAssetMenu(menuName = "Hollow Chains/Quests/Quest", fileName = "Q_New")]
     public sealed class QuestSO : GameDataSO
     {
+        [SerializeField] private LocalizedString _localizedTitle = new LocalizedString();
+        [Tooltip("Dev fallback when no table entry is set.")]
         [SerializeField] private string _title;
         [SerializeField] private List<QuestPhaseSO> _phases = new List<QuestPhaseSO>();
 
-        public string Title => _title;
+        public string Title => LocalizedText.Resolve(_localizedTitle, _title);
 
         public IReadOnlyList<QuestPhaseSO> Phases => _phases;
     }
