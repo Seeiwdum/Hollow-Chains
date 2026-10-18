@@ -63,7 +63,8 @@
 ### UI / Font
 | ID | ประเภท | ชื่อ | คำอธิบาย | สเปก | ความสำคัญ | สถานะ | License check |
 |---|---|---|---|---|---|---|---|
-| UI-001 | Font | Thai heading font | ฟอนต์ไทยหัวข้อ มีคาแรกเตอร์ดาร์ก + ละตินในตัว | TTF/OTF, OFL หรือเทียบเท่า | P0 | Requested | ทีมตรวจ license ให้ได้ถ้าเจ้าของชี้แหล่ง |
+| UI-001 | Font | Thai heading font | ฟอนต์ไทยหัวข้อ มีคาแรกเตอร์ดาร์ก + ละตินในตัว | TTF/OTF, OFL หรือเทียบเท่า | P0 | ⏳ รอเลือก (ทีมเสนอ 7 ตัว) | — |
+| UI-001a | Font | Amatic SC (เจ้าของส่ง 2026-10-18) | ลายมือสูงผอม "สยองแต่อ่อนโยน" (ref: Little Nightmares) | TTF ×2 | P1 | ✅ Received → `Assets/ThirdParty/Fonts/AmaticSC/` | ✅ OFL 1.1 (ไฟล์ OFL.txt ในชุด, ตรวจ 2026-10-18 โดยเอก) · **ไม่มีอักษรไทย (0/91)** → ใช้กับโลโก้/หัวข้อภาษาอังกฤษ + ละติน fallback |
 | UI-002 | Font | Thai body/subtitle font | ฟอนต์ไทยอ่านง่ายขนาดเล็ก (มีหัว/ไม่มีหัว — ทีมเสนอแบบมีหัวสำหรับซับ) + ละติน | TTF/OTF, OFL | P0 | Requested | 〃 |
 | UI-003 | UI Art | Title logo "Hollow Chains" | โลโก้ + โซ่/ช่องว่าง | PNG โปร่ง 4K + SVG | P1 | Requested | — |
 | UI-004 | UI Art | Icons | quest, interact, ปุ่ม KB/M + gamepad | PNG/SVG 256 | P1 | Requested | — |
