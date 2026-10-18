@@ -1,5 +1,7 @@
 using HollowChains.Core.Events;
+using HollowChains.Data.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace HollowChains.Gameplay.Interaction
 {
@@ -10,10 +12,12 @@ namespace HollowChains.Gameplay.Interaction
     /// </summary>
     public abstract class InteractableBase : MonoBehaviour, IInteractable
     {
+        [SerializeField] private LocalizedString _localizedPrompt = new LocalizedString();
+        [Tooltip("Dev fallback when no table entry is set.")]
         [SerializeField] private string _prompt = "Interact";
         [SerializeField] private VoidEventChannelSO _onInteracted;
 
-        public string Prompt => _prompt;
+        public string Prompt => LocalizedText.Resolve(_localizedPrompt, _prompt);
 
         public Vector3 Position => transform.position;
 
