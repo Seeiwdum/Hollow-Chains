@@ -662,6 +662,91 @@ classDiagram
 ```
 ข้อความมาจาก string table `UI` / `Dialogue` / `Quests` (locale `th` เริ่มต้น) · `ThaiMarkPositioner` ติดกับ TMP ทุกตัวที่แสดงไทย (D-034)
 
+## 6f. ✅ Game flow, เมนู, HP (P3.3b)
+```mermaid
+classDiagram
+    class IState {
+        <<interface>>
+    }
+    class FlowState {
+        <<abstract>>
+        +string Name*
+        #bool GameplayInput*
+        #bool Paused*
+        +Enter() void
+    }
+    IState <|.. FlowState
+    FlowState <|-- TitleState
+    FlowState <|-- PlayingState
+    FlowState <|-- PausedState
+    FlowState <|-- EndState
+    class GameFlowService {
+        -StateMachine _machine
+        -InputActionReference _pauseAction
+        +EnterTitle() void
+        +EnterPlaying() void
+        +StartNewGame() void
+        +Pause() void
+        +Resume() void
+        +QuitToTitle() void
+        +ShowEnd() void
+    }
+    GameFlowService *-- FlowState
+    class GameBootstrapper
+    GameBootstrapper ..> GameFlowService : Title or Playing
+
+    class HealthModel {
+        +int Max
+        +int Current
+        +float Normalized
+        +bool IsCritical
+        +TakeDamage(int) void
+        +Heal(int) void
+        +SetTo(int) void
+    }
+    class IDamageable {
+        <<interface>>
+        +TakeDamage(int) void
+    }
+    class Health {
+        -FloatEventChannelSO _onHealthChanged
+    }
+    IDamageable <|.. Health
+    Health *-- HealthModel
+    class CriticalHealthVolume
+
+    class UIView {
+        <<abstract>>
+    }
+    class GameStateView {
+        -string[] _visibleInStates
+        -Selectable _firstSelected
+    }
+    UIView <|-- GameStateView
+    UIView <|-- SettingsView
+    class HealthBarView
+    class ChannelButton {
+        -VoidEventChannelSO _onClick
+    }
+    class LocalizedLabel {
+        -LocalizedString _text
+    }
+    class GameSettings {
+        <<Serializable>>
+        +float MasterVolume
+        +float SubtitleScale
+        +bool InvertCameraY
+        +Current$ GameSettings
+        +Save()$ void
+    }
+    SettingsView ..> GameSettings
+    ChannelButton ..> GameFlowService : EVT_UI_* (event channel)
+    GameFlowService ..> GameStateView : EVT_GameStateChanged
+    Health ..> HealthBarView : EVT_HealthChanged
+    Health ..> CriticalHealthVolume : EVT_HealthChanged
+```
+เมนูไม่อ้างอิง gameplay — ปุ่มยิง `EVT_UI_*`, `GameFlowService` ฟังแล้วประกาศ state กลับผ่าน `EVT_GameStateChanged`
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
