@@ -38,6 +38,11 @@ namespace HollowChains.Gameplay.Player
 
         public bool IsLocked => _stateMachine.Current == Locked;
 
+        public bool IsSprinting => _stateMachine.Current == Sprint;
+
+        /// <summary>Owner-facing input (camera look, interactor). Null if no input source is set up.</summary>
+        public IPlayerInput Input => _input;
+
         public IState CurrentState => _stateMachine.Current;
 
         private void Awake()
@@ -82,6 +87,7 @@ namespace HollowChains.Gameplay.Player
         /// <summary>Converts stick input to a world direction on the ground plane, relative to the camera.</summary>
         internal Vector3 CameraRelative(Vector2 input)
         {
+            if (_camera == null && Camera.main != null) _camera = Camera.main.transform; // _Boot may load after us
             if (_camera == null) return new Vector3(input.x, 0f, input.y);
             var forward = Vector3.ProjectOnPlane(_camera.forward, Vector3.up).normalized;
             var right = Vector3.ProjectOnPlane(_camera.right, Vector3.up).normalized;
