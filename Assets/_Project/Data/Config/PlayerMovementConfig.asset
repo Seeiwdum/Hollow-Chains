@@ -21,4 +21,4 @@ MonoBehaviour:
   _turnSpeedDegrees: 720
   _gravity: -20
   _groundedStickVelocity: -2
-  _sprintAllowedByDefault: 1
+  _sprintAllowedByDefault: 0
