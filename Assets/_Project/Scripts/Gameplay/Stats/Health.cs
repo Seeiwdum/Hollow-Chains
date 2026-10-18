@@ -21,9 +21,16 @@ namespace HollowChains.Gameplay.Stats
 
         public bool IsCritical => Model.IsCritical;
 
+        /// <summary>(current, max) after every change.</summary>
+        public event System.Action<int, int> Changed;
+
         private HealthModel Model => _model ??= new HealthModel(_max);
 
-        private void Awake() => Model.Changed += (_, __) => Publish();
+        private void Awake() => Model.Changed += (current, max) =>
+        {
+            Publish();
+            Changed?.Invoke(current, max);
+        };
 
         private void Start() => Publish();
 
