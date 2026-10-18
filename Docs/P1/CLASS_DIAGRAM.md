@@ -1,7 +1,7 @@
 # Class Diagram — Hollow Chains Demo (v0.1, แผนก่อนเขียนโค้ด)
 
 > เจ้าของ: ธีร์ · ตรวจ: กานต์, ณิชา · อ้างอิง: `TECH_SPEC.md` §4, skill `unity-csharp-architecture` (OOP/SOLID — D-020)
-> สถานะ: **แผน** — ยังไม่มีโค้ด; ชื่อคลาสอาจปรับตอนลงมือ และต้องอัปเดตไฟล์นี้ใน commit เดียวกับโค้ดทุกครั้ง
+> สถานะ: **แผน + โค้ดบางส่วน** (หัวข้อที่มี ✅ = ตรงกับโค้ดจริง); ชื่อคลาสอาจปรับตอนลงมือ และต้องอัปเดตไฟล์นี้ใน commit เดียวกับโค้ดทุกครั้ง
 > ดูภาพ: เปิดไฟล์นี้บน GitHub (branch `phase/P1-preproduction`) — GitHub วาด Mermaid ให้อัตโนมัติ
 
 ## วิธีอ่าน
@@ -20,34 +20,46 @@
 
 ---
 
-## 1. Core — รากฐาน (`HollowChains.Core`)
+## 1. Core — รากฐาน (`HollowChains.Core`) ✅ มีโค้ดแล้ว (P2.0)
 ```mermaid
 classDiagram
+    class EventChannelBaseSO {
+        <<abstract>>
+        -string _description
+        +string Description
+    }
+    class VoidEventChannelSO {
+        -event Action Raised
+        +Raise() void
+        +Subscribe(Action listener) void
+        +Unsubscribe(Action listener) void
+    }
     class EventChannelSO~T~ {
         <<abstract>>
-        -event Action~T~ OnRaised
+        -event Action~T~ Raised
         +Raise(T value) void
         +Subscribe(Action~T~ listener) void
         +Unsubscribe(Action~T~ listener) void
     }
-    class VoidEventChannelSO
     class IntEventChannelSO
     class StringEventChannelSO
-    EventChannelSO~T~ <|-- VoidEventChannelSO
+    EventChannelBaseSO <|-- VoidEventChannelSO
+    EventChannelBaseSO <|-- EventChannelSO~T~
     EventChannelSO~T~ <|-- IntEventChannelSO
     EventChannelSO~T~ <|-- StringEventChannelSO
 
     class IState {
         <<interface>>
         +Enter() void
-        +Tick(float dt) void
+        +Tick(float deltaTime) void
         +Exit() void
     }
     class StateMachine {
         -IState _current
         +IState Current
+        +event StateChanged
         +ChangeState(IState next) void
-        +Tick(float dt) void
+        +Tick(float deltaTime) void
     }
     StateMachine o-- IState
 
@@ -55,9 +67,13 @@ classDiagram
         <<interface>>
     }
     class ServiceLocator {
-        -Dictionary _services
+        <<static>>
+        -Dictionary Services
         +Register~T~(T service) void
+        +Unregister~T~() void
+        +TryGet~T~(out T service) bool
         +Get~T~() T
+        +Clear() void
     }
     ServiceLocator o-- IService
 
