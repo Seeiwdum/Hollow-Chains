@@ -487,6 +487,78 @@ classDiagram
 ```
 `ScriptedInteractable` (กอด/ยื่นมือ) เลื่อนไป P5 พร้อม Timeline · ข้อความทั้งหมดยังเป็น placeholder อังกฤษ `[PH]` จนกว่าจะมีฟอนต์ไทย + Localization (P3.3)
 
+## 6c. ✅ Quest system (P3.1)
+> แทนที่แผน Quest ใน §2/§4 · Objective ยังเป็น string `[PH]` → เปลี่ยนเป็น LocalizedString ใน P3.3
+```mermaid
+classDiagram
+    class IIdentifiable {
+        <<interface>>
+        +string Id
+    }
+    class GameDataSO {
+        <<abstract>>
+        -string _id
+        +string Id
+    }
+    IIdentifiable <|.. GameDataSO
+    class QuestSO {
+        -string _title
+        +IReadOnlyList Phases
+    }
+    class QuestPhaseSO {
+        -string _objective
+        +PhaseConditionSO CompleteWhen
+    }
+    GameDataSO <|-- QuestSO
+    GameDataSO <|-- QuestPhaseSO
+    QuestSO *-- QuestPhaseSO
+    class PhaseConditionSO {
+        <<abstract>>
+        +CreateWatcher()* IConditionWatcher
+    }
+    class EventRaisedConditionSO {
+        -VoidEventChannelSO _event
+    }
+    class IConditionWatcher {
+        <<interface>>
+        +Start(Action onMet) void
+        +Dispose() void
+    }
+    PhaseConditionSO <|-- EventRaisedConditionSO
+    PhaseConditionSO ..> IConditionWatcher : creates
+    QuestPhaseSO o-- PhaseConditionSO
+
+    class QuestState {
+        <<Serializable>>
+        +string QuestId
+        +int PhaseIndex
+        +bool IsComplete
+    }
+    class QuestRunner {
+        +QuestState State
+        +QuestPhaseSO CurrentPhase
+        +event PhaseStarted
+        +event Completed
+        +Begin() void
+        +ForceAdvance() void
+    }
+    class IQuestService {
+        <<interface>>
+        +StartQuest(QuestSO q) void
+        +GetState(string id) QuestState
+        +GetCurrentPhase(string id) QuestPhaseSO
+    }
+    class QuestService {
+        -List _autoStart
+        -StringEventChannelSO _onObjectiveChanged
+    }
+    IQuestService <|.. QuestService
+    QuestService *-- QuestRunner
+    QuestRunner *-- QuestState
+    QuestRunner o-- IConditionWatcher
+```
+Watcher แยก state การฟัง event ออกจาก SO (SO เป็น asset ที่แชร์กัน ห้ามเก็บ runtime state) · เงื่อนไขชนิดใหม่ = subclass ใหม่ของ `PhaseConditionSO`
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
