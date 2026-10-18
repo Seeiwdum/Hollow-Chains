@@ -54,6 +54,66 @@ MonoBehaviour:
     m_Localized: Look at the marks
     m_Metadata:
       m_Items: []
+  - m_Id: 55906228568064
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700352
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700353
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700354
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700355
+    m_Localized: Back to Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700356
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700357
+    m_Localized: Current Quest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700358
+    m_Localized: To be continued...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700359
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700360
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700361
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700362
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700363
+    m_Localized: Subtitle Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700364
+    m_Localized: Invert Camera Y
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700365
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

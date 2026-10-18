@@ -51,6 +51,66 @@ MonoBehaviour:
     m_Key: prompt_look_marks
     m_Metadata:
       m_Items: []
+  - m_Id: 55906228568064
+    m_Key: menu_new_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700352
+    m_Key: menu_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700353
+    m_Key: menu_quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700354
+    m_Key: menu_resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700355
+    m_Key: menu_quit_to_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700356
+    m_Key: pause_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700357
+    m_Key: pause_quest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700358
+    m_Key: end_tbc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700359
+    m_Key: settings_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700360
+    m_Key: settings_master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700361
+    m_Key: settings_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700362
+    m_Key: settings_sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700363
+    m_Key: settings_subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700364
+    m_Key: settings_invert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55906425700365
+    m_Key: settings_back
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
