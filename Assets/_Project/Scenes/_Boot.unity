@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 1083869600}
   - component: {fileID: 1083869599}
   m_Layer: 0
-  m_Name: ThoughtLine
+  m_Name: Subtitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,10 +618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccffe7652363dbe4693014414505eb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Views.StringChannelTextView
-  _channel: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
+  _channel: {fileID: 11400000, guid: 3a773d026bb883e40b621d7bec565fec, type: 2}
   _text: {fileID: 512811123}
-  _format: <i>{0}</i>
-  _autoHideSeconds: 3.5
+  _format: '{0}'
+  _autoHideSeconds: 0
 --- !u!225 &1083869600
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -905,6 +905,7 @@ GameObject:
   - component: {fileID: 1571664618}
   - component: {fileID: 1571664617}
   - component: {fileID: 1571664620}
+  - component: {fileID: 1571664621}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -974,6 +975,22 @@ MonoBehaviour:
   _onObjectiveChanged: {fileID: 11400000, guid: 823f17252f22dfc42a959b45c04c487a, type: 2}
   _onPhaseChanged: {fileID: 11400000, guid: 9526b03d4bc218c4d8c4cfca2662cedd, type: 2}
   _onQuestCompleted: {fileID: 11400000, guid: 1473ea0b512c0cd418c4d0a6ca354006, type: 2}
+--- !u!114 &1571664621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571664616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6543da9fc0dc5641b92371e1b1b42d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.DialogueRunner
+  _playLineRequests: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
+  _onSubtitle: {fileID: 11400000, guid: 3a773d026bb883e40b621d7bec565fec, type: 2}
+  _thoughtFormat: <i>{0}</i>
+  _speechFormat: <b>{0}</b>  {1}
 --- !u!1 &1873285545
 GameObject:
   m_ObjectHideFlags: 0

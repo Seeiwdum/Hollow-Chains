@@ -1576,6 +1576,8 @@ GameObject:
   - component: {fileID: 64627340}
   - component: {fileID: 64627339}
   - component: {fileID: 64627338}
+  - component: {fileID: 64627342}
+  - component: {fileID: 64627341}
   m_Layer: 0
   m_Name: Villager_Well_2
   m_TagString: Untagged
@@ -1678,6 +1680,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64627336}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &64627341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64627336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: 001b2ce17a2d1e14d9617f4dfef4cc5d, type: 2}
+  - {fileID: 11400000, guid: 4364804a4e8401743a107cea14533852, type: 2}
+  - {fileID: 11400000, guid: 49b069e27ff99174c9f051e2becd120f, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &64627342
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64627336}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &75753696
 Mesh:
   m_ObjectHideFlags: 0
@@ -8260,6 +8300,8 @@ GameObject:
   - component: {fileID: 310680716}
   - component: {fileID: 310680715}
   - component: {fileID: 310680714}
+  - component: {fileID: 310680718}
+  - component: {fileID: 310680717}
   m_Layer: 0
   m_Name: Child_2
   m_TagString: Untagged
@@ -8362,6 +8404,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310680712}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &310680717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310680712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: abc6f7c5c0e8b914a9ae8e7d2bbb9d56, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &310680718
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310680712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &323256329
 GameObject:
   m_ObjectHideFlags: 0
@@ -11276,6 +11354,8 @@ GameObject:
   - component: {fileID: 503724607}
   - component: {fileID: 503724606}
   - component: {fileID: 503724605}
+  - component: {fileID: 503724609}
+  - component: {fileID: 503724608}
   m_Layer: 0
   m_Name: Villager_Well_1
   m_TagString: Untagged
@@ -11378,6 +11458,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503724603}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &503724608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503724603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: 001b2ce17a2d1e14d9617f4dfef4cc5d, type: 2}
+  - {fileID: 11400000, guid: 4364804a4e8401743a107cea14533852, type: 2}
+  - {fileID: 11400000, guid: 49b069e27ff99174c9f051e2becd120f, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &503724609
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503724603}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &510223968
 GameObject:
   m_ObjectHideFlags: 0
@@ -12379,6 +12497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
   _prompt: Ask the shopkeeper
   _onInteracted: {fileID: 0}
+  _line: {fileID: 11400000, guid: 772040d4dba4c9a4abdf57d10a0e9af9, type: 2}
+  _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   _thought: '[PH] He looks straight through me.'
   _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
 --- !u!64 &565100557
@@ -19357,6 +19477,8 @@ GameObject:
   - component: {fileID: 898406513}
   - component: {fileID: 898406512}
   - component: {fileID: 898406511}
+  - component: {fileID: 898406515}
+  - component: {fileID: 898406514}
   m_Layer: 0
   m_Name: Villager_Gossip_1
   m_TagString: Untagged
@@ -19459,6 +19581,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898406509}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &898406514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898406509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: 001b2ce17a2d1e14d9617f4dfef4cc5d, type: 2}
+  - {fileID: 11400000, guid: 4364804a4e8401743a107cea14533852, type: 2}
+  - {fileID: 11400000, guid: 49b069e27ff99174c9f051e2becd120f, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &898406515
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898406509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &911454307
 Mesh:
   m_ObjectHideFlags: 0
@@ -22950,6 +23110,8 @@ GameObject:
   - component: {fileID: 1043268466}
   - component: {fileID: 1043268465}
   - component: {fileID: 1043268464}
+  - component: {fileID: 1043268468}
+  - component: {fileID: 1043268467}
   m_Layer: 0
   m_Name: Villager_Gossip_2
   m_TagString: Untagged
@@ -23052,6 +23214,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043268462}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1043268467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043268462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: 001b2ce17a2d1e14d9617f4dfef4cc5d, type: 2}
+  - {fileID: 11400000, guid: 4364804a4e8401743a107cea14533852, type: 2}
+  - {fileID: 11400000, guid: 49b069e27ff99174c9f051e2becd120f, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &1043268468
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043268462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1047746288
 GameObject:
   m_ObjectHideFlags: 0
@@ -25391,6 +25591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
   _prompt: Knock
   _onInteracted: {fileID: 0}
+  _line: {fileID: 11400000, guid: a491d00beeb72db409ccc029e87c0b1a, type: 2}
+  _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   _thought: '[PH] ...The latch clicks shut from inside.'
   _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
 --- !u!64 &1130068841
@@ -29860,6 +30062,8 @@ GameObject:
   - component: {fileID: 1293260722}
   - component: {fileID: 1293260721}
   - component: {fileID: 1293260720}
+  - component: {fileID: 1293260724}
+  - component: {fileID: 1293260723}
   m_Layer: 0
   m_Name: Villager_Road_2
   m_TagString: Untagged
@@ -29962,6 +30166,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293260718}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1293260723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293260718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: 001b2ce17a2d1e14d9617f4dfef4cc5d, type: 2}
+  - {fileID: 11400000, guid: 4364804a4e8401743a107cea14533852, type: 2}
+  - {fileID: 11400000, guid: 49b069e27ff99174c9f051e2becd120f, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &1293260724
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293260718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1307146265
 GameObject:
   m_ObjectHideFlags: 0
@@ -30670,6 +30912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
   _prompt: Read the old notice
   _onInteracted: {fileID: 0}
+  _line: {fileID: 11400000, guid: de7ad95e99a475e40b69b0cd50873302, type: 2}
+  _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   _thought: '[PH] Still here. Still his name.'
   _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
 --- !u!64 &1351631048
@@ -36296,6 +36540,75 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1656779596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656779599}
+  - component: {fileID: 1656779598}
+  - component: {fileID: 1656779597}
+  m_Layer: 0
+  m_Name: ThoughtZone_Elena (alley exit)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1656779597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656779596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d1a9d369db13040b1c5e69a0d38498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.LineTriggerZone
+  _once: 1
+  _line: {fileID: 11400000, guid: a249912961296144bacf690ac2d607ba, type: 2}
+  _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
+--- !u!65 &1656779598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656779596}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 4, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1656779599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656779596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662581752
 GameObject:
   m_ObjectHideFlags: 0
@@ -38593,6 +38906,8 @@ GameObject:
   - component: {fileID: 1802816361}
   - component: {fileID: 1802816360}
   - component: {fileID: 1802816359}
+  - component: {fileID: 1802816363}
+  - component: {fileID: 1802816362}
   m_Layer: 0
   m_Name: Villager_Road_1
   m_TagString: Untagged
@@ -38695,6 +39010,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802816357}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1802816362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802816357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: 001b2ce17a2d1e14d9617f4dfef4cc5d, type: 2}
+  - {fileID: 11400000, guid: 4364804a4e8401743a107cea14533852, type: 2}
+  - {fileID: 11400000, guid: 49b069e27ff99174c9f051e2becd120f, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &1802816363
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802816357}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &1812261468
 Mesh:
   m_ObjectHideFlags: 0
@@ -40469,6 +40822,8 @@ GameObject:
   - component: {fileID: 1942868373}
   - component: {fileID: 1942868372}
   - component: {fileID: 1942868371}
+  - component: {fileID: 1942868375}
+  - component: {fileID: 1942868374}
   m_Layer: 0
   m_Name: Child_1
   m_TagString: Untagged
@@ -40571,6 +40926,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942868369}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1942868374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942868369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933bbb86a99e8b4b95451e11d2e2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.BarkEmitter
+  _lines:
+  - {fileID: 11400000, guid: abc6f7c5c0e8b914a9ae8e7d2bbb9d56, type: 2}
+  _cooldownSeconds: 12
+--- !u!135 &1942868375
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942868369}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1944750097
 GameObject:
   m_ObjectHideFlags: 0
@@ -45580,3 +45971,4 @@ SceneRoots:
   - {fileID: 1583964515}
   - {fileID: 1445019061}
   - {fileID: 637404487}
+  - {fileID: 1656779599}

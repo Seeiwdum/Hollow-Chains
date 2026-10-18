@@ -34839,6 +34839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.InspectInteractable
   _prompt: Look at the marks
   _onInteracted: {fileID: 0}
+  _line: {fileID: 11400000, guid: aea1308e8c993cf4a84b79f43dc7d948, type: 2}
+  _playLine: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   _thought: '[PH] Claw marks... too big for any wolf.'
   _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
 --- !u!64 &351816025
