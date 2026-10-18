@@ -1,0 +1,10 @@
+{
+    "name": "HollowChains.Tests.EditMode",
+    "rootNamespace": "HollowChains.Tests",
+    "references": ["UnityEngine.TestRunner", "UnityEditor.TestRunner", "HollowChains.Core", "HollowChains.Data", "HollowChains.Gameplay"],
+    "includePlatforms": ["Editor"],
+    "overrideReferences": true,
+    "precompiledReferences": ["nunit.framework.dll"],
+    "autoReferenced": false,
+    "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}

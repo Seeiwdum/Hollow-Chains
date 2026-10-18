@@ -1,0 +1,6 @@
+{
+    "name": "HollowChains.Combat",
+    "rootNamespace": "HollowChains.Combat",
+    "references": ["HollowChains.Core", "HollowChains.Data"],
+    "autoReferenced": false
+}

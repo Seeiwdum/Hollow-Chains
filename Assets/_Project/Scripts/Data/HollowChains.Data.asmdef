@@ -1,0 +1,6 @@
+{
+    "name": "HollowChains.Data",
+    "rootNamespace": "HollowChains.Data",
+    "references": ["HollowChains.Core"],
+    "autoReferenced": false
+}

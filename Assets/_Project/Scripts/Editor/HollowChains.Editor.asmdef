@@ -1,0 +1,7 @@
+{
+    "name": "HollowChains.Editor",
+    "rootNamespace": "HollowChains.Editor",
+    "references": ["HollowChains.Core", "HollowChains.Data", "HollowChains.Gameplay", "HollowChains.Narrative", "HollowChains.UI", "HollowChains.Combat"],
+    "includePlatforms": ["Editor"],
+    "autoReferenced": false
+}
