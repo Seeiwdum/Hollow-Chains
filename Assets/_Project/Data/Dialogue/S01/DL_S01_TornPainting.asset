@@ -13,7 +13,28 @@ MonoBehaviour:
   m_Name: DL_S01_TornPainting
   m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Dialogue.DialogueLineSO
   _id: S01_TornPainting
+  _localizedSpeaker:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _localizedText:
+    m_TableReference:
+      m_TableCollectionName: Dialogue
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: S01_TornPainting
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _speakerName: 
   _text: '[PH] Father''s face... torn out. I hid it again.'
   _isThought: 1
   _duration: 0
+  references:
+    version: 2
+    RefIds: []

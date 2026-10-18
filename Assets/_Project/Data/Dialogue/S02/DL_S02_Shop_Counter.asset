@@ -13,7 +13,28 @@ MonoBehaviour:
   m_Name: DL_S02_Shop_Counter
   m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Dialogue.DialogueLineSO
   _id: S02_Shop_Counter
+  _localizedSpeaker:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _localizedText:
+    m_TableReference:
+      m_TableCollectionName: Dialogue
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: S02_Shop_Counter
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _speakerName: 
   _text: '[PH] He looks straight through me.'
   _isThought: 1
   _duration: 0
+  references:
+    version: 2
+    RefIds: []
