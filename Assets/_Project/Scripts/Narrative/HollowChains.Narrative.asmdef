@@ -1,6 +1,6 @@
 {
     "name": "HollowChains.Narrative",
     "rootNamespace": "HollowChains.Narrative",
-    "references": ["HollowChains.Core", "HollowChains.Data", "Unity.Localization", "Unity.Timeline", "Unity.InputSystem", "Unity.RenderPipelines.Core.Runtime"],
+    "references": ["HollowChains.Core", "HollowChains.Data", "Unity.Localization", "Unity.Timeline", "Unity.InputSystem", "Unity.RenderPipelines.Core.Runtime", "Unity.Cinemachine"],
     "autoReferenced": false
 }

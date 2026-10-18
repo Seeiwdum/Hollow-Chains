@@ -1,4 +1,5 @@
 using HollowChains.Core.Events;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -42,8 +43,18 @@ namespace HollowChains.Narrative.Cutscenes
             if (_played) return;
             _played = true;
             if (_onStarted != null) _onStarted.Raise();
+            BindCameraBrain();
             _director.time = 0;
             _director.Play();
+        }
+
+        /// <summary>The CinemachineBrain lives in _Boot (another scene), so Cinemachine tracks are bound at runtime.</summary>
+        private void BindCameraBrain()
+        {
+            var brain = Camera.main != null ? Camera.main.GetComponent<CinemachineBrain>() : null;
+            if (brain == null || _director.playableAsset == null) return;
+            foreach (var output in _director.playableAsset.outputs)
+                if (output.outputTargetType == typeof(CinemachineBrain)) _director.SetGenericBinding(output.sourceObject, brain);
         }
 
         private void OnStopped(PlayableDirector _)
