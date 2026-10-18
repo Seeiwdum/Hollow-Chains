@@ -5736,7 +5736,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -7193,6 +7193,8 @@ MonoBehaviour:
   _onObjectiveChanged: {fileID: 11400000, guid: 823f17252f22dfc42a959b45c04c487a, type: 2}
   _onPhaseChanged: {fileID: 11400000, guid: 9526b03d4bc218c4d8c4cfca2662cedd, type: 2}
   _onQuestCompleted: {fileID: 11400000, guid: 1473ea0b512c0cd418c4d0a6ca354006, type: 2}
+  _scenesWithoutTracker:
+  - S00_ComicIntro_Placeholder
 --- !u!114 &1571664621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9462,6 +9464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Feedback.CriticalHealthVolume
   _onHealthChanged: {fileID: 11400000, guid: e1b4cc7466b71c3489eadffa45373b9e, type: 2}
+  _onGameStateChanged: {fileID: 11400000, guid: d40a2c72c0b87f6488418210ab618cb2, type: 2}
+  _clearInState: Title
   _threshold: 0.15
   _blendSpeed: 3
 --- !u!114 &2140590070
