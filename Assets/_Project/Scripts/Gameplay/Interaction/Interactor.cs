@@ -28,7 +28,39 @@ namespace HollowChains.Gameplay.Interaction
 
         public IInteractable Focused => _focused;
 
+        /// <summary>The object currently held at the carry anchor (the bucket), or null.</summary>
+        public GameObject Carried { get; private set; }
+
         private void Reset() => _player = GetComponent<PlayerController>();
+
+        /// <summary>Puts an item in the player's hand: parents it to the anchor, disables its colliders, enters Carry.</summary>
+        public void Hold(GameObject item)
+        {
+            if (item == null) return;
+            foreach (var c in item.GetComponentsInChildren<Collider>()) c.enabled = false;
+            item.transform.SetParent(CarryAnchor, false);
+            item.transform.localPosition = Vector3.zero;
+            item.transform.localRotation = Quaternion.identity;
+            Carried = item;
+            if (_player != null) _player.SetCarrying(true);
+        }
+
+        /// <summary>Lets go of the held item so it falls with physics (D-015 bucket drop). Returns the dropped object.</summary>
+        public GameObject Drop(Vector3 impulse)
+        {
+            var item = Carried;
+            if (item == null) return null;
+            Carried = null;
+            item.transform.SetParent(null, true);
+            foreach (var c in item.GetComponentsInChildren<Collider>()) c.enabled = true;
+            foreach (var i in item.GetComponentsInChildren<InteractableBase>()) i.enabled = false; // dropped for good
+            var body = item.GetComponent<Rigidbody>();
+            if (body == null) body = item.AddComponent<Rigidbody>();
+            body.AddForce(impulse, ForceMode.VelocityChange);
+            body.AddTorque(Random.onUnitSphere * 2f, ForceMode.VelocityChange);
+            if (_player != null) _player.SetCarrying(false);
+            return item;
+        }
 
         private void Start()
         {

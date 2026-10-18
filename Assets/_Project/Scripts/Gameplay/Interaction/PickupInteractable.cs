@@ -1,14 +1,16 @@
+using HollowChains.Core.Events;
 using UnityEngine;
 
 namespace HollowChains.Gameplay.Interaction
 {
     /// <summary>
-    /// Carryable key item (the bucket, ITEM_BUCKET): on interact it attaches to the player's carry anchor and puts
-    /// the player in the Carry state. Colliders are disabled while carried.
+    /// Carryable key item (the bucket, ITEM_BUCKET): on interact the Interactor holds it and the item ID is announced
+    /// (EVT_ItemPicked) so persistent player state and quests can react.
     /// </summary>
     public sealed class PickupInteractable : InteractableBase
     {
         [SerializeField] private string _itemId = "ITEM_BUCKET";
+        [SerializeField] private StringEventChannelSO _onPickedUp;
 
         public string ItemId => _itemId;
 
@@ -16,11 +18,8 @@ namespace HollowChains.Gameplay.Interaction
 
         protected override void OnInteract(Interactor who)
         {
-            foreach (var c in GetComponentsInChildren<Collider>()) c.enabled = false;
-            transform.SetParent(who.CarryAnchor, false);
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
-            who.Player.SetCarrying(true);
+            who.Hold(gameObject);
+            if (_onPickedUp != null) _onPickedUp.Raise(_itemId);
         }
     }
 }
