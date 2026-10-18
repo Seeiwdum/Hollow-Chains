@@ -24,8 +24,11 @@ namespace HollowChains.Gameplay.Quests
         [SerializeField] private StringEventChannelSO _onPhaseChanged;
         [Tooltip("Raised with the quest ID when a quest completes.")]
         [SerializeField] private StringEventChannelSO _onQuestCompleted;
+        [Tooltip("Scenes where the tracker stays hidden (the intro); every other scene re-shows the objective on load.")]
+        [SerializeField] private string[] _scenesWithoutTracker = { "S00_ComicIntro_Placeholder" };
 
         private readonly Dictionary<string, QuestRunner> _runners = new Dictionary<string, QuestRunner>();
+        private ISceneFlowService _sceneFlow;
 
         public string SaveKey => "quests";
 
@@ -38,13 +41,28 @@ namespace HollowChains.Gameplay.Quests
         private void Start()
         {
             if (ServiceLocator.TryGet<ISaveService>(out var save)) save.Register(this);
+            if (ServiceLocator.TryGet(out _sceneFlow)) _sceneFlow.SceneLoaded += OnSceneLoaded;
             StartAutoQuests();
         }
 
         private void OnDestroy()
         {
             if (ServiceLocator.TryGet<ISaveService>(out var save)) save.Unregister(this);
+            if (_sceneFlow != null) _sceneFlow.SceneLoaded -= OnSceneLoaded;
             DisposeRunners();
+        }
+
+        /// <summary>The objective first appears during the New Game fade/intro; show it again where the player can read it.</summary>
+        private void OnSceneLoaded(string scene)
+        {
+            if (_onObjectiveChanged == null) return;
+            if (Array.IndexOf(_scenesWithoutTracker, scene) >= 0) { _onObjectiveChanged.Raise(string.Empty); return; }
+            foreach (var runner in _runners.Values)
+            {
+                if (runner.State.IsComplete || runner.CurrentPhase == null) continue;
+                _onObjectiveChanged.Raise(runner.CurrentPhase.Objective);
+                return;
+            }
         }
 
         public void ResetAll()
