@@ -8,12 +8,12 @@
 ## สถานะปัจจุบัน
 | หัวข้อ | ค่า |
 |---|---|
-| Phase | **P0 ปิดแล้ว (D-010)** → **P1 Pre-production กำลังทำ** |
+| Phase | **P1 Pre-production จบ — รออนุมัติ merge + เข้า P2** |
 | วันที่ | 2026-10-18 |
 | Unity | 6000.3.10f1 · URP 17.3.0 · Input System 1.18.0 (template เริ่มต้นยังอยู่: Scenes, Settings, TutorialInfo, Readme) |
 | Repo | `github.com/Seeiwdum/Hollow-Chains` · main = `0d7e2a7 Initial commit` · ชื่อเกม = **Hollow Chains** (D-013) |
 | Branch งาน | `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff` เพราะ main ยังไม่มี Docs) |
-| Unity MCP | ⚠️ Editor ยังเปิด `D:/project for unity/Hollow Chains` (Q-010) — P1.3 ทำผ่าน batchmode แทน |
+| Unity MCP | ✅ ต่อ repo แล้ว (`D:/Git/Hollow-Chains`, D-021) |
 | เอกสารต้นทาง | `00_MASTER_PROMPT` + `01–09` (อยู่นอก repo ที่ `D:\DL\`) |
 
 ---
@@ -92,13 +92,22 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | P1.2 | `Docs/P1/TECH_SPEC.md` v0.9 (Package จาก registry จริง, โฟลเดอร์, asmdef, Event Bus) | ✅ อนุมัติ (D-019) |
 | P1.2b | `Docs/P1/CLASS_DIAGRAM.md` v0.1 (แผนคลาส OOP — D-020) · `com.unity.ai.assistant` ใน manifest | ✅ |
 | P1.3 | Unity init: `.gitattributes`+LFS, `tools/gitbatch.sh`, Linear/Force Text/Input System only, packages ตาม Tech Spec, ลบ template, โฟลเดอร์ + asmdef 8 ตัว, Localization `en` + table `UI` (ทำผ่าน Unity batchmode) | ✅ |
-| P1.4 | Art Bible สั้น · Backlog · Risk Register · Asset Request ชุดแรก | ⏳ |
+| P1.4 | `Docs/P1/ART_BIBLE.md` · `Docs/P1/BACKLOG.md` · `Docs/P1/RISK_REGISTER.md` · `Docs/ASSET_TRACKER.md` (ชุดที่ 1) | ✅ |
 
 ### ⚠️ P1 — สิ่งที่พบ
-- **R8 (L1 ก่อน P1.3):** Unity Editor ที่ MCP ต่ออยู่เปิดโปรเจกต์ `D:/project for unity/Hollow Chains` (ไม่มี git, ไม่มี URP/Input System, มี `com.unity.ai.assistant`) — **ไม่ใช่** repo `D:\Git\Hollow-Chains` (ซึ่งไม่มี `com.unity.ai.assistant`). ก่อน P1.3 ต้องให้เจ้าของเปิด repo ใน Unity และเพิ่ม package `com.unity.ai.assistant` เพื่อเปิด MCP Server ในโปรเจกต์นี้
-- Q-004–Q-007 ตอบแล้ว (D-014–D-017) · R1 ฟอนต์ไทย เลื่อนไปตอนเพิ่มภาษาไทย (D-017) · ค้าง: Q-009 คำแปลบท CANON, Q-010 โปรเจกต์ Unity
+- ~~R8~~ MCP ต่อผิดโปรเจกต์ → ปิดแล้ว (D-021): MCP ชี้ `D:/Git/Hollow-Chains/Assets`
+- Q-004–Q-007 ตอบแล้ว (D-014–D-017) · R1 ฟอนต์ไทย เลื่อนไปตอนเพิ่มภาษาไทย (D-017) · ค้าง: Q-009 (P3.2), Q-011 สไตล์ภาพ, Q-008 mood ref
 
 ### 🔀 Git (P1)
 - `phase/P1-preproduction` · P1.0 `84f63fe` skills · P1.1 `8b9d763` GDD v0.9 + freeze v1.0 · P1.2 Tech Spec — push แล้ว
 - P1.3 `efa55c7`…`6f6d3a7` (10 commits) — push แล้ว · Unity log: ไม่มี error; warning "asmdef has no scripts" ×8 = ปกติจนกว่าจะมีโค้ดใน P2
 - หมายเหตุ: Localization สร้าง `Assets/AddressableAssetsData/` เอง (Addressables เป็น dependency) — track ไว้ตามมาตรฐาน
+- P1.4 docs + ProjectSettings ของ package (ai.assistant, probuilder) — push แล้ว · tag `p1-done`
+
+## P1 — Phase Report
+✅ **ทำเสร็จ:** Skills 5 ตัว · GDD v1.0 FROZEN · Tech Spec (อนุมัติ) · Class Diagram · Unity init (settings/packages/asmdef/Localization) · Art Bible · Backlog P2–P6 · Risk Register · Asset Request ชุดที่ 1 (P0 30 รายการ)
+⚠️ **ความเสี่ยงค้าง:** R2 asset ฉาก Awakening · R4 ตัวละคร rigged · R7 วัดความรู้สึกฉากจบ · R9 คำแปลบท CANON (ดู `RISK_REGISTER.md`)
+❓ **คำถาม L3:** Q-011 สไตล์ภาพ (default ก) · Q-008 mood reference · (Q-009 ถามใน P3.2)
+📦 **Asset Request:** `Docs/ASSET_TRACKER.md` ชุดที่ 1
+🔀 **Git:** `phase/P1-preproduction` · tag `p1-done` · เสนอ merge → `main` (merge commit, ไม่ squash) รออนุมัติ
+▶️ **ถัดไป:** P2 Tech Prototype (B-201…B-210) — skills #3, #4, #5, #8, #27, #36
