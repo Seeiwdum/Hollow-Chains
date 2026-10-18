@@ -1,7 +1,7 @@
 {
     "name": "HollowChains.Editor",
     "rootNamespace": "HollowChains.Editor",
-    "references": ["HollowChains.Core", "HollowChains.Data", "HollowChains.Gameplay", "HollowChains.Narrative", "HollowChains.UI", "HollowChains.Combat", "Unity.ProBuilder", "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Universal.Runtime"],
+    "references": ["HollowChains.Core", "HollowChains.Data", "HollowChains.Gameplay", "HollowChains.Narrative", "HollowChains.UI", "HollowChains.Combat", "Unity.Localization", "Unity.Localization.Editor", "Unity.TextMeshPro", "Unity.ProBuilder", "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Universal.Runtime"],
     "includePlatforms": ["Editor"],
     "autoReferenced": false
 }
