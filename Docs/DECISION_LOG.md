@@ -24,6 +24,8 @@
 | D-016 | 2026-10-18 | P1 | **Q-006:** เจ้าของต้องการให้ **เอเลนาเป็นคนแรกที่ไม่เกลียด Phineas**. ทีมตัดสิน (มอบอำนาจ): ไม่มีชาวบ้านใจดีในเดโม; ชาวบ้านที่ "ไม่ได้เกลียดเต็มที่" เลื่อนไปหลังเดโม | OWNER + L4 (อ.รัตติกาล/ภูผา) | NAMOE | 02 §2, GDD SC-02 |
 | D-017 | 2026-10-18 | P1 | **Q-007: เดโมเป็นภาษาอังกฤษ ภาษาไทยทำภายหลัง** — แทนที่ "ไทยหลัก" ของ `01` §1 สำหรับเดโม. ผลกระทบ: `06` เกณฑ์ #2 (ฟอนต์ไทย) ใช้เมื่อเพิ่มไทย; spike ฟอนต์ไทย (R1) เลื่อน; ข้อความทั้งหมดผ่าน Localization string table; บท CANON ต้องแปลอังกฤษ (Q-009) | OWNER | NAMOE | 00 §8, 01 §1, 06, GDD §7 |
 | D-018 | 2026-10-18 | P1 | **GDD เดโม v1.0 FROZEN** (`Docs/P1/GDD_DEMO.md`) | OWNER | NAMOE | GDD |
+| D-019 | 2026-10-18 | P1 | **อนุมัติ Tech Spec v0.9** (`Docs/P1/TECH_SPEC.md`) + ให้ทีมเพิ่ม `com.unity.ai.assistant` 2.20.0-pre.2 ใน `Packages/manifest.json` ของ repo (Unity MCP) | OWNER | NAMOE | TECH_SPEC §2 |
+| D-020 | 2026-10-18 | P1 | **โค้ดต้องยึดหลัก OOP** (Encapsulation / Abstraction / Inheritance / Polymorphism) + SOLID — สะอาด ไม่สปาเกตตี้. ทีมตีความ: Composition ก่อน, inheritance ตื้นเฉพาะ is-a จริง. ดูแล **Class Diagram** (`Docs/P1/CLASS_DIAGRAM.md`, Mermaid) ให้ตรงกับโค้ดทุก commit | OWNER | NAMOE | 00 §8, skill #2 |
 
 ## PENDING — รอเจ้าของตอบ (ดู STUDIO_LOG › คำถามค้าง)
 | ID | หัวข้อ | ค่า default ของทีม |
