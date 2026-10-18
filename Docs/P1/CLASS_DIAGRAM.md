@@ -137,30 +137,52 @@ classDiagram
     PhaseConditionSO <|-- EventRaisedCondition
 ```
 
-## 3. Gameplay — ผู้เล่น / Interact / ค่าสถานะ (`HollowChains.Gameplay`)
+## 3. Gameplay — ผู้เล่น / Interact / ค่าสถานะ (`HollowChains.Gameplay`) — ✅ Player ส่วนเคลื่อนที่มีโค้ดแล้ว (P2.1); Interact/Health = แผน
 ```mermaid
 classDiagram
     class PlayerController {
-        -StateMachine _fsm
-        -PlayerMotor _motor
-        -PlayerInputReader _input
+        -StateMachine _stateMachine
+        -PlayerMovementConfigSO _config
+        -IPlayerInput _input
+        +bool IsCarrying
+        +bool IsLocked
         +EnterCutscene() void
         +ExitCutscene() void
+        +SetCarrying(bool carrying) void
+        +SetSprintAllowed(bool allowed) void
+        ~CameraRelative(Vector2 input) Vector3
+    }
+    class IPlayerInput {
+        <<interface>>
+        +Vector2 Move
+        +Vector2 Look
+        +bool SprintHeld
+        +event InteractPressed
     }
     class PlayerInputReader {
-        +Vector2 Move
-        +bool SprintHeld
-        +event Action InteractPressed
+        -InputActionReference _move
+        -InputActionReference _sprint
     }
+    IPlayerInput <|.. PlayerInputReader
+    class PlayerMovementConfigSO {
+        <<Data>>
+        +float WalkSpeed
+        +float RunSpeed
+        +float SprintSpeed
+        +float CarryMultiplier
+    }
+    PlayerController o-- PlayerMovementConfigSO
+    PlayerController o-- IPlayerInput
     class PlayerMotor {
-        +Move(Vector3 dir, float speed) void
+        +Move(Vector3 dir, float speed, config, float dt) void
+        +Halt(config, float dt) void
         +bool IsGrounded
     }
     class PlayerState {
         <<abstract>>
         #PlayerController Owner
         +Enter() void
-        +Tick(float dt) void
+        +Tick(float deltaTime)* void
         +Exit() void
     }
     class LocomotionState
@@ -176,7 +198,7 @@ classDiagram
     PlayerState <|-- SprintState
     PlayerState <|-- LockedState
     PlayerController *-- PlayerMotor
-    PlayerController *-- PlayerInputReader
+    PlayerController *-- PlayerInputReader : same GameObject
     PlayerController ..> PlayerState
 
     class IInteractable {
