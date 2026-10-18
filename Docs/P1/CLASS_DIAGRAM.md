@@ -615,6 +615,53 @@ classDiagram
 ```
 Gameplay ขอเล่นบทผ่าน `EVT_PlayLine` (ไม่อ้างอิง Narrative) · Barks ไม่ขัดบทหลัก (`TryPlayAmbient`) · UI แสดงจาก `EVT_Subtitle`
 
+## 6e. ✅ Localization + ภาษาไทย (P3.3)
+```mermaid
+classDiagram
+    class LocalizedText {
+        <<static>>
+        +Resolve(LocalizedString s, string fallback) string
+    }
+    class DialogueLineSO {
+        -LocalizedString _localizedText
+        -LocalizedString _localizedSpeaker
+        -string _text
+    }
+    class QuestPhaseSO {
+        -LocalizedString _localizedObjective
+        -string _objective
+    }
+    class InteractableBase {
+        <<abstract>>
+        -LocalizedString _localizedPrompt
+        -string _prompt
+    }
+    DialogueLineSO ..> LocalizedText
+    QuestPhaseSO ..> LocalizedText
+    InteractableBase ..> LocalizedText
+    class ThaiMarkRules {
+        <<static>>
+        +VerticalAction(string text, int i) ThaiMarkAction
+        +ShiftLeft(string text, int i) bool
+        +BaseIndex(string text, int i) int
+    }
+    class ThaiMarkAction {
+        <<enumeration>>
+        None
+        StackOnPrevious
+        StackOnNext
+        DropBelowBase
+    }
+    class ThaiMarkPositioner {
+        -float _stackGap
+        -float _tallShift
+        -Adjust(TMP_TextInfo info) void
+    }
+    ThaiMarkPositioner ..> ThaiMarkRules
+    ThaiMarkRules ..> ThaiMarkAction
+```
+ข้อความมาจาก string table `UI` / `Dialogue` / `Quests` (locale `th` เริ่มต้น) · `ThaiMarkPositioner` ติดกับ TMP ทุกตัวที่แสดงไทย (D-034)
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
