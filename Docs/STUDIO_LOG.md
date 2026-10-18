@@ -13,7 +13,7 @@
 | Unity | 6000.3.10f1 · URP 17.3.0 · Input System 1.18.0 (template เริ่มต้นยังอยู่: Scenes, Settings, TutorialInfo, Readme) |
 | Repo | `github.com/Seeiwdum/Hollow-Chains` · main = `0d7e2a7 Initial commit` · ชื่อเกม = **Hollow Chains** (D-013) |
 | Branch งาน | `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff` เพราะ main ยังไม่มี Docs) |
-| Unity MCP | ต่อ Editor ได้ แต่ Editor เปิด `D:/project for unity/Hollow Chains` ไม่ใช่ repo (Q-010) |
+| Unity MCP | ⚠️ Editor ยังเปิด `D:/project for unity/Hollow Chains` (Q-010) — P1.3 ทำผ่าน batchmode แทน |
 | เอกสารต้นทาง | `00_MASTER_PROMPT` + `01–09` (อยู่นอก repo ที่ `D:\DL\`) |
 
 ---
@@ -91,7 +91,7 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | P1.1 | `Docs/P1/GDD_DEMO.md` **v1.0 FROZEN** (D-018) | ✅ |
 | P1.2 | `Docs/P1/TECH_SPEC.md` v0.9 (Package จาก registry จริง, โฟลเดอร์, asmdef, Event Bus) | ✅ อนุมัติ (D-019) |
 | P1.2b | `Docs/P1/CLASS_DIAGRAM.md` v0.1 (แผนคลาส OOP — D-020) · `com.unity.ai.assistant` ใน manifest | ✅ |
-| P1.3 | Unity init + `.gitattributes`/LFS + Force Text + `tools/gitbatch.sh` + ลบ template (spike ฟอนต์ไทยเลื่อน — D-017) | ⏳ รอ Q-010 |
+| P1.3 | Unity init: `.gitattributes`+LFS, `tools/gitbatch.sh`, Linear/Force Text/Input System only, packages ตาม Tech Spec, ลบ template, โฟลเดอร์ + asmdef 8 ตัว, Localization `en` + table `UI` (ทำผ่าน Unity batchmode) | ✅ |
 | P1.4 | Art Bible สั้น · Backlog · Risk Register · Asset Request ชุดแรก | ⏳ |
 
 ### ⚠️ P1 — สิ่งที่พบ
@@ -100,3 +100,5 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 
 ### 🔀 Git (P1)
 - `phase/P1-preproduction` · P1.0 `84f63fe` skills · P1.1 `8b9d763` GDD v0.9 + freeze v1.0 · P1.2 Tech Spec — push แล้ว
+- P1.3 `efa55c7`…`6f6d3a7` (10 commits) — push แล้ว · Unity log: ไม่มี error; warning "asmdef has no scripts" ×8 = ปกติจนกว่าจะมีโค้ดใน P2
+- หมายเหตุ: Localization สร้าง `Assets/AddressableAssetsData/` เอง (Addressables เป็น dependency) — track ไว้ตามมาตรฐาน
