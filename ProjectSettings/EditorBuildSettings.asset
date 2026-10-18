@@ -4,7 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Project/Scenes/_Boot.unity
+    guid: 239c0e5293395cb4a8d1dcc37b9f526f
+  - enabled: 1
+    path: Assets/_Project/Scenes/S01_Bedroom.unity
+    guid: 858b3c019b030d1488516737956e4339
+  - enabled: 1
+    path: Assets/_Project/Scenes/S02_Astraon.unity
+    guid: 2d4dbfafedce1314d9cc132a675b30ff
+  - enabled: 1
+    path: Assets/_Project/Scenes/S03_Forest.unity
+    guid: 6b0b6d6a8edf5a14b905dcf017816e84
+  - enabled: 1
+    path: Assets/_Project/Scenes/S04_StreamCliff.unity
+    guid: 7077e65b6de22c74dafb61c9cba5f24a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8ef69b19c2abd6c47b278c830dac4ce4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
