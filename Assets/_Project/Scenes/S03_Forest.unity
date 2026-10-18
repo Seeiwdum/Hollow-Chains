@@ -34840,7 +34840,7 @@ MonoBehaviour:
   _prompt: Look at the marks
   _onInteracted: {fileID: 0}
   _thought: '[PH] Claw marks... too big for any wolf.'
-  _onThought: {fileID: 0}
+  _onThought: {fileID: 11400000, guid: afcc3fcdf1bd97043bca761a103ca381, type: 2}
 --- !u!64 &351816025
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -148365,7 +148365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.EventTriggerZone
   _once: 0
-  _onEnter: {fileID: 0}
+  _onEnter: {fileID: 11400000, guid: b303bd6ac3ac91449b2e3e6fb971986e, type: 2}
 --- !u!65 &1567833558
 BoxCollider:
   m_ObjectHideFlags: 0

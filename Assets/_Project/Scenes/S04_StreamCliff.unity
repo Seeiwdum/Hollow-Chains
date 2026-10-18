@@ -23424,7 +23424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.EventTriggerZone
   _once: 0
-  _onEnter: {fileID: 0}
+  _onEnter: {fileID: 11400000, guid: b581b512beb425b45ae195a8249529aa, type: 2}
 --- !u!65 &1199327108
 BoxCollider:
   m_ObjectHideFlags: 0
