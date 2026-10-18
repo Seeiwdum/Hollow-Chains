@@ -1,4 +1,5 @@
 using HollowChains.Core.Events;
+using HollowChains.Core.Settings;
 using TMPro;
 using UnityEngine;
 
@@ -16,8 +17,18 @@ namespace HollowChains.UI.Views
         [SerializeField] private string _format = "{0}";
         [Tooltip("0 = stay visible until an empty string arrives.")]
         [SerializeField, Min(0f)] private float _autoHideSeconds;
+        [Tooltip("Scale the font with the player's subtitle-size setting (subtitle line only).")]
+        [SerializeField] private bool _useSubtitleScale;
+
+        private float _baseFontSize;
 
         private float _hideAt = float.PositiveInfinity;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            if (_text != null) _baseFontSize = _text.fontSize;
+        }
 
         private void OnEnable()
         {
@@ -41,6 +52,7 @@ namespace HollowChains.UI.Views
                 Hide();
                 return;
             }
+            if (_useSubtitleScale) _text.fontSize = _baseFontSize * GameSettings.Current.SubtitleScale;
             _text.text = string.Format(_format, value);
             _hideAt = _autoHideSeconds > 0f ? Time.unscaledTime + _autoHideSeconds : float.PositiveInfinity;
             Show();
