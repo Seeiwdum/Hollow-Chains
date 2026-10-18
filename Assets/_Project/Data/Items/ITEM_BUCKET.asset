@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ad68057fd3466488a62970e15f6b90, type: 3}
+  m_Name: ITEM_BUCKET
+  m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Items.ItemSO
+  _id: ITEM_BUCKET
+  _localizedName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _name: "\u0E16\u0E31\u0E07\u0E19\u0E49\u0E33"
+  _isKeyItem: 1
+  _carryPrefab: {fileID: 6654302990138796633, guid: b8281eae5ccd0a247b8f1e50e7336133, type: 3}
+  references:
+    version: 2
+    RefIds: []
