@@ -62,6 +62,7 @@ namespace HollowChains.Narrative.Cutscenes
         private void Update()
         {
             if (_active == null || _interact == null) return;
+            if (Time.timeScale <= 0f) return; // pause menu open: E must not complete the beat behind it
             var action = _interact.action;
             if (_active.Kind == BeatKind.Press)
             {
