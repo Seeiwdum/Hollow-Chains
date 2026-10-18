@@ -50,6 +50,9 @@
 | B-604 | Controller glyphs (KB/M ↔ gamepad) | skill #34 | ณิชา | S |
 | B-605 | Build profile Windows IL2CPP + smoke test เครื่องอื่น | AC-04 | เอก | S |
 | B-606 | Playtest ≥ 3 คน + แบบสอบถาม (AC-03, AC-08) | `06` #3 | บอล | M |
+| B-607 | AudioMixer (Master/Music/SFX/Ambience/Voice) + snapshot เงียบก่อนเสียงโซ่ + ambience หมู่บ้าน/ป่า/ลำธาร (ย้ายมาจาก P5.7) | `06` SC-05, D-037 | ภีม/แพรว | M |
+| B-608 | ฟอนต์ไทยเป็น static atlas (ไฟล์ไม่เปลี่ยนทุกครั้งที่ Play) + ตัวเลือกลดการสั่น/แฟลชของจอ | D-033, skill #42 | ณิชา/มีนา | S |
+| B-609 | ปรับจังหวะ climax ตาม feedback เจ้าของ (แก้ค่าใน `ClimaxCutsceneBuilder.T`) | D-040 | กานต์ | S |
 
 ## P4 — Combat Prototype (หลังเดโม) — รายละเอียดแตกตอนเริ่ม P4
 Turn engine · Weakness/Down/1 More/All-Out · Form Swap stub · Battle UI · ศัตรู 1–2 · Polarity (เมื่อ Inversus ปลดล็อก)

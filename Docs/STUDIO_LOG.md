@@ -175,4 +175,13 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | P5.2 | S03 เสียงกรีด (LineTriggerZone, [PROPOSAL]) | ✅ |
 | P5.1b-3b | **SC-01** คำใบ้ปุ่ม ([WASD] เดิน · [เมาส์] กล้อง → [Esc] ดูภารกิจ) ผ่าน HintTriggerZone + EVT_ControlHint + HUD ControlHint (หายเองใน 6 วิ) · **SC-02** โทนอุ่นตอนคิดถึงเอเลน่า (VolumeBlendZone + VP_S02_Warm_Elena: เข้า 1.5 วิ ค้าง 6 วิ จาง 3 วิ) · **SC-03** ไอดำจาง ๆ (particle 2 จุด ที่รอยเล็บ/ต้นไม้ตาย, texture ทำเอง) · tests 36/36 · play-test ✓ (D-043) | ✅ |
 | P5.4-6 | Climax timeline SC-04→06 (36.6 วิ, 28 tracks, กล้อง 6 ตัว): เวทน้ำล้มเหลว → beat กอด → โดนกัด HP 1 + จอแดง → **กดค้าง** ปล่อยราก → Soul Drain HP เต็ม / Humanity −15 → แฟลชความทรงจำ ×3 → quest P4→P5 → beat ยื่นมือ → เอเลน่า 3 ประโยค (CANON) → วิ่งหนี → หยดสีดำ + ข้อความพ่อ → เข็มนาฬิกาเดิน → ซูมออก → จอจบ (D-040) · **แก้บั๊ก:** beat วนซ้ำหลังกด (Pause/Resume รีเซ็ต clip) → เปลี่ยนเป็นแช่ graph · prompt "[E]" ซ้ำ 2 ครั้ง · play-test ทั้งฉากผ่าน | ✅ |
-| P5.7 | AudioMixer + ambience (รอไฟล์ Freesound จากเจ้าของ) · ปรับจังหวะตาม feedback | ⏳ |
+| P5.7 | AudioMixer + ambience → **ย้ายไป P6** (B-607, รอไฟล์ Freesound) · ปรับจังหวะ climax ตาม feedback เจ้าของ → P6 | ➡️ P6 |
+
+## P5 — Phase Report
+✅ **ทำเสร็จ:** Skills #19 + #42 · ระบบ cutscene บน Timeline (track 5 แบบ + beat โต้ตอบ กด/กดค้าง) · S00 อินโทรจอดำ + narration CANON + ข้าม · SC-01 คำใบ้ปุ่ม · SC-02 โทนอุ่นตอนคิดถึงเอเลน่า · SC-03 ไอดำ + เสียงกรีด · climax SC-04→06 ในไทม์ไลน์เดียว (เวทน้ำล้มเหลว → กอด → HP 1 → ปล่อยราก → Soul Drain → แฟลช → ยื่นมือ → บท CANON ของเอเลน่า → ข้อความพ่อ → ซูมออก → จอจบ) · เดโมเล่นได้ตั้งแต่ต้นจนจบ · tests 36/36
+🐞 **บั๊กที่เจอและแก้แล้ว:** beat ค้างวนซ้ำหลังกด (Pause/Resume) · "[E]" ซ้ำสองครั้ง
+⚠️ **ค้าง/ความเสี่ยง:** ยังไม่มี AudioMixer/เสียงบรรยากาศ (P6) · เสียงโซ่/รากยังเป็นเสียง Kenney ชั่วคราว · ฉากยังเป็น greybox + capsule (D-023) · ฟอนต์ dynamic เปลี่ยนทุกครั้งที่กด Play (P6) · ยังไม่มีคนนอกทีมเล่น (B-606)
+❓ **คำถาม:** Q-017 (ตระกูลฝั่งแม่ — หลังเดโม) · Q-018 (ตรวจบทไทย รวมบท P5 ใน D-042/D-043)
+📦 **Asset Request:** เสียง Freesound 4 ตัว (เจ้าของโหลด) · เสียงโซ่/รากที่ดีกว่า Kenney · โมเดล/อนิเมชันยังไม่ต้อง (D-023)
+🔀 **Git:** `phase/P5-vertical-slice` · tag `p5-done` · `main` ยังเป็น Initial commit → แนะนำเปิด PR ครั้งเดียวจาก `phase/P5-vertical-slice` (มี P0–P5 ครบ) แบบ merge commit
+▶️ **ถัดไป:** P6 Polish, QA & Demo Build (รออนุมัติ)
