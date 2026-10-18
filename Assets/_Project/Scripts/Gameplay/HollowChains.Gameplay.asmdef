@@ -1,6 +1,6 @@
 {
     "name": "HollowChains.Gameplay",
     "rootNamespace": "HollowChains.Gameplay",
-    "references": ["HollowChains.Core", "HollowChains.Data", "Unity.InputSystem"],
+    "references": ["HollowChains.Core", "HollowChains.Data", "Unity.InputSystem", "Unity.Cinemachine"],
     "autoReferenced": false
 }
