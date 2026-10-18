@@ -8,11 +8,11 @@
 ## สถานะปัจจุบัน
 | หัวข้อ | ค่า |
 |---|---|
-| Phase | **P1 Pre-production จบ — รออนุมัติ merge + เข้า P2** |
+| Phase | **P2 Tech Prototype กำลังทำ** (P1 จบ — PR รอ merge) |
 | วันที่ | 2026-10-18 |
 | Unity | 6000.3.10f1 · URP 17.3.0 · Input System 1.18.0 (template เริ่มต้นยังอยู่: Scenes, Settings, TutorialInfo, Readme) |
 | Repo | `github.com/Seeiwdum/Hollow-Chains` · main = `0d7e2a7 Initial commit` · ชื่อเกม = **Hollow Chains** (D-013) |
-| Branch งาน | `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff` เพราะ main ยังไม่มี Docs) |
+| Branch งาน | `phase/P2-tech-prototype` (แตกจาก `phase/P1-preproduction` @ `p1-done`) |
 | Unity MCP | ✅ ต่อ repo แล้ว (`D:/Git/Hollow-Chains`, D-021) |
 | เอกสารต้นทาง | `00_MASTER_PROMPT` + `01–09` (อยู่นอก repo ที่ `D:\DL\`) |
 
@@ -111,3 +111,21 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 📦 **Asset Request:** `Docs/ASSET_TRACKER.md` ชุดที่ 1
 🔀 **Git:** `phase/P1-preproduction` · tag `p1-done` · เสนอ merge → `main` (merge commit, ไม่ squash) รออนุมัติ
 ▶️ **ถัดไป:** P2 Tech Prototype (B-201…B-210) — skills #3, #4, #5, #8, #27, #36
+
+---
+
+## P2 — Tech Prototype (เริ่ม 2026-10-18)
+การตัดสินใจก่อนเริ่ม: D-023 (ProBuilder blocking + capsule, ไม่มี animation) · D-024 (เจ้าของ playtest เอง — ทีมแจ้งจุดทดสอบ) · D-025 (เดโมกลับเป็นภาษาไทย) · D-026 (สไตล์ ก) · D-027 (หมู่บ้านในกำแพงเมืองยุคกลาง)
+
+| Sub-phase | ผลลัพธ์ | สถานะ |
+|---|---|---|
+| P2.0 | Skills #3 #4 #5 #8 #27 #36 · Core: event channels, StateMachine, ServiceLocator + EditMode tests 11/11 ผ่าน (B-201) | ✅ |
+| P2.0b | `_Boot` scene + SceneFlowService (B-202) | ⏳ |
+| P2.1 | IPlayerInput/PlayerInputReader, PlayerController + Motor + 4 states, config SO, Player capsule prefab, scene `P2_PlayerTest` — play mode smoke ผ่าน (B-203/204) | ✅ |
+| P2.2 | Cinemachine 3 camera (B-205) | ⏳ |
+| P2.3 | Interaction (B-206) | ⏳ |
+| P2.4 | Greybox S01–S04 ตาม D-027 (B-207–209) + Volumes (B-210) | ⏳ |
+
+### 🔀 Git (P2)
+- `phase/P2-tech-prototype` · docs `65f4e05`…`85ec697` · skills `2b8f5e9` · P2.0 `bbb67c8`…`3447630` · P2.1 `d1f6eb3`…`c663cad` — push แล้ว
+- PR P1 → main: เปิดโดยเจ้าของผ่านลิงก์ compare (เครื่องนี้ไม่มี `gh`)
