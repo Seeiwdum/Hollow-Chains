@@ -120,12 +120,17 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | Sub-phase | ผลลัพธ์ | สถานะ |
 |---|---|---|
 | P2.0 | Skills #3 #4 #5 #8 #27 #36 · Core: event channels, StateMachine, ServiceLocator + EditMode tests 11/11 ผ่าน (B-201) | ✅ |
-| P2.0b | `_Boot` scene + SceneFlowService (B-202) | ⏳ |
+| P2.0b | `_Boot` (Main Camera + Brain, UI Root, Fade) + GameBootstrapper + SceneFlowService + BootSceneLoader (กด Play ฉากไหนก็ได้ _Boot ตามมาเอง) (B-202) | ✅ |
 | P2.1 | IPlayerInput/PlayerInputReader, PlayerController + Motor + 4 states, config SO, Player capsule prefab, scene `P2_PlayerTest` — play mode smoke ผ่าน (B-203/204) | ✅ |
-| P2.2 | Cinemachine 3 camera (B-205) | ⏳ |
-| P2.3 | Interaction (B-206) | ⏳ |
-| P2.4 | Greybox S01–S04 ตาม D-027 (B-207–209) + Volumes (B-210) | ⏳ |
+| P2.2 | PlayerRig prefab: CM_Explore (OrbitalFollow + RotationComposer + Deoccluder) + OrbitLookInput (mouse/stick) + SprintCameraEffect (B-205) | ✅ |
+| P2.3 | IInteractable/InteractableBase → Pickup (ถัง) / Inspect (ความคิด); Interactor; PlayerTriggerZone → SceneTransition/Sprint/Event; UIView + prompt/thought text (B-206) | ✅ |
+| P2.4 | GreyboxKit (ProBuilder) + S01 ห้องนอน · S02 ตรอกมืด→ย่านหมู่บ้าน→ถนน→ประตูกำแพง + เมืองฉากหลัง · S03 ป่า (ต้นไม้ตาย, จุดกรีดร้อง, sprint zone) · S04 ลานหน้าผา (Elena/หมาป่า capsule) + Volume ต่อฉาก (B-207–210) | ✅ รอเจ้าของเทส |
 
 ### 🔀 Git (P2)
 - `phase/P2-tech-prototype` · docs `65f4e05`…`85ec697` · skills `2b8f5e9` · P2.0 `bbb67c8`…`3447630` · P2.1 `d1f6eb3`…`c663cad` — push แล้ว
 - PR P1 → main: เปิดโดยเจ้าของผ่านลิงก์ compare (เครื่องนี้ไม่มี `gh`)
+- P2.0b–P2.4 `…`→`06848d4` (22 commits) — push แล้ว · Play-mode smoke (step frames ผ่าน MCP): Boot adopt ✓, S01→S02→S03→S04 load ✓, ประตูห้องนอน trigger ✓, หยิบถัง → Carry ✓, กล้องตัวเดียว ✓, Console ไม่มี error
+
+### 🎮 จุดเทสของเจ้าของ (D-024) — P2 "เดินจากห้อง → หน้าผา"
+เปิด `Assets/_Project/Scenes/S01_Bedroom` → Play (หรือเปิด `_Boot` แล้ว Play) · WASD/สติ๊กซ้าย เดิน, เมาส์/สติ๊กขวา หมุนกล้อง, E/ปุ่ม Interact, Shift = sprint (ใช้ได้เฉพาะในป่าช่วงหลังเสียงกรีด)
+สังเกต: (1) ความเร็ว/ความหนืดเดิน-วิ่ง (2) กล้องในห้องแคบ/ตรอก ทะลุหรือกระตุกไหม (3) ตรอกมืด→หมู่บ้าน รู้สึก "เมืองใหญ่ แต่ไม่มีใครมองเรา" ไหม (4) หลงทางไหม (มองเห็นต้นไม้ใหญ่นอกประตูไหม) (5) ระยะทางแต่ละฉากยาว/สั้นไป
