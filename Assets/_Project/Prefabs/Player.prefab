@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8664868622658820798}
   - component: {fileID: 1946921748350047758}
   - component: {fileID: 3380755244368634093}
+  - component: {fileID: 6708657303920733527}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,6 +152,7 @@ MonoBehaviour:
   _look: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _sprint: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _interact: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _inputEnabled: {fileID: 11400000, guid: 16d69e2e09a7ab147aa8660d45c3aa34, type: 2}
 --- !u!114 &1946921748350047758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +185,20 @@ MonoBehaviour:
   _radius: 1.8
   _facingWeight: 0.6
   _scanInterval: 0.1
+--- !u!114 &6708657303920733527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887676319679741021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d91ce7d7b3f824d89265013b380307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Stats.Health
+  _max: 10
+  _onHealthChanged: {fileID: 11400000, guid: e1b4cc7466b71c3489eadffa45373b9e, type: 2}
 --- !u!1 &4248038386689631980
 GameObject:
   m_ObjectHideFlags: 0
