@@ -8,6 +8,9 @@ namespace HollowChains.Gameplay.Quests
     {
         void StartQuest(QuestSO quest);
 
+        /// <summary>Forgets all progress and restarts the auto-start quests (New Game).</summary>
+        void ResetAll();
+
         /// <summary>Progress of a quest by ID, or null if it was never started.</summary>
         QuestState GetState(string questId);
 

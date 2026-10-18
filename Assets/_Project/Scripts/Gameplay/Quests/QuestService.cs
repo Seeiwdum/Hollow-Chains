@@ -23,7 +23,16 @@ namespace HollowChains.Gameplay.Quests
 
         private readonly Dictionary<string, QuestRunner> _runners = new Dictionary<string, QuestRunner>();
 
-        private void Start()
+        private void Start() => StartAutoQuests();
+
+        public void ResetAll()
+        {
+            foreach (var runner in _runners.Values) runner.Dispose();
+            _runners.Clear();
+            StartAutoQuests();
+        }
+
+        private void StartAutoQuests()
         {
             foreach (var quest in _autoStart)
                 if (quest != null) StartQuest(quest);
