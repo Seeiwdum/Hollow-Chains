@@ -7,6 +7,11 @@ description: uGUI + TextMeshPro UI for Hollow Chains — canvas setup, UIView ba
 
 Tech Spec: uGUI + TMP for everything in the demo (TMP ships inside `com.unity.ugui` 2.0 in Unity 6).
 
+- **Every Canvas needs a `GraphicRaycaster`** or the mouse cannot click anything (bug found in P3.3b — the
+  canvas was created with only Canvas + CanvasScaler). The `_Boot` EventSystem uses `InputSystemUIInputModule`.
+  Turn `raycastTarget` off on decorative graphics (labels, icons) so they never swallow clicks.
+- Verify menus in play mode with `EventSystem.current.RaycastAll` at the button's screen point (mouse) and by
+  checking `currentSelectedGameObject` + a Submit event (keyboard/gamepad).
 - One `UI Root` in `_Boot`: Screen Space Overlay, Canvas Scaler = Scale With Screen Size 1920×1080, match 0.5.
   Separate child canvases for HUD / Menus / Subtitles so rebuilds stay local.
 - Every screen/element derives from `UIView` (abstract `Show`/`Hide`, protected `OnShow`/`OnHide`) and listens only
