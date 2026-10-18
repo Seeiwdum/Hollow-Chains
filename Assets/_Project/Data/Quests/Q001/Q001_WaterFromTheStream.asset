@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ef048024905b34eb737c988aa4b29e, type: 3}
+  m_Name: Q001_WaterFromTheStream
+  m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Quests.QuestSO
+  _id: Q001
+  _title: "[PH] Water from the Stream (\u0E19\u0E49\u0E33\u0E08\u0E32\u0E01\u0E25\u0E33\u0E18\u0E32\u0E23)"
+  _phases:
+  - {fileID: 11400000, guid: 754d70d63f42b1240881dd87be6bcbf1, type: 2}
+  - {fileID: 11400000, guid: b812be110f62b4449b980e56c933bfd0, type: 2}
+  - {fileID: 11400000, guid: a4352ceb52256ab4585df19928ce56a8, type: 2}
+  - {fileID: 11400000, guid: 3bb428326641acd41b2e16d4ec5f7894, type: 2}
+  - {fileID: 11400000, guid: 6d82804783f659b46927e9ee12752e71, type: 2}
