@@ -50,6 +50,9 @@
 | D-036 | 2026-10-18 | P3 | **Game flow + เมนู:** state machine Title → Playing ⇄ Paused → End ใน `GameFlowService`; เมนูคุยผ่าน event channel เท่านั้น (`ChannelButton`, `GameStateView`); กด Play จาก `_Boot` = เข้าหน้า Title / กด Play ในฉากเนื้อหา = ข้าม Title (เทสเร็ว). Pause = Esc / Start. ปุ่ม "เล่นต่อ" (Continue) ที่หน้า Title จะเพิ่มพร้อมระบบ Save ใน P3.4 | L4 | กานต์/มีนา/ณิชา | GDD §6, skill #31 |
 | D-037 | 2026-10-18 | P3 | **เสียง:** ทีมคัดเสียง CC0 ชุดที่ 1 (`Docs/P3/AUDIO_CANDIDATES.md`) ให้เจ้าของเลือก — ยังไม่ดาวน์โหลด (Freesound ต้องล็อกอิน) | L4 | ภีม/แพรว | Asset Tracker AUD-014/015/017 |
 
+| D-038 | 2026-10-18 | P3 | **Save:** 1 slot `save_0.json` (persistentDataPath) เขียนแบบ temp→replace, มี `SaveVersion`; ระบบที่ต้องเซฟ implement `ISaveable` เอง (player, quests). Checkpoint: CP_01 ต้นตรอก (S02), CP_02 ประตูกำแพง → เล่นต่อที่ S03. HP/Humanity/ของในมือ อยู่ใน `PlayerStateService` (_Boot) ข้ามฉากได้ · ถังหลุดมือตอนได้ยินเสียงกรีด (D-015) | L4 | เอก/กานต์ | GDD FT-09, skill #10 |
+| D-039 | 2026-10-18 | P3 | **Q-019 = ก):** ทีมดาวน์โหลด Kenney RPG Audio (CC0, ยืนยันจาก License.txt) → เสียงฝีเท้า placeholder + เสียงกลอนประตู · เสียงจาก Freesound เจ้าของโหลดเอง | OWNER | NAMOE | Asset Tracker AUD-014 |
+
 ## PENDING — รอเจ้าของตอบ (ดู STUDIO_LOG › คำถามค้าง)
 | ID | หัวข้อ | ค่า default ของทีม |
 |---|---|---|
@@ -61,4 +64,4 @@
 | ~~Q-016~~ | → D-032 | — |
 | Q-017 | 🟡 ภายหลัง (ไม่ block เดโม): ประชุมออกแบบตระกูลฝั่งแม่ + จังหวะเปิดเผยสายเลือด Aeterna ในเกมเต็ม | นัดหลังเดโม |
 | Q-018 | 🟡 L3 ตรวจบทภาษาไทย (Dialogue 15 + Quests 6 + UI 9 รายการ) — อยากปรับน้ำเสียงตรงไหนบอกได้ | ใช้ตามที่ทีมเขียน |
-| Q-019 | 🟠 L2 เลือกเสียง CC0 (ดู AUDIO_CANDIDATES.md) + ใครดาวน์โหลด (เจ้าของโหลดจาก Freesound เอง / อนุญาตทีมโหลด Kenney RPG Audio) | ชุดแนะนำ 5 ตัว · ทีมโหลด Kenney |
+| ~~Q-019~~ | → D-039 | — |
