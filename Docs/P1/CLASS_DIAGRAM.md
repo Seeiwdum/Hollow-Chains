@@ -818,6 +818,67 @@ classDiagram
 ```
 Player ของแต่ละฉากเป็นตัวใหม่ — สถานะจริงอยู่ใน `PlayerStateService` (_Boot) แล้ว `PlayerStateSync` ดึงกลับตอนเริ่มฉาก
 
+## 6h. ✅ Cutscene (Timeline) + Comic intro (P5)
+```mermaid
+classDiagram
+    class CutscenePlayer {
+        -VoidEventChannelSO _playOn
+        +Play() void
+        -BindCameraBrain() void
+    }
+    class InteractiveBeatRunner {
+        +bool IsWaiting
+        +Begin(InteractiveBeatClip) void
+        +Complete() void
+    }
+    class FireOnceBehaviour {
+        +Action Action
+    }
+    class ChannelEventClip
+    class LineClip
+    class InteractiveBeatClip {
+        +BeatKind Kind
+        +float HoldSeconds
+        +LocalizedString Prompt
+    }
+    class TransformTweenClip
+    class VolumeWeightClip
+    PlayableAsset <|-- ChannelEventClip
+    PlayableAsset <|-- LineClip
+    PlayableAsset <|-- InteractiveBeatClip
+    PlayableAsset <|-- TransformTweenClip
+    PlayableAsset <|-- VolumeWeightClip
+    ChannelEventClip ..> FireOnceBehaviour
+    LineClip ..> FireOnceBehaviour
+    InteractiveBeatClip ..> FireOnceBehaviour
+    InteractiveBeatClip ..> InteractiveBeatRunner : Begin → freeze graph
+    CutscenePlayer ..> PlayableDirector
+    InteractiveBeatRunner ..> PlayableDirector
+
+    class PlayerStoryHooks
+    PlayerStoryHooks ..> PlayerController : EnterCutscene
+    PlayerStoryHooks ..> Health : bite → HP 1, soul drain → full
+    PlayerStoryHooks ..> IPlayerStateService : Humanity −15
+    class ScreenFlashView {
+        -VoidEventChannelSO _onFlash
+    }
+
+    class IComicPage {
+        <<interface>>
+        +Play(Action onFinished) void
+        +Skip() void
+    }
+    class SubtitleComicPage
+    class ComicPlayer {
+        +SkipAll() void
+    }
+    IComicPage <|.. SubtitleComicPage
+    ComicPlayer o-- IComicPage
+    SubtitleComicPage ..> IDialogueService
+    ComicPlayer ..> ISceneFlowService : load S01
+```
+Timeline ไม่เรียกโค้ด gameplay ตรง ๆ — ทุกอย่างผ่าน event channel (EVT_CutsceneStarted / PlayerBitten / SoulDrain / Flash / AwakeningEnded / DemoEnded) · Beat แบบโต้ตอบ "แช่" graph (speed 0) แทน `Pause()` เพราะ Pause/Resume ทำให้ clip ยิงซ้ำ · ฉาก climax สร้างด้วย `ClimaxCutsceneBuilder` (Editor menu) — แก้เวลาใน class `T` แล้วกดสร้างใหม่ได้
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
