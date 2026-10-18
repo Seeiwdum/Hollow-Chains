@@ -146,6 +146,18 @@ MonoBehaviour:
     m_Localized: "[Esc] Pause \xB7 see your current quest"
     m_Metadata:
       m_Items: []
+  - m_Id: 163836479209472
+    m_Localized: Reduce screen flashes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163836659564544
+    m_Localized: Press once instead of holding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163836659564545
+    m_Localized: Press to release the roots
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

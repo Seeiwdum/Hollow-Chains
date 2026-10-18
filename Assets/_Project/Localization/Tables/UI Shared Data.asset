@@ -143,6 +143,18 @@ MonoBehaviour:
     m_Key: hint_quest
     m_Metadata:
       m_Items: []
+  - m_Id: 163836479209472
+    m_Key: settings_reduce_flash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163836659564544
+    m_Key: settings_press_hold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163836659564545
+    m_Key: beat_roots_press
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
