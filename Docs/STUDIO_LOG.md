@@ -185,3 +185,18 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 📦 **Asset Request:** เสียง Freesound 4 ตัว (เจ้าของโหลด) · เสียงโซ่/รากที่ดีกว่า Kenney · โมเดล/อนิเมชันยังไม่ต้อง (D-023)
 🔀 **Git:** `phase/P5-vertical-slice` · tag `p5-done` · `main` ยังเป็น Initial commit → แนะนำเปิด PR ครั้งเดียวจาก `phase/P5-vertical-slice` (มี P0–P5 ครบ) แบบ merge commit
 ▶️ **ถัดไป:** P6 Polish, QA & Demo Build (รออนุมัติ)
+
+---
+
+## P6 — Polish, QA & Demo Build (เริ่ม 2026-10-19, เจ้าของอนุมัติ)
+เป้าหมาย: เดโมที่ส่งให้คนนอกเล่นได้ ผ่านเกณฑ์ `06` → tag `p6-demo-v0.1`
+| Sub-phase | งาน | Backlog | สถานะ |
+|---|---|---|---|
+| P6.0 | Skills #12 #13 #14 #33 #34 #48 · แผน P6 | — | ✅ |
+| P6.1 | Bug bash: review โค้ดทั้งหมด + เล่นทดสอบทั้งเส้น → `Docs/P6/BUGS.md` → แก้ S1–S2 | B-601 | 🔄 |
+| P6.2 | ฟอนต์ static atlas · ตัวเลือกลดแฟลช/สั่น + กดแทนกดค้าง | B-608, B-603 | ⏳ |
+| P6.3 | ไอคอนปุ่มตามอุปกรณ์ (คีย์บอร์ด ↔ จอย) | B-604 | ⏳ |
+| P6.4 | Profiling → 60 FPS 1080p | B-602 | ⏳ |
+| P6.5 | Windows build (IL2CPP) + smoke test | B-605 | ⏳ |
+| P6.6 | เสียง: AudioMixer + ambience (เมื่อไฟล์ Freesound มาถึง) · ปรับจังหวะ climax | B-607, B-609 | ⏳ |
+| P6.7 | Playtest ≥ 3 คน (เจ้าของเป็นคนจัด) + แบบสอบถามไทย | B-606 | ⏳ |
