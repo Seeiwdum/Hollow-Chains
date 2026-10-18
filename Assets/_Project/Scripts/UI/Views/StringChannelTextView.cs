@@ -6,7 +6,7 @@ namespace HollowChains.UI.Views
 {
     /// <summary>
     /// Shows the text carried by a string event channel; an empty string hides the view.
-    /// Used for the interact prompt (EVT_InteractPrompt) and for inspect thoughts (EVT_Thought, auto-hide).
+    /// Used for the interact prompt (EVT_InteractPrompt), the subtitle line (EVT_Subtitle) and the quest tracker (EVT_ObjectiveChanged, auto-hide).
     /// Setup: on a UI element with CanvasGroup; assign a TMP text and the channel.
     /// </summary>
     public sealed class StringChannelTextView : UIView
