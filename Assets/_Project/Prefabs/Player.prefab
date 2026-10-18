@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 6132533008346606848}
   - component: {fileID: 8664868622658820798}
   - component: {fileID: 1946921748350047758}
+  - component: {fileID: 3380755244368634093}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,6 +38,7 @@ Transform:
   m_Children:
   - {fileID: 7860679698371741251}
   - {fileID: 3614610917744474710}
+  - {fileID: 7227480236621027415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8809255102057061974
@@ -163,6 +165,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Player.PlayerController
   _config: {fileID: 11400000, guid: e3ed7c161fa8bf440837a4c6b3fec72a, type: 2}
   _inputSource: {fileID: 8664868622658820798}
+--- !u!114 &3380755244368634093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887676319679741021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c41f4cd46352a42947052093bda6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Interaction.Interactor
+  _player: {fileID: 1946921748350047758}
+  _carryAnchor: {fileID: 7227480236621027415}
+  _onPromptChanged: {fileID: 11400000, guid: 559278053a2330040938f4f335adc04d, type: 2}
+  _radius: 1.8
+  _facingWeight: 0.6
+  _scanInterval: 0.1
 --- !u!1 &4248038386689631980
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +209,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4550093072778696255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4553369794774570643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7227480236621027415}
+  m_Layer: 0
+  m_Name: CarryAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7227480236621027415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553369794774570643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9, y: -0.1, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
