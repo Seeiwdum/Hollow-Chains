@@ -26,9 +26,12 @@
 | D-018 | 2026-10-18 | P1 | **GDD เดโม v1.0 FROZEN** (`Docs/P1/GDD_DEMO.md`) | OWNER | NAMOE | GDD |
 | D-019 | 2026-10-18 | P1 | **อนุมัติ Tech Spec v0.9** (`Docs/P1/TECH_SPEC.md`) + ให้ทีมเพิ่ม `com.unity.ai.assistant` 2.20.0-pre.2 ใน `Packages/manifest.json` ของ repo (Unity MCP) | OWNER | NAMOE | TECH_SPEC §2 |
 | D-020 | 2026-10-18 | P1 | **โค้ดต้องยึดหลัก OOP** (Encapsulation / Abstraction / Inheritance / Polymorphism) + SOLID — สะอาด ไม่สปาเกตตี้. ทีมตีความ: Composition ก่อน, inheritance ตื้นเฉพาะ is-a จริง. ดูแล **Class Diagram** (`Docs/P1/CLASS_DIAGRAM.md`, Mermaid) ให้ตรงกับโค้ดทุก commit | OWNER | NAMOE | 00 §8, skill #2 |
+| D-021 | 2026-10-18 | P1 | **Q-010 ปิด:** เจ้าของเปิด repo ใน Unity + MCP; ตรวจ `Application.dataPath = D:/Git/Hollow-Chains/Assets` แล้ว. P1.3 ทำผ่าน batchmode ก่อนหน้านั้น | OWNER | NAMOE / เอก | Tech §8 |
+| D-022 | 2026-10-18 | P1 | Greybox/placeholder ใช้กติกา Art Bible §8 (เทา `#808080`, interact เหลือง, trigger ฟ้า) และ palette เริ่มต้น §3 | L4 | อ.ชัย/ฟ้าใส | Art Bible |
 
 ## PENDING — รอเจ้าของตอบ (ดู STUDIO_LOG › คำถามค้าง)
 | ID | หัวข้อ | ค่า default ของทีม |
 |---|---|---|
 | Q-009 | อนุมัติคำแปลอังกฤษของบท CANON 3 ชิ้น (บรรยาย SC-00, บทเอเลนา SC-06, ข้อความพ่อ) — ส่งใน P3.2 | อ.รัตติกาลแปลรักษาน้ำเสียง |
-| Q-010 | 🔴 L1: Unity Editor ที่ MCP ต่ออยู่เปิด `D:/project for unity/Hollow Chains` ไม่ใช่ repo `D:\Git\Hollow-Chains` | เปิด repo ใน Unity + ติดตั้ง `com.unity.ai.assistant` ในโปรเจกต์ repo |
+| Q-011 | 🟡 L3 ทิศทางสไตล์ภาพ: ก) Semi-stylized painterly ข) Realistic dark fantasy ค) Toon/cel-shaded (Art Bible §2) | **ก)** |
+| Q-008 | 🟡 L3 เกม/หนัง/อนิเมะที่อยากให้ "โทนภาพหมู่บ้าน/ป่า" คล้าย (1–3 เรื่อง) | อ.ชัยใช้ palette ใน Art Bible |
