@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6734270665083344574}
   - component: {fileID: 1636078113860342423}
   - component: {fileID: 3106024417494329019}
+  - component: {fileID: 3008784264674842805}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -344,6 +345,24 @@ MonoBehaviour:
   _strideMetres: 0.7
   _volume: 0.55
   _pitchJitter: 0.08
+--- !u!114 &3008784264674842805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887676319679741021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1bfc97f417dc84390f80190d9b729a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Player.PlayerStoryHooks
+  _player: {fileID: 1946921748350047758}
+  _health: {fileID: 6708657303920733527}
+  _cutsceneStarted: {fileID: 11400000, guid: df3e592570b65b14daaab7e89bb4e698, type: 2}
+  _bitten: {fileID: 11400000, guid: 71afe128cf7a30d409b9c41044e1f615, type: 2}
+  _soulDrain: {fileID: 11400000, guid: 9b7ea64d8a4d9ab498a6e316d43e438e, type: 2}
+  _humanityCostOfSoulDrain: 15
 --- !u!1 &4248038386689631980
 GameObject:
   m_ObjectHideFlags: 0

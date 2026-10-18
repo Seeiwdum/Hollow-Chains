@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/_Boot.unity
     guid: 239c0e5293395cb4a8d1dcc37b9f526f
   - enabled: 1
+    path: Assets/_Project/Scenes/S00_ComicIntro_Placeholder.unity
+    guid: feb214571e985f4449754287eaf77fc3
+  - enabled: 1
     path: Assets/_Project/Scenes/S01_Bedroom.unity
     guid: 858b3c019b030d1488516737956e4339
   - enabled: 1

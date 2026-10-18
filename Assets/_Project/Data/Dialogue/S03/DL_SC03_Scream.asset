@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f84593861b7a04b801bad0501d3fc2, type: 3}
+  m_Name: DL_SC03_Scream
+  m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Dialogue.DialogueLineSO
+  _id: SC03_Scream
+  _localizedSpeaker:
+    m_TableReference:
+      m_TableCollectionName: Dialogue
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: speaker_unknown
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _localizedText:
+    m_TableReference:
+      m_TableCollectionName: Dialogue
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: SC03_Scream
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _speakerName: '?'
+  _text: "\u0E01\u0E23\u0E35\u0E4A\u0E14\u2014! \u0E0A\u0E48\u0E27\u0E22\u0E14\u0E49\u0E27\u0E22!"
+  _isThought: 0
+  _duration: 2.5
+  references:
+    version: 2
+    RefIds: []
