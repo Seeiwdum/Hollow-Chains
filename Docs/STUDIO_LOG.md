@@ -8,7 +8,7 @@
 ## สถานะปัจจุบัน
 | หัวข้อ | ค่า |
 |---|---|
-| Phase | **P3 Core Systems กำลังทำ** (P2 ผ่าน, tag `p2-done`) |
+| Phase | **P3 Core Systems จบ** — รออนุมัติเข้า P5 (tag `p3-done`) |
 | วันที่ | 2026-10-18 |
 | Unity | 6000.3.10f1 · URP 17.3.0 · Input System 1.18.0 (template เริ่มต้นยังอยู่: Scenes, Settings, TutorialInfo, Readme) |
 | Repo | `github.com/Seeiwdum/Hollow-Chains` · main = `0d7e2a7 Initial commit` · ชื่อเกม = **Hollow Chains** (D-013) |
@@ -155,4 +155,12 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | P3.2 | DialogueLineSO + EVT_PlayLine, SubtitleQueue (tests), DialogueRunner (_Boot), BarkEmitter ×8 ใน S02, LineTriggerZone (ความคิดถึงเอเลนาตอนออกจากตรอก), นาฬิกาพกใน S01 (D-032) · tests 21/21 · play-test ✓ · บทยังเป็น `[PH]` อังกฤษจนถึง P3.3 (B-302) | ✅ |
 | P3.3a | ฟอนต์ไทย Sarabun + Mali (+ Amatic) · TMP SDF · **ThaiMarkPositioner** แก้วรรณยุกต์ซ้อน (D-034, ภาพก่อน/หลัง) · Localization: locale `th` เริ่มต้น, tables UI/Dialogue/Quests, LocalizedString ใน Dialogue/Quest/Prompt · บทไทย 30 รายการ (D-035) · tests 27/27 · play-test ไทยขึ้นครบ | ✅ |
 | P3.3b | GameFlowService (Title→Playing⇄Paused→End) · เมนู Title/Pause (แสดงภารกิจปัจจุบัน)/Settings (เสียง, ขนาดซับ, กลับแกนกล้อง)/End เป็นภาษาไทย · Pause = Esc/Start · HUD: แถบ HP (Health + HealthModel) + จอแดงตอน HP วิกฤต · tests 31/31 · play-test flow 9 ขั้นผ่าน (D-036) · เสียง CC0 ชุดที่ 1 (D-037) | ✅ |
-| P3.4 | Health/Humanity + Save/Checkpoint + ถังข้ามฉาก (B-306/307) | ⏳ |
+| P3.4 | SaveFile/SaveService (ISaveable), PlayerStateService (HP, Humanity data-only, ของในมือ) + PlayerStateSync, ถังข้ามฉาก + หลุดมือ (D-015), CheckpointTrigger CP_01/CP_02 + ข้อความ "บันทึกแล้ว", ปุ่ม "เล่นต่อจากจุดบันทึก", ฝีเท้า Kenney + เสียงกลอนประตู · tests 35/35 · play-test 8 ขั้นผ่าน (D-038, D-039) | ✅ |
+
+## P3 — Phase Report
+✅ **ทำเสร็จ:** Quest (Q001 5 phase) · บทพูด/ซับ/เสียงกระซิบ · ภาษาไทย (Sarabun + Mali + ThaiMarkPositioner, Localization th) · เมนู Title/Pause/Settings/End · HUD HP + จอแดง · Save/Checkpoint/Continue · ถังข้ามฉาก/หลุดมือ · ฝีเท้า + เสียงประตู (Kenney) · นาฬิกาพก (D-032) · tests 35/35
+⚠️ **ค้าง/ความเสี่ยง:** ไฟล์ฟอนต์ dynamic เปลี่ยนทุกครั้งที่เล่น (ทำ static ใน P6) · ยังไม่มี AudioMixer (P5) · เมนูยังเป็น UI greybox · ญ/ฐ + สระล่าง
+❓ **คำถาม:** Q-017 (ตระกูลฝั่งแม่ — หลังเดโม) · Q-018 (ตรวจบทไทย)
+📦 **Asset Request:** เสียง Freesound ชุดแนะนำ 4 ตัว (เจ้าของโหลด) · ฟอนต์ ✅ ครบ · โมเดลยังไม่ต้อง (D-023)
+🔀 **Git:** `phase/P3-core-systems` · tag `p3-done` · `main` ยังเป็น Initial commit → แนะนำเปิด PR ครั้งเดียวจาก `phase/P3-core-systems` (มี P0–P3 ครบ) แบบ merge commit
+▶️ **ถัดไป:** P5 Vertical Slice — Scene 0–6 (Comic placeholder, ฉากเวทน้ำ, Awakening, Cliffhanger) ตาม D-001
