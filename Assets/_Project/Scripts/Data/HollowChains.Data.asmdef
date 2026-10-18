@@ -1,6 +1,6 @@
 {
     "name": "HollowChains.Data",
     "rootNamespace": "HollowChains.Data",
-    "references": ["HollowChains.Core"],
+    "references": ["HollowChains.Core", "Unity.Localization"],
     "autoReferenced": false
 }
