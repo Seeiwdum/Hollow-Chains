@@ -1,3 +1,4 @@
+using HollowChains.Core.Settings;
 using HollowChains.Gameplay.Player;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -29,7 +30,7 @@ namespace HollowChains.Gameplay.CameraRig
             var delta = _player.Input.LookFromPointer
                 ? Vector2.Scale(look, _mouseDegreesPerPixel)
                 : Vector2.Scale(look, _stickDegreesPerSecond) * Time.deltaTime;
-            if (!_invertY) delta.y = -delta.y;
+            if (_invertY == GameSettings.Current.InvertCameraY) delta.y = -delta.y; // Settings toggle flips the default
 
             _orbit.HorizontalAxis.Value = _orbit.HorizontalAxis.ClampValue(_orbit.HorizontalAxis.Value + delta.x);
             _orbit.VerticalAxis.Value = _orbit.VerticalAxis.ClampValue(_orbit.VerticalAxis.Value + delta.y);
