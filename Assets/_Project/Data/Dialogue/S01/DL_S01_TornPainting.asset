@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f84593861b7a04b801bad0501d3fc2, type: 3}
+  m_Name: DL_S01_TornPainting
+  m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Dialogue.DialogueLineSO
+  _id: S01_TornPainting
+  _speakerName: 
+  _text: '[PH] Father''s face... torn out. I hid it again.'
+  _isThought: 1
+  _duration: 0
