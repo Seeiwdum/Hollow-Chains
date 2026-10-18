@@ -153,5 +153,6 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | P3.1 | Quest: GameDataSO, QuestSO/QuestPhaseSO, PhaseConditionSO + EventRaised, QuestRunner, QuestService (_Boot) + HUD tracker · Q001 data 5 phases (D-031) · tests 17/17 · play-test: tracker + prompt + หยิบถัง → P2 ✓ | ✅ |
 | P3.1b | **แก้บั๊ก:** reference event channel หลุดเป็น null ใน _Boot/S03/S04 (โหลด asset ก่อนเปิดฉาก) → prompt/thought/tracker ไม่ขึ้น และเสียงกรีดใน S03 ไม่ยิง event — ต่อใหม่ครบ + บันทึกบทเรียนใน skill `unity-project-setup` | ✅ |
 | P3.2 | DialogueLineSO + EVT_PlayLine, SubtitleQueue (tests), DialogueRunner (_Boot), BarkEmitter ×8 ใน S02, LineTriggerZone (ความคิดถึงเอเลนาตอนออกจากตรอก), นาฬิกาพกใน S01 (D-032) · tests 21/21 · play-test ✓ · บทยังเป็น `[PH]` อังกฤษจนถึง P3.3 (B-302) | ✅ |
-| P3.3 | UI framework + TMP ไทย + Localization + HUD HP (B-304/305) — **ต้องการฟอนต์ไทย UI-001/002** | ⏳ |
+| P3.3a | ฟอนต์ไทย Sarabun + Mali (+ Amatic) · TMP SDF · **ThaiMarkPositioner** แก้วรรณยุกต์ซ้อน (D-034, ภาพก่อน/หลัง) · Localization: locale `th` เริ่มต้น, tables UI/Dialogue/Quests, LocalizedString ใน Dialogue/Quest/Prompt · บทไทย 30 รายการ (D-035) · tests 27/27 · play-test ไทยขึ้นครบ | ✅ |
+| P3.3b | เมนู Title/Pause/Settings/End + HUD HP + critical vignette (B-304/305) | ⏳ |
 | P3.4 | Health/Humanity + Save/Checkpoint + ถังข้ามฉาก (B-306/307) | ⏳ |
