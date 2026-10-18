@@ -46,6 +46,17 @@ Underscore keeps project content sorted above third-party folders.
 - Never commit `Library/ Temp/ Logs/ UserSettings/ Build*/`. Check `git status -sb` before each batch.
 - Work on `phase/*`, no force push, no direct push to `main` without owner approval.
 
+## MCP editor-script pitfalls (learned in P2/P3)
+- `EditorSceneManager.OpenScene/NewScene` unloads unused assets: **load ScriptableObjects (event channels,
+  configs) after opening the scene**, otherwise `objectReferenceValue` silently saves `{fileID: 0}`. After building
+  a scene, grep its `.unity` for `fileID: 0}` on fields that must be wired.
+- Commands that delete assets (`AssetDatabase.DeleteAsset`) or pop dialogs (first TMP use → import TMP Essentials
+  via `TMP_PackageResourceImporter.ImportResources(true, false, false)`) are rejected by MCP; delete with git instead.
+- Play mode does not tick while the Editor is unfocused: set `EditorApplication.isPaused = true` and call
+  `EditorApplication.Step()` in a loop to advance frames for smoke tests.
+- After writing `.cs` files, call `AssetDatabase.Refresh()`; the MCP bridge disconnects during the domain reload —
+  wait, then check `Unity_GetConsoleLogs`.
+
 ## Making changes
 Prefer editing settings through the Editor (MCP `Unity_RunCommand` with `EditorSettings`, `PlayerSettings`,
 `AssetDatabase`) so Unity rewrites YAML consistently; hand-edit YAML only when the Editor is closed. After changes,
