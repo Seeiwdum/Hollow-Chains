@@ -193,7 +193,7 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 | Sub-phase | งาน | Backlog | สถานะ |
 |---|---|---|---|
 | P6.0 | Skills #12 #13 #14 #33 #34 #48 · แผน P6 | — | ✅ |
-| P6.1 | Bug bash: review โค้ดทั้งหมด + เล่นทดสอบทั้งเส้น → `Docs/P6/BUGS.md` → แก้ S1–S2 | B-601 | 🔄 |
+| P6.1 | Bug bash รอบ 1: เล่นทั้งเส้น Title→จบ→เล่นต่อ ไม่มี error · S1/S2 = 0 · S3 แก้ 3 ตัว (BUG-601..603) · S4 ค้าง 2 · tests 36/36 → `Docs/P6/BUGS.md` | B-601 | ✅ |
 | P6.2 | ฟอนต์ static atlas · ตัวเลือกลดแฟลช/สั่น + กดแทนกดค้าง | B-608, B-603 | ⏳ |
 | P6.3 | ไอคอนปุ่มตามอุปกรณ์ (คีย์บอร์ด ↔ จอย) | B-604 | ⏳ |
 | P6.4 | Profiling → 60 FPS 1080p | B-602 | ⏳ |
