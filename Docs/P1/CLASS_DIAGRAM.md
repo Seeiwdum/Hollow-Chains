@@ -1,0 +1,362 @@
+# Class Diagram — Hollow Chains Demo (v0.1, แผนก่อนเขียนโค้ด)
+
+> เจ้าของ: ธีร์ · ตรวจ: กานต์, ณิชา · อ้างอิง: `TECH_SPEC.md` §4, skill `unity-csharp-architecture` (OOP/SOLID — D-020)
+> สถานะ: **แผน** — ยังไม่มีโค้ด; ชื่อคลาสอาจปรับตอนลงมือ และต้องอัปเดตไฟล์นี้ใน commit เดียวกับโค้ดทุกครั้ง
+> ดูภาพ: เปิดไฟล์นี้บน GitHub (branch `phase/P1-preproduction`) — GitHub วาด Mermaid ให้อัตโนมัติ
+
+## วิธีอ่าน
+| สัญลักษณ์ | ความหมาย | หลัก OOP |
+|---|---|---|
+| `<<interface>>` | สัญญา (สิ่งที่ทำได้) ไม่มีโค้ดจริง | Abstraction |
+| `<<abstract>>` | คลาสแม่ที่มีโค้ดร่วม ใช้ตรง ๆ ไม่ได้ | Inheritance |
+| `A <\|-- B` | B สืบทอดจาก A | Inheritance |
+| `A <\|.. B` | B ทำตาม interface A | Polymorphism |
+| `A *-- B` | A เป็นเจ้าของ B (B ตายตาม A) | Composition |
+| `A o-- B` | A ใช้ B ที่มีอยู่แล้ว | Aggregation |
+| `A ..> B` | A เรียกใช้ B | Dependency |
+| `-` / `+` | private / public | Encapsulation |
+
+หลักที่ทีมยึด: **Composition ก่อน, Inheritance ตื้น ๆ เฉพาะ "is-a" จริง**, สื่อสารข้ามระบบผ่าน Event Channel (ไม่อ้างอิงกันตรง ๆ), พึ่ง interface ไม่ใช่คลาสจริง
+
+---
+
+## 1. Core — รากฐาน (`HollowChains.Core`)
+```mermaid
+classDiagram
+    class EventChannelSO~T~ {
+        <<abstract>>
+        -event Action~T~ OnRaised
+        +Raise(T value) void
+        +Subscribe(Action~T~ listener) void
+        +Unsubscribe(Action~T~ listener) void
+    }
+    class VoidEventChannelSO
+    class IntEventChannelSO
+    class StringEventChannelSO
+    EventChannelSO~T~ <|-- VoidEventChannelSO
+    EventChannelSO~T~ <|-- IntEventChannelSO
+    EventChannelSO~T~ <|-- StringEventChannelSO
+
+    class IState {
+        <<interface>>
+        +Enter() void
+        +Tick(float dt) void
+        +Exit() void
+    }
+    class StateMachine {
+        -IState _current
+        +IState Current
+        +ChangeState(IState next) void
+        +Tick(float dt) void
+    }
+    StateMachine o-- IState
+
+    class IService {
+        <<interface>>
+    }
+    class ServiceLocator {
+        -Dictionary _services
+        +Register~T~(T service) void
+        +Get~T~() T
+    }
+    ServiceLocator o-- IService
+
+    class IIdentifiable {
+        <<interface>>
+        +string Id
+    }
+```
+
+## 2. Data — ข้อมูลเกม (`HollowChains.Data`, ScriptableObject)
+```mermaid
+classDiagram
+    class IIdentifiable {
+        <<interface>>
+        +string Id
+    }
+    class GameDataSO {
+        <<abstract>>
+        -string _id
+        +string Id
+    }
+    IIdentifiable <|.. GameDataSO
+
+    class QuestSO {
+        +LocalizedString Title
+        +IReadOnlyList~QuestPhaseSO~ Phases
+    }
+    class QuestPhaseSO {
+        +LocalizedString Objective
+        +PhaseConditionSO CompleteWhen
+    }
+    class PhaseConditionSO {
+        <<abstract>>
+        +Bind(Action onMet) void
+        +Unbind() void
+    }
+    class EventRaisedCondition {
+        -VoidEventChannelSO _event
+    }
+    class ItemSO {
+        +LocalizedString DisplayName
+        +bool IsKeyItem
+    }
+    class DialogueLineSO {
+        +string SpeakerId
+        +LocalizedString Text
+        +float Duration
+    }
+    class CharacterStatsSO {
+        +int MaxHealth
+        +int StartHumanity
+    }
+
+    GameDataSO <|-- QuestSO
+    GameDataSO <|-- QuestPhaseSO
+    GameDataSO <|-- ItemSO
+    GameDataSO <|-- DialogueLineSO
+    GameDataSO <|-- CharacterStatsSO
+    QuestSO *-- QuestPhaseSO
+    QuestPhaseSO o-- PhaseConditionSO
+    PhaseConditionSO <|-- EventRaisedCondition
+```
+
+## 3. Gameplay — ผู้เล่น / Interact / ค่าสถานะ (`HollowChains.Gameplay`)
+```mermaid
+classDiagram
+    class PlayerController {
+        -StateMachine _fsm
+        -PlayerMotor _motor
+        -PlayerInputReader _input
+        +EnterCutscene() void
+        +ExitCutscene() void
+    }
+    class PlayerInputReader {
+        +Vector2 Move
+        +bool SprintHeld
+        +event Action InteractPressed
+    }
+    class PlayerMotor {
+        +Move(Vector3 dir, float speed) void
+        +bool IsGrounded
+    }
+    class PlayerState {
+        <<abstract>>
+        #PlayerController Owner
+        +Enter() void
+        +Tick(float dt) void
+        +Exit() void
+    }
+    class LocomotionState
+    class CarryState
+    class SprintState
+    class LockedState
+    class IState {
+        <<interface>>
+    }
+    IState <|.. PlayerState
+    PlayerState <|-- LocomotionState
+    PlayerState <|-- CarryState
+    PlayerState <|-- SprintState
+    PlayerState <|-- LockedState
+    PlayerController *-- PlayerMotor
+    PlayerController *-- PlayerInputReader
+    PlayerController ..> PlayerState
+
+    class IInteractable {
+        <<interface>>
+        +LocalizedString Prompt
+        +CanInteract(Interactor who) bool
+        +Interact(Interactor who) void
+    }
+    class InteractableBase {
+        <<abstract>>
+        #VoidEventChannelSO _onInteracted
+        +Interact(Interactor who) void
+        #OnInteract(Interactor who) void*
+    }
+    class PickupInteractable {
+        -ItemSO _item
+    }
+    class InspectInteractable {
+        -DialogueLineSO _thought
+    }
+    class ScriptedInteractable {
+        -PlayableDirector _timeline
+    }
+    class Interactor {
+        -IInteractable _focused
+        +TryInteract() void
+    }
+    IInteractable <|.. InteractableBase
+    InteractableBase <|-- PickupInteractable
+    InteractableBase <|-- InspectInteractable
+    InteractableBase <|-- ScriptedInteractable
+    Interactor o-- IInteractable
+    PlayerController *-- Interactor
+
+    class IDamageable {
+        <<interface>>
+        +TakeDamage(int amount) void
+    }
+    class Health {
+        -int _current
+        +int Current
+        +SetTo(int value) void
+        +Heal(int amount) void
+    }
+    class HumanityState {
+        -int _value
+        +int Value
+        +Change(int delta) void
+    }
+    IDamageable <|.. Health
+    PlayerController *-- Health
+    PlayerController *-- HumanityState
+```
+`ScriptedInteractable` = prompt "วิ่งเข้าไปกอด" (SC-04) และ "ยื่นมือ" (SC-06) · `HumanityState` ไม่มี UI (D-002)
+
+## 4. Quest / Save / Scene flow (`HollowChains.Gameplay`)
+```mermaid
+classDiagram
+    class IService {
+        <<interface>>
+    }
+    class ISaveable {
+        <<interface>>
+        +string SaveKey
+        +CaptureState() object
+        +RestoreState(object state) void
+    }
+    class QuestService {
+        -List~QuestState~ _active
+        +Start(QuestSO quest) void
+        +GetState(string questId) QuestState
+    }
+    class QuestState {
+        +string QuestId
+        +int PhaseIndex
+        +bool IsComplete
+    }
+    class SaveService {
+        -List~ISaveable~ _saveables
+        +Save(string checkpointId) void
+        +Load() bool
+    }
+    class SaveData {
+        +int SaveVersion
+        +string CheckpointId
+        +Dictionary States
+    }
+    class SceneFlowService {
+        +LoadScene(string sceneId) Task
+        +Preload(string sceneId) void
+    }
+    class CheckpointTrigger {
+        -string _checkpointId
+    }
+
+    IService <|.. QuestService
+    IService <|.. SaveService
+    IService <|.. SceneFlowService
+    ISaveable <|.. QuestService
+    QuestService *-- QuestState
+    SaveService o-- ISaveable
+    SaveService ..> SaveData
+    CheckpointTrigger ..> SaveService
+```
+
+## 5. Narrative — บทพูด / Cutscene / Comic hook (`HollowChains.Narrative`)
+```mermaid
+classDiagram
+    class IComicPage {
+        <<interface>>
+        +Play(Action onFinished) void
+        +Skip() void
+    }
+    class ComicPlayer {
+        -List~IComicPage~ _pages
+        +PlayAll() void
+    }
+    class SubtitleComicPage {
+        -DialogueLineSO[] _lines
+    }
+    class PanelComicPage {
+        <<P7>>
+    }
+    IComicPage <|.. SubtitleComicPage
+    IComicPage <|.. PanelComicPage
+    ComicPlayer o-- IComicPage
+
+    class DialogueRunner {
+        +Play(DialogueLineSO line) void
+        +event Action~DialogueLineSO~ LineStarted
+    }
+    class BarkEmitter {
+        -DialogueLineSO[] _barks
+        -float _radius
+    }
+    class InteractiveBeat {
+        <<abstract>>
+        +Begin(Action onDone) void
+        #IsSatisfied() bool*
+    }
+    class HoldBeat {
+        -float _holdSeconds
+    }
+    class MashBeat {
+        -int _pressesNeeded
+    }
+    InteractiveBeat <|-- HoldBeat
+    InteractiveBeat <|-- MashBeat
+    BarkEmitter ..> DialogueRunner
+```
+`SubtitleComicPage` = S00 ตอนนี้ · `PanelComicPage` = Comic จริงใน P7 (เสียบแทนโดยไม่แก้ `ComicPlayer` — Open/Closed)
+`HoldBeat` = "ปล่อยราก" (SC-05) · ผลลัพธ์คงที่ ล้มเหลวไม่ได้
+
+## 6. UI (`HollowChains.UI`)
+```mermaid
+classDiagram
+    class UIView {
+        <<abstract>>
+        +Show() void
+        +Hide() void
+        #OnShow() void*
+    }
+    class HealthBarView {
+        -IntEventChannelSO _onHealthChanged
+    }
+    class InteractPromptView
+    class QuestTrackerView
+    class SubtitleView
+    class MenuView {
+        <<abstract>>
+    }
+    class TitleMenu
+    class PauseMenu
+    class EndScreen
+    UIView <|-- HealthBarView
+    UIView <|-- InteractPromptView
+    UIView <|-- QuestTrackerView
+    UIView <|-- SubtitleView
+    UIView <|-- MenuView
+    MenuView <|-- TitleMenu
+    MenuView <|-- PauseMenu
+    MenuView <|-- EndScreen
+```
+UI ฟัง Event Channel เท่านั้น — ไม่อ้างอิง `PlayerController` / `QuestService` ตรง ๆ (UI กับ Gameplay เปลี่ยนแยกกันได้)
+
+## 7. ภาพรวมการพึ่งพา Assembly
+```mermaid
+flowchart LR
+    Core["HollowChains.Core"]
+    Data["HollowChains.Data"] --> Core
+    Gameplay["HollowChains.Gameplay"] --> Data
+    Narrative["HollowChains.Narrative"] --> Data
+    UI["HollowChains.UI"] --> Data
+    Combat["HollowChains.Combat (P4)"] --> Data
+    Gameplay -. "Event Channels" .- UI
+    Gameplay -. "Event Channels" .- Narrative
+    Gameplay -. "OnEncounterRequested" .- Combat
+```
+ลูกศรทึบ = อ้างอิงโค้ด · เส้นประ = คุยผ่าน Event Channel (ไม่อ้างอิงกัน)
