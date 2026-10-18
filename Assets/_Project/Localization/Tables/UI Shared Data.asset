@@ -14,7 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
   m_TableCollectionName: UI
   m_TableCollectionNameGuidString: f848306fc73115d4c87638a31be78a4f
-  m_Entries: []
+  m_Entries:
+  - m_Id: 48635180285952
+    m_Key: prompt_pickup_bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451776
+    m_Key: prompt_look_painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451777
+    m_Key: prompt_look_flower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451778
+    m_Key: prompt_look_under_bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451779
+    m_Key: prompt_look_watch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451780
+    m_Key: prompt_knock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451781
+    m_Key: prompt_shopkeeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451782
+    m_Key: prompt_read_notice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451783
+    m_Key: prompt_look_marks
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -17,7 +17,43 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: f848306fc73115d4c87638a31be78a4f, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 48635180285952
+    m_Localized: Pick up the bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451776
+    m_Localized: Look at the torn painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451777
+    m_Localized: Look at the flower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451778
+    m_Localized: Look under the bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451779
+    m_Localized: Look at the pocket watch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451780
+    m_Localized: Knock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451781
+    m_Localized: Ask the shopkeeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451782
+    m_Localized: Read the old notice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48635205451783
+    m_Localized: Look at the marks
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

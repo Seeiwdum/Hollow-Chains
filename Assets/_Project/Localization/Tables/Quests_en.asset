@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Quests_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 8dff539a31fed754dbc3b1b54c2e212c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8835629056
+    m_Localized: Water from the Stream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8860794880
+    m_Localized: Take the bucket and head for the forest stream behind the village
+      (where you meet Elena)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8860794881
+    m_Localized: Head for the forest stream behind the village, where Elena waits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8860794882
+    m_Localized: Follow the scream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8860794883
+    m_Localized: Save Elena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8860794884
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
