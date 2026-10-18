@@ -16,5 +16,8 @@ namespace HollowChains.Core.Services
         event Action<string> SceneLoaded;
 
         void Load(string sceneName);
+
+        /// <summary>Fades out and unloads the current content scene (back to the title over _Boot).</summary>
+        void UnloadCurrent();
     }
 }
