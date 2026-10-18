@@ -89,7 +89,8 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 |---|---|---|
 | P1.0 | Skills #43, #49, #1, #2, #47 ใน `.claude/skills/` | ✅ |
 | P1.1 | `Docs/P1/GDD_DEMO.md` **v1.0 FROZEN** (D-018) | ✅ |
-| P1.2 | `Docs/P1/TECH_SPEC.md` v0.9 (Package จาก registry จริง, โฟลเดอร์, asmdef, Event Bus) | ✅ รอเจ้าของอนุมัติ |
+| P1.2 | `Docs/P1/TECH_SPEC.md` v0.9 (Package จาก registry จริง, โฟลเดอร์, asmdef, Event Bus) | ✅ อนุมัติ (D-019) |
+| P1.2b | `Docs/P1/CLASS_DIAGRAM.md` v0.1 (แผนคลาส OOP — D-020) · `com.unity.ai.assistant` ใน manifest | ✅ |
 | P1.3 | Unity init + `.gitattributes`/LFS + Force Text + `tools/gitbatch.sh` + ลบ template (spike ฟอนต์ไทยเลื่อน — D-017) | ⏳ รอ Q-010 |
 | P1.4 | Art Bible สั้น · Backlog · Risk Register · Asset Request ชุดแรก | ⏳ |
 
