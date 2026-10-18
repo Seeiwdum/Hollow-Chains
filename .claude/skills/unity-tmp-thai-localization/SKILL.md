@@ -23,7 +23,9 @@ Demo locale = **th** (D-025); `en` is added later. Acceptance AC-02: tone marks/
 
 ## Fonts
 - Use the owner-supplied fonts (UI-001 heading, UI-002 body). Verify license (OFL or equivalent) before import (D-004).
-- Create TMP Font Assets with Atlas Population Mode **Dynamic**, sampling ~90, padding ~9, atlas 2048.
+- Font assets are **Static** (P6, D-044): run *Hollow Chains/Fonts/Bake Static Font Atlases* after adding text with new
+  symbols (`StaticFontBaker`: ASCII + whole Thai block + every table character; sampling ~90, padding ~9, atlas 2048).
+  Dynamic mode was only for prototyping — it re-saved the atlas on every Play.
   Keep a Latin font as fallback (TMP Settings → fallback list) for digits/punctuation if the Thai font lacks them.
 - Thai stacking: TMP needs the font's **GPOS/mark positioning**. Test strings with stacked marks
   (e.g. "ปู่", "ญี่ปุ่น", "น้ำ", "ที่นั่น", "ฟื้น") at small sizes; if marks overlap, try the font's

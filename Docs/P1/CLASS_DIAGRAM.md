@@ -736,6 +736,8 @@ classDiagram
         +float MasterVolume
         +float SubtitleScale
         +bool InvertCameraY
+        +bool ReduceFlashes
+        +bool PressInsteadOfHold
         +Current$ GameSettings
         +Save()$ void
     }
