@@ -747,6 +747,77 @@ classDiagram
 ```
 เมนูไม่อ้างอิง gameplay — ปุ่มยิง `EVT_UI_*`, `GameFlowService` ฟังแล้วประกาศ state กลับผ่าน `EVT_GameStateChanged`
 
+## 6g. ✅ Save / สถานะผู้เล่นข้ามฉาก (P3.4)
+```mermaid
+classDiagram
+    class ISaveable {
+        <<interface>>
+        +string SaveKey
+        +CaptureState() string
+        +RestoreState(string json) void
+    }
+    class ISaveService {
+        <<interface>>
+        +bool HasSave
+        +Register(ISaveable s) void
+        +Save(string checkpointId, string resumeScene) void
+        +RestoreAll() string
+    }
+    class SaveService
+    class SaveFile {
+        +Write(SaveData d) void
+        +Read() SaveData
+    }
+    class SaveData {
+        <<Serializable>>
+        +int SaveVersion
+        +string ResumeScene
+        +List Entries
+    }
+    ISaveService <|.. SaveService
+    SaveService *-- SaveFile
+    SaveFile ..> SaveData
+    SaveService o-- ISaveable
+
+    class IPlayerStateService {
+        <<interface>>
+        +PlayerStateData State
+        +RecordHealth(int) void
+        +RecordCarried(string id) void
+        +ChangeHumanity(int delta) void
+        +ResetToNew() void
+    }
+    class PlayerStateService
+    class HumanityModel {
+        +int Value
+        +Change(int delta) void
+    }
+    IPlayerStateService <|.. PlayerStateService
+    ISaveable <|.. PlayerStateService
+    ISaveable <|.. QuestService
+    PlayerStateService *-- HumanityModel
+    class PlayerStateSync {
+        -List~ItemSO~ _knownItems
+    }
+    PlayerStateSync ..> IPlayerStateService : restore on Start, report changes
+    class ItemSO {
+        +GameObject CarryPrefab
+    }
+    PlayerStateSync o-- ItemSO
+    class Interactor {
+        +GameObject Carried
+        +Hold(GameObject) void
+        +Drop(Vector3 impulse) GameObject
+    }
+    class CheckpointTrigger
+    class DropCarriedItemZone
+    PlayerTriggerZone <|-- CheckpointTrigger
+    PlayerTriggerZone <|-- DropCarriedItemZone
+    CheckpointTrigger ..> ISaveService
+    DropCarriedItemZone ..> Interactor
+```
+Player ของแต่ละฉากเป็นตัวใหม่ — สถานะจริงอยู่ใน `PlayerStateService` (_Boot) แล้ว `PlayerStateSync` ดึงกลับตอนเริ่มฉาก
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
