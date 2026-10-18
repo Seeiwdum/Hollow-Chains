@@ -8,11 +8,11 @@
 ## สถานะปัจจุบัน
 | หัวข้อ | ค่า |
 |---|---|
-| Phase | **P2 Tech Prototype กำลังทำ** (P1 จบ — PR รอ merge) |
+| Phase | **P3 Core Systems กำลังทำ** (P2 ผ่าน, tag `p2-done`) |
 | วันที่ | 2026-10-18 |
 | Unity | 6000.3.10f1 · URP 17.3.0 · Input System 1.18.0 (template เริ่มต้นยังอยู่: Scenes, Settings, TutorialInfo, Readme) |
 | Repo | `github.com/Seeiwdum/Hollow-Chains` · main = `0d7e2a7 Initial commit` · ชื่อเกม = **Hollow Chains** (D-013) |
-| Branch งาน | `phase/P2-tech-prototype` (แตกจาก `phase/P1-preproduction` @ `p1-done`) |
+| Branch งาน | `phase/P3-core-systems` (แตกจาก `p2-done`) |
 | Unity MCP | ✅ ต่อ repo แล้ว (`D:/Git/Hollow-Chains`, D-021) |
 | เอกสารต้นทาง | `00_MASTER_PROMPT` + `01–09` (อยู่นอก repo ที่ `D:\DL\`) |
 
@@ -143,3 +143,15 @@ Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
 📦 **Asset Request:** ไม่มีรายการใหม่ — ยังรอ **ฟอนต์ไทย UI-001/002** (ใช้ใน P3.3)
 🔀 **Git:** `phase/P2-tech-prototype` · tag `p2-done` · merge: รอ PR P1 ก่อน แล้วค่อยเปิด PR P2 (P2 มี P1 อยู่ในตัว — merge P2 อย่างเดียวก็ได้)
 ▶️ **ถัดไป:** P3 Core Systems
+
+---
+
+## P3 — Core Systems (เริ่ม 2026-10-18)
+| Sub-phase | ผลลัพธ์ | สถานะ |
+|---|---|---|
+| P3.0 | Skills #15 #16 #10 #28 #29 #31 #20 · Lore proposal นาฬิกาพก (Q-016) | ✅ |
+| P3.1 | Quest: GameDataSO, QuestSO/QuestPhaseSO, PhaseConditionSO + EventRaised, QuestRunner, QuestService (_Boot) + HUD tracker · Q001 data 5 phases (D-031) · tests 17/17 · play-test: tracker + prompt + หยิบถัง → P2 ✓ | ✅ |
+| P3.1b | **แก้บั๊ก:** reference event channel หลุดเป็น null ใน _Boot/S03/S04 (โหลด asset ก่อนเปิดฉาก) → prompt/thought/tracker ไม่ขึ้น และเสียงกรีดใน S03 ไม่ยิง event — ต่อใหม่ครบ + บันทึกบทเรียนใน skill `unity-project-setup` | ✅ |
+| P3.2 | Dialogue/Subtitle + บทไทย (B-302/303) | ⏳ |
+| P3.3 | UI framework + TMP ไทย + Localization + HUD HP (B-304/305) — **ต้องการฟอนต์ไทย UI-001/002** | ⏳ |
+| P3.4 | Health/Humanity + Save/Checkpoint + ถังข้ามฉาก (B-306/307) | ⏳ |
