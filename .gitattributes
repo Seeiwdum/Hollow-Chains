@@ -1,4 +1,5 @@
 * text=auto
+*.sh text eol=lf
 
 # Unity YAML (set up unityyamlmerge locally to use merge=unityyamlmerge)
 *.unity    merge=unityyamlmerge eol=lf
