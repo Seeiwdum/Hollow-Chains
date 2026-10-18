@@ -1,7 +1,9 @@
 using HollowChains.Core.Events;
+using HollowChains.Core.Save;
 using HollowChains.Core.Services;
 using HollowChains.Core.StateMachines;
 using HollowChains.Gameplay.Flow.States;
+using HollowChains.Gameplay.Player;
 using HollowChains.Gameplay.Quests;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -29,6 +31,7 @@ namespace HollowChains.Gameplay.Flow
 
         [Header("Listens (raised by menus / story)")]
         [SerializeField] private VoidEventChannelSO _newGameRequested;
+        [SerializeField] private VoidEventChannelSO _continueRequested;
         [SerializeField] private VoidEventChannelSO _resumeRequested;
         [SerializeField] private VoidEventChannelSO _quitToTitleRequested;
         [SerializeField] private VoidEventChannelSO _quitGameRequested;
@@ -53,6 +56,7 @@ namespace HollowChains.Gameplay.Flow
         private void OnEnable()
         {
             Listen(_newGameRequested, StartNewGame, true);
+            Listen(_continueRequested, ContinueGame, true);
             Listen(_resumeRequested, Resume, true);
             Listen(_quitToTitleRequested, QuitToTitle, true);
             Listen(_quitGameRequested, QuitGame, true);
@@ -67,6 +71,7 @@ namespace HollowChains.Gameplay.Flow
         private void OnDisable()
         {
             Listen(_newGameRequested, StartNewGame, false);
+            Listen(_continueRequested, ContinueGame, false);
             Listen(_resumeRequested, Resume, false);
             Listen(_quitToTitleRequested, QuitToTitle, false);
             Listen(_quitGameRequested, QuitGame, false);
@@ -83,7 +88,18 @@ namespace HollowChains.Gameplay.Flow
         public void StartNewGame()
         {
             if (ServiceLocator.TryGet<IQuestService>(out var quests)) quests.ResetAll();
+            if (ServiceLocator.TryGet<IPlayerStateService>(out var player)) player.ResetToNew();
             if (ServiceLocator.TryGet<ISceneFlowService>(out var flow)) flow.Load(_firstScene);
+            _machine.ChangeState(_playing);
+        }
+
+        /// <summary>Title → "Continue": restore the checkpoint save, then load its scene.</summary>
+        public void ContinueGame()
+        {
+            if (!ServiceLocator.TryGet<ISaveService>(out var save) || !save.HasSave) return;
+            var scene = save.RestoreAll();
+            if (string.IsNullOrEmpty(scene)) return;
+            if (ServiceLocator.TryGet<ISceneFlowService>(out var flow)) flow.Load(scene);
             _machine.ChangeState(_playing);
         }
 
