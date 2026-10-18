@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 namespace HollowChains.Gameplay.Flow
 {
     /// <summary>
-    /// Entry point in the _Boot scene. Registers global services, locks the cursor, then either loads the first
-    /// content scene or adopts the one already open (when Play is pressed inside a content scene in the editor).
-    /// Setup: on a GameObject in _Boot together with <see cref="SceneFlowService"/>.
+    /// Entry point in the _Boot scene. Registers global services, then either shows the title screen or — when Play
+    /// was pressed inside a content scene in the editor — adopts that scene and goes straight to Playing.
+    /// Setup: on "Game" in _Boot together with SceneFlowService, QuestService and GameFlowService.
     /// </summary>
     public sealed class GameBootstrapper : MonoBehaviour
     {
@@ -16,8 +16,7 @@ namespace HollowChains.Gameplay.Flow
 
         [SerializeField] private SceneFlowService _sceneFlow;
         [SerializeField] private QuestService _quests;
-        [SerializeField] private string _firstScene = "S01_Bedroom";
-        [SerializeField] private bool _lockCursor = true;
+        [SerializeField] private GameFlowService _gameFlow;
 
         private static GameBootstrapper s_active;
 
@@ -35,24 +34,15 @@ namespace HollowChains.Gameplay.Flow
             }
             s_active = this;
             if (_sceneFlow == null) _sceneFlow = GetComponent<SceneFlowService>();
-            ServiceLocator.Register<ISceneFlowService>(_sceneFlow);
             if (_quests == null) _quests = GetComponent<QuestService>();
+            if (_gameFlow == null) _gameFlow = GetComponent<GameFlowService>();
+            ServiceLocator.Register<ISceneFlowService>(_sceneFlow);
             if (_quests != null) ServiceLocator.Register<IQuestService>(_quests);
         }
 
         private void Start()
         {
             if (s_active != this) return;
-            Begin();
-        }
-
-        private void Begin()
-        {
-            if (_lockCursor)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
 
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {
@@ -60,10 +50,11 @@ namespace HollowChains.Gameplay.Flow
                 if (scene.name != BootSceneName && scene.isLoaded)
                 {
                     _sceneFlow.Adopt(scene);
+                    _gameFlow.EnterPlaying();
                     return;
                 }
             }
-            _sceneFlow.Load(_firstScene);
+            _gameFlow.EnterTitle();
         }
 
         private void OnDestroy()

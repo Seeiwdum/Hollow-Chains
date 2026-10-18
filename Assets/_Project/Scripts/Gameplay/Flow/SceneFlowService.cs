@@ -29,6 +29,12 @@ namespace HollowChains.Gameplay.Flow
             StartCoroutine(LoadRoutine(sceneName));
         }
 
+        public void UnloadCurrent()
+        {
+            if (IsLoading || string.IsNullOrEmpty(CurrentScene)) return;
+            StartCoroutine(UnloadRoutine());
+        }
+
         /// <summary>Registers a content scene that was already open (e.g. pressing Play inside S02 in the editor).</summary>
         public void Adopt(Scene scene)
         {
@@ -56,6 +62,17 @@ namespace HollowChains.Gameplay.Flow
             yield return Fade(1f, 0f);
             IsLoading = false;
             SceneLoaded?.Invoke(sceneName);
+        }
+
+        private IEnumerator UnloadRoutine()
+        {
+            IsLoading = true;
+            yield return Fade(0f, 1f);
+            var current = SceneManager.GetSceneByName(CurrentScene);
+            if (current.isLoaded) yield return SceneManager.UnloadSceneAsync(current);
+            CurrentScene = null;
+            yield return Fade(1f, 0f);
+            IsLoading = false;
         }
 
         private IEnumerator Fade(float from, float to)
