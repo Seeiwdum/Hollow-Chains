@@ -1,4 +1,5 @@
 using System;
+using HollowChains.Core.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,12 +16,16 @@ namespace HollowChains.Gameplay.Input
         [SerializeField] private InputActionReference _look;
         [SerializeField] private InputActionReference _sprint;
         [SerializeField] private InputActionReference _interact;
+        [Tooltip("Game flow turns gameplay input off in menus/pause (EVT_GameplayInputEnabled).")]
+        [SerializeField] private BoolEventChannelSO _inputEnabled;
 
-        public Vector2 Move => Read(_move);
+        private bool _enabled = true;
 
-        public Vector2 Look => Read(_look);
+        public Vector2 Move => _enabled ? Read(_move) : Vector2.zero;
 
-        public bool SprintHeld => _sprint != null && _sprint.action.IsPressed();
+        public Vector2 Look => _enabled ? Read(_look) : Vector2.zero;
+
+        public bool SprintHeld => _enabled && _sprint != null && _sprint.action.IsPressed();
 
         public bool LookFromPointer => _look != null && _look.action.activeControl?.device is Pointer;
 
@@ -32,14 +37,21 @@ namespace HollowChains.Gameplay.Input
             Enable(_look);
             Enable(_sprint);
             if (Enable(_interact)) _interact.action.performed += OnInteractPerformed;
+            if (_inputEnabled != null) _inputEnabled.Subscribe(SetEnabled);
         }
 
         private void OnDisable()
         {
             if (_interact != null) _interact.action.performed -= OnInteractPerformed;
+            if (_inputEnabled != null) _inputEnabled.Unsubscribe(SetEnabled);
         }
 
-        private void OnInteractPerformed(InputAction.CallbackContext _) => InteractPressed?.Invoke();
+        private void SetEnabled(bool enabled) => _enabled = enabled;
+
+        private void OnInteractPerformed(InputAction.CallbackContext _)
+        {
+            if (_enabled) InteractPressed?.Invoke();
+        }
 
         private static Vector2 Read(InputActionReference reference) =>
             reference != null ? reference.action.ReadValue<Vector2>() : Vector2.zero;
