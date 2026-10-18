@@ -559,6 +559,62 @@ classDiagram
 ```
 Watcher แยก state การฟัง event ออกจาก SO (SO เป็น asset ที่แชร์กัน ห้ามเก็บ runtime state) · เงื่อนไขชนิดใหม่ = subclass ใหม่ของ `PhaseConditionSO`
 
+## 6d. ✅ Dialogue / Subtitle (P3.2)
+```mermaid
+classDiagram
+    class DialogueLineSO {
+        -string _speakerName
+        -string _text
+        -bool _isThought
+        +float Duration
+    }
+    class GameDataSO {
+        <<abstract>>
+    }
+    GameDataSO <|-- DialogueLineSO
+    class DialogueLineEventChannelSO
+    class EventChannelSO~T~ {
+        <<abstract>>
+    }
+    EventChannelSO~T~ <|-- DialogueLineEventChannelSO
+    class SubtitleQueue {
+        +DialogueLineSO Current
+        +bool IsBusy
+        +event LineChanged
+        +PlayNow(line) void
+        +Enqueue(line) void
+        +TryPlayAmbient(line) bool
+        +Tick(float dt) void
+    }
+    class IDialogueService {
+        <<interface>>
+        +PlayNow(line) void
+        +Enqueue(line) void
+        +TryPlayAmbient(line) bool
+    }
+    class DialogueRunner {
+        -DialogueLineEventChannelSO _playLineRequests
+        -StringEventChannelSO _onSubtitle
+    }
+    IDialogueService <|.. DialogueRunner
+    DialogueRunner *-- SubtitleQueue
+    class BarkEmitter {
+        -DialogueLineSO[] _lines
+        -float _cooldownSeconds
+    }
+    BarkEmitter ..> IDialogueService : TryPlayAmbient
+    class InspectInteractable {
+        -DialogueLineSO _line
+    }
+    class LineTriggerZone {
+        -DialogueLineSO _line
+    }
+    InspectInteractable ..> DialogueLineEventChannelSO : EVT_PlayLine
+    LineTriggerZone ..> DialogueLineEventChannelSO : EVT_PlayLine
+    DialogueLineEventChannelSO ..> DialogueRunner : listened by
+```
+Gameplay ขอเล่นบทผ่าน `EVT_PlayLine` (ไม่อ้างอิง Narrative) · Barks ไม่ขัดบทหลัก (`TryPlayAmbient`) · UI แสดงจาก `EVT_Subtitle`
+
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
 flowchart LR
