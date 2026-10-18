@@ -111,6 +111,14 @@ MonoBehaviour:
     m_Key: settings_back
     m_Metadata:
       m_Items: []
+  - m_Id: 63334189957120
+    m_Key: menu_continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63335003652096
+    m_Key: hud_saved
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
