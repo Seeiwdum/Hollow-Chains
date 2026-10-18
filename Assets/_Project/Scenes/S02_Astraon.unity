@@ -36725,6 +36725,7 @@ GameObject:
   - component: {fileID: 1656779599}
   - component: {fileID: 1656779598}
   - component: {fileID: 1656779597}
+  - component: {fileID: 1656779600}
   m_Layer: 0
   m_Name: ThoughtZone_Elena (alley exit)
   m_TagString: Untagged
@@ -36783,6 +36784,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656779600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656779596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4eb1baa96868cb4e858c3e981f99ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Triggers.VolumeBlendZone
+  _once: 1
+  _volume: {fileID: 1994706418}
+  _weight: 1
+  _fadeInSeconds: 1.5
+  _holdSeconds: 6
+  _fadeOutSeconds: 3
 --- !u!1 &1662581752
 GameObject:
   m_ObjectHideFlags: 0
@@ -42462,6 +42481,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989125362}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1994706417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1994706419}
+  - component: {fileID: 1994706418}
+  m_Layer: 0
+  m_Name: WarmVolume_Elena
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1994706418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994706417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 10
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: d85758366e4c6564aadff3a7c7c64f7e, type: 2}
+--- !u!4 &1994706419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994706417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1997857759
 Mesh:
   m_ObjectHideFlags: 0
@@ -46148,3 +46216,4 @@ SceneRoots:
   - {fileID: 1656779599}
   - {fileID: 1235956412}
   - {fileID: 5100706}
+  - {fileID: 1994706419}
