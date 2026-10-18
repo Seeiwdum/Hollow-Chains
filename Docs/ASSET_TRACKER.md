@@ -56,6 +56,7 @@
 | AUD-012 | SFX | Wolf set | ขู่, กัด, โหยหวน, แห้งเหี่ยว | WAV | P0 | SC-04–05 |
 | AUD-013 | SFX | Human set | ลมหายใจหอบ, หัวใจเต้น, กรีดร้องเอเลนา, ร้องไห้ | WAV | P0 | SC-03–06 |
 | AUD-014 | SFX | Footsteps | ดิน/หญ้า/หิน/ไม้ (เดิน/วิ่ง) | WAV ชุดละ 4–6 | P0 | ทุก scene |
+| AUD-014a | SFX | Kenney RPG Audio (51 ไฟล์: footstep00–09, doorOpen/Close, metalLatch, creak, cloth…) | ใช้เป็นฝีเท้า placeholder + เสียงกลอนประตู S02 | OGG | P0 | ✅ Integrated → `ThirdParty/Audio/Kenney_RPGAudio` | ✅ CC0 (License.txt ในแพ็ก, kenney.nl, ตรวจ 2026-10-18 โดยภีม) |
 | AUD-015 | SFX | Village whispers | กระซิบ/บ่นไม่ชัดคำ (ไม่มีภาษา = ไม่ต้องแปล) | WAV หลายไฟล์ | P0 | SC-02 |
 | AUD-016 | SFX | Water magic + steam hiss | เวทน้ำพุ่ง → ระเหย | WAV | P0 | SC-04 |
 | AUD-017 | Ambience | Village / forest / stream | ลม นก ลำธาร น้ำตก | loop | P0 | SC-01–06 |
