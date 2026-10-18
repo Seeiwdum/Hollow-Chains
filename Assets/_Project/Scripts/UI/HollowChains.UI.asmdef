@@ -1,6 +1,6 @@
 {
     "name": "HollowChains.UI",
     "rootNamespace": "HollowChains.UI",
-    "references": ["HollowChains.Core", "HollowChains.Data", "Unity.TextMeshPro"],
+    "references": ["HollowChains.Core", "HollowChains.Data", "Unity.TextMeshPro", "Unity.Localization"],
     "autoReferenced": false
 }
