@@ -8,11 +8,12 @@
 ## สถานะปัจจุบัน
 | หัวข้อ | ค่า |
 |---|---|
-| Phase | **P0 Studio Kickoff — รอเจ้าของอนุมัติ Phase Plan** |
+| Phase | **P0 ปิดแล้ว (D-010)** → **P1 Pre-production กำลังทำ** |
 | วันที่ | 2026-10-18 |
 | Unity | 6000.3.10f1 · URP 17.3.0 · Input System 1.18.0 (template เริ่มต้นยังอยู่: Scenes, Settings, TutorialInfo, Readme) |
 | Repo | `github.com/Seeiwdum/Hollow-Chains` · main = `0d7e2a7 Initial commit` |
-| Branch งาน | `phase/P0-kickoff` (local, ยังไม่ push) |
+| Branch งาน | `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff` เพราะ main ยังไม่มี Docs) |
+| Unity MCP | เชื่อมต่อ Editor ได้ (ทดสอบ `Unity_GetConsoleLogs` 2026-10-18) |
 | เอกสารต้นทาง | `00_MASTER_PROMPT` + `01–09` (อยู่นอก repo ที่ `D:\DL\`) |
 
 ---
@@ -51,8 +52,8 @@ Story-driven 3D Action-Adventure RPG แบบ Open-Hub (Unity) — เด็ก
 | R6 | Contribution graph ไม่นับ ถ้า `user.email` ไม่ตรงบัญชี GitHub | เอก | Q-003 ให้เจ้าของตรวจ |
 | R7 | "รู้สึก" ของฉากจบ (เกณฑ์ข้อ 3 ใน `06`) วัดได้แค่จาก playtest | บอล / จ๊ะจ๋า | Playtest ภายในตั้งแต่ P5 greybox ไม่รอ Asset จริง |
 
-### Phase Plan (ฉบับแก้ — รออนุมัติ)
-ลำดับ: **P0 → P1 → P2 → P3 → P5 → P6\* → P4 → P7 → P8+** (\*ตำแหน่ง P6 = Q-001)
+### Phase Plan (ฉบับแก้ — ✅ อนุมัติแล้ว D-010)
+ลำดับ: **P0 → P1 → P2 → P3 → P5 → P6 → P4 → P7 → P8+** (P6 ก่อน P4 = D-011)
 
 | ลำดับ | Phase | ผลลัพธ์หลัก | Skills (สร้างตอนเริ่ม Phase) | เงื่อนไขจบ |
 |---|---|---|---|---|
@@ -72,11 +73,22 @@ Story-driven 3D Action-Adventure RPG แบบ Open-Hub (Unity) — เด็ก
 - `Docs/STUDIO_LOG.md` (ไฟล์นี้) · `Docs/DECISION_LOG.md`
 
 ### ❓ คำถามค้าง
-- Q-001 ตำแหน่ง P6 · Q-002 ชื่อเกม · Q-003 git user.email (รายละเอียดใน DECISION_LOG)
+- ~~Q-001~~ → D-011 (P6 ก่อน P4) · ~~Q-003~~ → D-012 (อีเมลตรงแล้ว)
+- **Q-002 ชื่อเกม** — รอเจ้าของเลือก (ตัวเลือกใน DECISION_LOG); ระหว่างนี้ใช้ `Hollow Chains`
 
 ### 🔀 Git
-- Branch: `phase/P0-kickoff` (local) · commit: `docs(studio): add P0 kickoff studio log and decision log` · tag: — · push: **ยังไม่ push** (รอเจ้าของอนุมัติแผน; push พร้อม P1)
+- Branch: `phase/P0-kickoff` · commits: `36a00f4` + commit ปิด P0 · tag: `p0-done` · push: branch + tag ขึ้น origin (ไม่แตะ `main`)
+- Merge เข้า `main`: **ยังไม่ทำ** — เสนอพร้อมจบ P1 (ตอนนั้น main จะเปิดใน Unity ได้ครบ เพราะ P1.3 track `Assets/` `Packages/` `ProjectSettings/`)
 
-### ▶️ ขั้นตอนต่อไป
-1. เจ้าของอนุมัติ Phase Plan (+ ตอบ Q-001–Q-003 หรือใช้ default)
-2. เริ่ม P1: สร้าง Skill #43, #49, #1, #2, #47 ใน `.claude/skills/` → P1.1 GDD freeze
+---
+
+## P1 — Pre-production (เริ่ม 2026-10-18)
+Branch: `phase/P1-preproduction` (แตกจาก `phase/P0-kickoff`)
+
+| Sub-phase | ผลลัพธ์ | สถานะ |
+|---|---|---|
+| P1.0 | Skills #43, #49, #1, #2, #47 ใน `.claude/skills/` | ✅ |
+| P1.1 | `Docs/P1/GDD_DEMO.md` (freeze candidate) | ⏳ |
+| P1.2 | `Docs/P1/TECH_SPEC.md` (Package, โฟลเดอร์, asmdef, Event Bus) | ⏳ |
+| P1.3 | Unity init + `.gitattributes`/LFS + Force Text + `tools/gitbatch.sh` + ลบ template + spike ฟอนต์ไทย | ⏳ |
+| P1.4 | Art Bible สั้น · Backlog · Risk Register · Asset Request ชุดแรก | ⏳ |

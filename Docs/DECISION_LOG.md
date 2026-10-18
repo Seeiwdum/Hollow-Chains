@@ -15,10 +15,11 @@
 | D-007 | 2026-10-18 | P0 | Engine = Unity **6000.3.10f1** (โปรเจกต์ที่เจ้าของสร้างไว้แล้ว) + URP 17.3 + Input System 1.18 — ไม่ย้ายเวอร์ชัน; ธีร์ยืนยันสถานะ LTS และชุด Package ใน P1.2 | L4 | ธีร์ | 01 §1, 00 §8 |
 | D-008 | 2026-10-18 | P0 | เอกสารสตูดิโอเก็บที่ `Docs/` (นอก `Assets/` เพื่อไม่ให้ Unity import) | L4 | ใบเตย/เอก | — |
 | D-009 | 2026-10-18 | P0 | `main` มีแค่ Initial commit; `Assets/`, `Packages/`, `ProjectSettings/` ยังไม่ถูก track → จะ track ใน **P1.3** พร้อม `.gitattributes` (LFS) + ตั้ง Force Text / Visible Meta. ระหว่างนี้งาน P0 อยู่บน branch `phase/P0-kickoff` (local, ยังไม่ push) | L4 | เอก | 09 §6 |
+| D-010 | 2026-10-18 | P0 | **อนุมัติ Phase Plan ฉบับแก้** (STUDIO_LOG › Phase Plan) → ปิด P0, เริ่ม P1 | OWNER | NAMOE | 00 §6 |
+| D-011 | 2026-10-18 | P0 | **Q-001 → P6 อยู่ก่อน P4:** ลำดับสุดท้าย P5 → P6 → P4. เจ้าของมอบให้ทีมตัดสิน. เหตุผล: ได้ demo build ที่ playtest ได้จริงเร็วสุด (เกณฑ์ `06` ข้อ 3 วัดได้จาก playtest เท่านั้น), feedback ฉากจบไหลกลับมาก่อนลงทุนระบบ combat, และ P4 ไม่ถูกใช้ในเดโม (D-001). ความเสี่ยง: ถ้า P4 ต้องแก้สถาปัตยกรรม → ธีร์วาง hook combat/Form ไว้ตั้งแต่ P1.2 | L4 (มอบอำนาจ) | พี่พิม/ภูผา/ธีร์ | 00 §6, 09 §5 |
+| D-012 | 2026-10-18 | P0 | **Q-003:** เจ้าของยืนยันอีเมลบัญชี GitHub; ตรวจแล้ว `git config user.email` (global) ตรงกัน และ commit เดิมทั้ง 2 ใช้อีเมลนี้ — ไม่ต้องแก้ | OWNER | NAMOE / เอก | 09 §9 |
 
 ## PENDING — รอเจ้าของตอบ (ดู STUDIO_LOG › คำถามค้าง)
 | ID | หัวข้อ | ค่า default ของทีม |
 |---|---|---|
-| Q-001 | ตำแหน่ง P6 (Polish & Demo Build) อยู่ก่อนหรือหลัง P4 Combat | **ก่อน** (P5 → P6 → P4) — ได้เดโมจริงเร็วสุด |
-| Q-002 | ชื่อเกม: `Hollow Chains` (ชื่อ repo) vs `Chains of the Hollow` (ใน `01`) | `Hollow Chains` |
-| Q-003 | git `user.email` ในเครื่องตรงกับอีเมลบัญชี GitHub ที่ถือ repo หรือไม่ (มีผลกับ Contribution Graph / Farm Mode) | เจ้าของตรวจเอง |
+| Q-002 | ชื่อเกม — ทีมเสนอ: ก) `Hollow Chains` ข) `Chains of the Hollow` ค) `Vessel of Zero` ง) `Hollow Chains` + ชื่อไทย "โซ่ตรวนแห่งความว่าง" | **ง)** — ใช้ `Hollow Chains` เป็น working title ระหว่างรอ (ไม่ block งาน) |
