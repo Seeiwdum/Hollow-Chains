@@ -138,6 +138,14 @@ MonoBehaviour:
     m_Localized: Hold [E] to skip
     m_Metadata:
       m_Items: []
+  - m_Id: 150916089315328
+    m_Localized: "[WASD] Move \xB7 [Mouse] Look"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150916273864704
+    m_Localized: "[Esc] Pause \xB7 see your current quest"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

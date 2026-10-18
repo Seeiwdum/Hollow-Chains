@@ -135,6 +135,14 @@ MonoBehaviour:
     m_Key: comic_skip
     m_Metadata:
       m_Items: []
+  - m_Id: 150916089315328
+    m_Key: hint_move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150916273864704
+    m_Key: hint_quest
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
