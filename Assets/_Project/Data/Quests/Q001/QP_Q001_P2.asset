@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: QP_Q001_P2
   m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Quests.QuestPhaseSO
   _id: Q001-P2
+  _localizedObjective:
+    m_TableReference:
+      m_TableCollectionName: Quests
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Q001-P2
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _objective: '[PH] Go to the stream beyond the village, where Elena waits'
   _completeWhen: {fileID: 11400000, guid: a93bb1198d32c29428f51e25ffd585a7, type: 2}
+  references:
+    version: 2
+    RefIds: []

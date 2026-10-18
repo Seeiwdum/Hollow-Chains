@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: QP_Q001_P1
   m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Quests.QuestPhaseSO
   _id: Q001-P1
+  _localizedObjective:
+    m_TableReference:
+      m_TableCollectionName: Quests
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Q001-P1
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _objective: '[PH] Take the water bucket'
   _completeWhen: {fileID: 11400000, guid: 40d586f37a3c1194cbf671a66266ac7e, type: 2}
+  references:
+    version: 2
+    RefIds: []

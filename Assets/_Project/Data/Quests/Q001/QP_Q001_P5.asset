@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: QP_Q001_P5
   m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Quests.QuestPhaseSO
   _id: Q001-P5
+  _localizedObjective:
+    m_TableReference:
+      m_TableCollectionName: Quests
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Q001-P5
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _objective: ...
   _completeWhen: {fileID: 11400000, guid: 9ffedfa75fdd5bf40b0303da1b757a0b, type: 2}
+  references:
+    version: 2
+    RefIds: []
