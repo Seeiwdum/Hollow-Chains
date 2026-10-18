@@ -1,4 +1,5 @@
 using HollowChains.Core.Services;
+using HollowChains.Gameplay.Quests;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,7 @@ namespace HollowChains.Gameplay.Flow
         public const string BootSceneName = "_Boot";
 
         [SerializeField] private SceneFlowService _sceneFlow;
+        [SerializeField] private QuestService _quests;
         [SerializeField] private string _firstScene = "S01_Bedroom";
         [SerializeField] private bool _lockCursor = true;
 
@@ -34,6 +36,8 @@ namespace HollowChains.Gameplay.Flow
             s_active = this;
             if (_sceneFlow == null) _sceneFlow = GetComponent<SceneFlowService>();
             ServiceLocator.Register<ISceneFlowService>(_sceneFlow);
+            if (_quests == null) _quests = GetComponent<QuestService>();
+            if (_quests != null) ServiceLocator.Register<IQuestService>(_quests);
         }
 
         private void Start()
@@ -67,6 +71,7 @@ namespace HollowChains.Gameplay.Flow
             if (s_active != this) return;
             s_active = null;
             ServiceLocator.Unregister<ISceneFlowService>();
+            ServiceLocator.Unregister<IQuestService>();
         }
     }
 }
