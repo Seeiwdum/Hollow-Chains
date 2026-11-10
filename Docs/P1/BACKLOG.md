@@ -47,7 +47,7 @@
 | B-601 | Bug bash + triage | AC-01 | จ๊ะจ๋า | M |
 | B-602 | Profiling → 60 FPS 1080p GTX 1060 | AC-04, Tech §7 | ธีร์/พลอย | M |
 | B-603 | Accessibility ขั้นต่ำ (ขนาดซับ, remap, invert) | `04` §6 #9 | มีนา/ณิชา | M |
-| B-604 | Controller glyphs (KB/M ↔ gamepad) | skill #34 | ณิชา | S |
+| B-604 | Controller glyphs (KB/M ↔ gamepad) | skill #34 | ณิชา | S — done P6.3 |
 | B-605 | Build profile Windows IL2CPP + smoke test เครื่องอื่น | AC-04 | เอก | S |
 | B-606 | Playtest ≥ 3 คน + แบบสอบถาม (AC-03, AC-08) | `06` #3 | บอล | M |
 | B-607 | AudioMixer (Master/Music/SFX/Ambience/Voice) + snapshot เงียบก่อนเสียงโซ่ + ambience หมู่บ้าน/ป่า/ลำธาร (ย้ายมาจาก P5.7) | `06` SC-05, D-037 | ภีม/แพรว | M |

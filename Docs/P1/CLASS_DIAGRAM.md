@@ -585,6 +585,10 @@ classDiagram
         +Enqueue(line) void
         +TryPlayAmbient(line) bool
         +Tick(float dt) void
+        +bool IsMuted
+        +Clear() void
+        +Mute() void
+        +Unmute() void
     }
     class IDialogueService {
         <<interface>>
@@ -594,6 +598,8 @@ classDiagram
     }
     class DialogueRunner {
         -DialogueLineEventChannelSO _playLineRequests
+        -StringEventChannelSO _onGameStateChanged
+        -string _clearInState
         -StringEventChannelSO _onSubtitle
     }
     IDialogueService <|.. DialogueRunner
@@ -890,6 +896,60 @@ classDiagram
     ComicPlayer ..> ISceneFlowService : load S01
 ```
 Timeline ไม่เรียกโค้ด gameplay ตรง ๆ — ทุกอย่างผ่าน event channel (EVT_CutsceneStarted / PlayerBitten / SoulDrain / Flash / AwakeningEnded / DemoEnded) · Beat แบบโต้ตอบ "แช่" graph (speed 0) แทน `Pause()` เพราะ Pause/Resume ทำให้ clip ยิงซ้ำ · ฉาก climax สร้างด้วย `ClimaxCutsceneBuilder` (Editor menu) — แก้เวลาใน class `T` แล้วกดสร้างใหม่ได้
+
+## 6i. Key hints ตาม device (P6.3 / B-604)
+
+Glyph เป็นข้อความล้วน (`[E]` / `(Y)`) · ข้อความใน string table ใช้ token `{key:Interact}` แทนชื่อปุ่ม · เพิ่ม action/scheme = เพิ่มแถวในตาราง ไม่แก้โค้ด
+
+```mermaid
+classDiagram
+    class InputSchemes {
+        <<static>>
+        +string KeyboardMouse
+        +string Gamepad
+    }
+    class IInputSchemeService {
+        <<interface>>
+        +string CurrentScheme
+    }
+    class InputSchemeDetector {
+        -StringEventChannelSO _onSchemeChanged
+        -float _mouseNoiseThreshold
+        +string CurrentScheme
+    }
+    IService <|-- IInputSchemeService
+    IInputSchemeService <|.. InputSchemeDetector
+    InputSchemeDetector ..> StringEventChannelSO : raises EVT_InputSchemeChanged
+    InputSchemeDetector ..> ServiceLocator : registers
+
+    class IGlyphLookup {
+        <<interface>>
+        +TryGetGlyph(string action, string scheme, out string glyph) bool
+    }
+    class InputGlyphTableSO {
+        -string _fallbackScheme
+        -List~Entry~ _entries
+    }
+    class GlyphResolver {
+        +Resolve(string source, string scheme) string
+    }
+    IGlyphLookup <|.. InputGlyphTableSO
+    GlyphResolver o-- IGlyphLookup
+
+    class GlyphText {
+        +string Source
+        +SetScheme(string scheme) void
+        +Render() string
+    }
+    GlyphText o-- GlyphResolver
+    GlyphText ..> IInputSchemeService : reads
+    StringChannelTextView o-- GlyphText
+    LocalizedLabel o-- GlyphText
+    StringChannelTextView ..> StringEventChannelSO : listens to scheme change
+    LocalizedLabel ..> StringEventChannelSO : listens to scheme change
+```
+
+`GlyphResolver` ใช้ `IGlyphLookup` (ทดสอบด้วย fake ได้) · `Core` อ้าง `Unity.InputSystem` เพื่อ `InputSchemeDetector` · View เก็บ `Source` ที่ยังมี token ไว้แล้ว render ใหม่เมื่อ scheme เปลี่ยน
 
 ## 7. ภาพรวมการพึ่งพา Assembly
 ```mermaid
