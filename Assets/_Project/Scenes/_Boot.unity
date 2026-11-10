@@ -243,6 +243,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -456,6 +458,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -722,6 +726,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -1104,6 +1110,8 @@ MonoBehaviour:
   _format: '{0}'
   _autoHideSeconds: 6
   _useSubtitleScale: 0
+  _glyphTable: {fileID: 11400000, guid: d3ebf885e632fb7409dcc974f65cb39b, type: 2}
+  _onSchemeChanged: {fileID: 11400000, guid: b8a9a53e5900a844dbaf498f0de1dc41, type: 2}
 --- !u!225 &336214850
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1511,6 +1519,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -2178,6 +2188,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -2686,6 +2698,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -3051,6 +3065,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -4114,6 +4130,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -4366,6 +4384,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -4779,6 +4799,8 @@ MonoBehaviour:
   _format: '{0}'
   _autoHideSeconds: 0
   _useSubtitleScale: 1
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
 --- !u!225 &1083869600
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4851,6 +4873,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -5025,6 +5049,8 @@ MonoBehaviour:
     {0}'
   _autoHideSeconds: 6
   _useSubtitleScale: 0
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
 --- !u!225 &1091164727
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5097,6 +5123,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -5469,9 +5497,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Views.StringChannelTextView
   _channel: {fileID: 11400000, guid: 559278053a2330040938f4f335adc04d, type: 2}
   _text: {fileID: 816215331}
-  _format: '[E]  {0}'
+  _format: '{key:Interact}  {0}'
   _autoHideSeconds: 0
   _useSubtitleScale: 0
+  _glyphTable: {fileID: 11400000, guid: d3ebf885e632fb7409dcc974f65cb39b, type: 2}
+  _onSchemeChanged: {fileID: 11400000, guid: b8a9a53e5900a844dbaf498f0de1dc41, type: 2}
 --- !u!225 &1151816040
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5693,6 +5723,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -6113,6 +6145,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -6717,6 +6751,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -6894,6 +6930,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -7071,6 +7109,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -7580,6 +7620,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -7798,6 +7840,7 @@ GameObject:
   - component: {fileID: 1571664622}
   - component: {fileID: 1571664624}
   - component: {fileID: 1571664623}
+  - component: {fileID: 1571664625}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -7882,6 +7925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Narrative::HollowChains.Narrative.Dialogue.DialogueRunner
   _playLineRequests: {fileID: 11400000, guid: 6a4623c6f0e8ad04a927f730257f581c, type: 2}
   _onSubtitle: {fileID: 11400000, guid: 3a773d026bb883e40b621d7bec565fec, type: 2}
+  _onGameStateChanged: {fileID: 11400000, guid: d40a2c72c0b87f6488418210ab618cb2, type: 2}
+  _clearInState: Title
   _thoughtFormat: <i>{0}</i>
   _speechFormat: <b>{0}</b>  {1}
 --- !u!114 &1571664622
@@ -7932,6 +7977,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: HollowChains.Gameplay::HollowChains.Gameplay.Save.SaveService
   _onSaveAvailable: {fileID: 11400000, guid: 9c8004933241dd541957ce20f0252ca0, type: 2}
   _onCheckpointSaved: {fileID: 11400000, guid: d7184ed71df7539489e98d07482adf69, type: 2}
+--- !u!114 &1571664625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571664616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4ad15905b0b3e4780aa9c66e279b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.Core::HollowChains.Core.Input.InputSchemeDetector
+  _onSchemeChanged: {fileID: 11400000, guid: b8a9a53e5900a844dbaf498f0de1dc41, type: 2}
+  _mouseNoiseThreshold: 2
 --- !u!1 &1666710188
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,6 +8051,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -8280,6 +8341,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -8917,6 +8980,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -9241,6 +9306,8 @@ MonoBehaviour:
   _format: '{0}'
   _autoHideSeconds: 0
   _useSubtitleScale: 0
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
 --- !u!225 &1880733470
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9384,6 +9451,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 0}
+  _onSchemeChanged: {fileID: 0}
   references:
     version: 2
     RefIds: []

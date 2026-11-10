@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ca1eaef76dfda419d72ab44588fd42, type: 3}
+  m_Name: GLYPHS_Default
+  m_EditorClassIdentifier: HollowChains.Data::HollowChains.Data.Input.InputGlyphTableSO
+  _fallbackScheme: kbm
+  _entries:
+  - Action: Interact
+    Scheme: kbm
+    Glyph: '[E]'
+  - Action: Interact
+    Scheme: gamepad
+    Glyph: (Y)
+  - Action: Skip
+    Scheme: kbm
+    Glyph: '[E]'
+  - Action: Skip
+    Scheme: gamepad
+    Glyph: (Y)
+  - Action: Pause
+    Scheme: kbm
+    Glyph: '[Esc]'
+  - Action: Pause
+    Scheme: gamepad
+    Glyph: (Start)
+  - Action: Move
+    Scheme: kbm
+    Glyph: '[WASD]'
+  - Action: Move
+    Scheme: gamepad
+    Glyph: (L)
+  - Action: Look
+    Scheme: kbm
+    Glyph: '[Mouse]'
+  - Action: Look
+    Scheme: gamepad
+    Glyph: (R)

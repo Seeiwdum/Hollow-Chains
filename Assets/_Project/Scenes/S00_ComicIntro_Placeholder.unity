@@ -179,6 +179,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _glyphTable: {fileID: 11400000, guid: d3ebf885e632fb7409dcc974f65cb39b, type: 2}
+  _onSchemeChanged: {fileID: 11400000, guid: b8a9a53e5900a844dbaf498f0de1dc41, type: 2}
   references:
     version: 2
     RefIds: []
