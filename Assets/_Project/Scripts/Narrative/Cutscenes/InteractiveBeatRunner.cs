@@ -19,7 +19,7 @@ namespace HollowChains.Narrative.Cutscenes
         [SerializeField] private InputActionReference _interact;
         [SerializeField] private StringEventChannelSO _onPrompt;
         [SerializeField] private FloatEventChannelSO _onHoldProgress;
-        [Tooltip("The HUD prompt view already adds the [E] key hint.")]
+        [Tooltip("The HUD prompt view already adds the interact key hint ({key:Interact} in its format).")]
         [SerializeField] private string _promptFormat = "{0}";
 
         private PlayableDirector _director;

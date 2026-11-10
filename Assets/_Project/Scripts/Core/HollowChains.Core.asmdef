@@ -1,6 +1,6 @@
 {
     "name": "HollowChains.Core",
     "rootNamespace": "HollowChains.Core",
-    "references": [],
+    "references": ["Unity.InputSystem"],
     "autoReferenced": false
 }
