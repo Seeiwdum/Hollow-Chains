@@ -9,12 +9,16 @@ namespace HollowChains.Narrative.Dialogue
     /// <see cref="IDialogueService"/> in the _Boot scene. Plays lines through a <see cref="SubtitleQueue"/>, listens to
     /// the "play line" channel raised by gameplay, and publishes formatted subtitle text for the UI
     /// (empty string = clear). Registers itself in the ServiceLocator.
-    /// Setup: on the "Game" object in _Boot; assign EVT_PlayLine and EVT_Subtitle.
+    /// Listens to the game-flow state: on the title screen the subtitle is cleared at once and new lines are ignored
+    /// until another state arrives (BUG-604: the content scene unloads over several frames and could still raise lines).
+    /// Setup: on the "Game" object in _Boot; assign EVT_PlayLine, EVT_Subtitle and EVT_GameStateChanged.
     /// </summary>
     public sealed class DialogueRunner : MonoBehaviour, IDialogueService
     {
         [SerializeField] private DialogueLineEventChannelSO _playLineRequests;
         [SerializeField] private StringEventChannelSO _onSubtitle;
+        [SerializeField] private StringEventChannelSO _onGameStateChanged;
+        [SerializeField] private string _clearInState = "Title";
         [SerializeField] private string _thoughtFormat = "<i>{0}</i>";
         [SerializeField] private string _speechFormat = "<b>{0}</b>  {1}";
 
@@ -34,11 +38,13 @@ namespace HollowChains.Narrative.Dialogue
         private void OnEnable()
         {
             if (_playLineRequests != null) _playLineRequests.Subscribe(PlayNow);
+            if (_onGameStateChanged != null) _onGameStateChanged.Subscribe(OnGameState);
         }
 
         private void OnDisable()
         {
             if (_playLineRequests != null) _playLineRequests.Unsubscribe(PlayNow);
+            if (_onGameStateChanged != null) _onGameStateChanged.Unsubscribe(OnGameState);
         }
 
         private void OnDestroy()
@@ -53,6 +59,12 @@ namespace HollowChains.Narrative.Dialogue
         public void Enqueue(DialogueLineSO line) => _queue.Enqueue(line);
 
         public bool TryPlayAmbient(DialogueLineSO line) => _queue.TryPlayAmbient(line);
+
+        private void OnGameState(string state)
+        {
+            if (state == _clearInState) _queue.Mute();
+            else _queue.Unmute();
+        }
 
         private void OnLineChanged(DialogueLineSO line)
         {

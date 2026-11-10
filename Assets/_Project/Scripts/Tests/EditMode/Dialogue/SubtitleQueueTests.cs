@@ -70,6 +70,47 @@ namespace HollowChains.Tests.Dialogue
         }
 
         [Test]
+        public void Clear_RemovesCurrentAndPending_AndRaisesClearOnce()
+        {
+            var q = new SubtitleQueue();
+            var seen = new List<string>();
+            q.Enqueue(Line("a", 5f));
+            q.Enqueue(Line("b", 5f));
+            q.LineChanged += l => seen.Add(l != null ? l.Text : "<clear>");
+
+            q.Clear();
+            q.Tick(10f); // "b" must not appear afterwards
+            q.Clear();   // nothing on screen: no second clear event
+
+            CollectionAssert.AreEqual(new[] { "<clear>" }, seen);
+            Assert.IsNull(q.Current);
+            Assert.IsFalse(q.IsBusy);
+        }
+
+        [Test]
+        public void Mute_ClearsAndIgnoresNewLines_UntilUnmute()
+        {
+            var q = new SubtitleQueue();
+            var seen = new List<string>();
+            q.PlayNow(Line("story", 5f));
+            q.LineChanged += l => seen.Add(l != null ? l.Text : "<clear>");
+
+            q.Mute(); // BUG-604: quit to Title while a line is on screen
+            q.PlayNow(Line("late story", 1f));
+            q.Enqueue(Line("late queued", 1f));
+            Assert.IsFalse(q.TryPlayAmbient(Line("late bark", 1f)));
+            q.Tick(10f);
+
+            CollectionAssert.AreEqual(new[] { "<clear>" }, seen);
+            Assert.IsFalse(q.IsBusy);
+
+            q.Unmute(); // new game
+            q.PlayNow(Line("intro", 1f));
+
+            CollectionAssert.AreEqual(new[] { "<clear>", "intro" }, seen);
+        }
+
+        [Test]
         public void AutoDuration_IsClampedBetweenTwoAndSixSeconds()
         {
             Assert.AreEqual(2f, Line("hi", 0f).Duration, 1e-4f);
