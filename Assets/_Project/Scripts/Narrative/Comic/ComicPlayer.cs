@@ -7,6 +7,7 @@ namespace HollowChains.Narrative.Comic
 {
     /// <summary>
     /// Plays the intro comic pages in order, then loads the first gameplay scene. Holding Interact skips the intro.
+    /// The skip hold is ignored (and reset) while the game is paused (Time.timeScale 0), BUG-605.
     /// Setup: in S00_ComicIntro_Placeholder; list page components (anything implementing IComicPage).
     /// </summary>
     public sealed class ComicPlayer : MonoBehaviour
@@ -31,6 +32,7 @@ namespace HollowChains.Narrative.Comic
         private void Update()
         {
             if (_done || _skipAction == null) return;
+            if (Time.timeScale <= 0f) { _held = 0f; return; } // pause menu open: no skipping behind it (BUG-605)
             _held = _skipAction.action.IsPressed() ? _held + Time.unscaledDeltaTime : 0f;
             if (_held >= _holdToSkipSeconds) SkipAll();
         }
