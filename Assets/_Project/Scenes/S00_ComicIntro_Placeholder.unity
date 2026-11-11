@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 515923008}
   - component: {fileID: 515923007}
   - component: {fileID: 515923006}
+  - component: {fileID: 515923011}
+  - component: {fileID: 515923010}
   m_Layer: 0
   m_Name: SkipHint
   m_TagString: Untagged
@@ -298,6 +300,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515923004}
   m_CullTransparentMesh: 1
+--- !u!114 &515923010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515923004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8901effccc33194b869f42d844a8b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Views.CanvasGroupGate
+  _onStateChanged: {fileID: 11400000, guid: d40a2c72c0b87f6488418210ab618cb2, type: 2}
+  _hiddenInStates:
+  - Paused
+  _hiddenInScenes: []
+--- !u!225 &515923011
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515923004}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &576864352
 GameObject:
   m_ObjectHideFlags: 0

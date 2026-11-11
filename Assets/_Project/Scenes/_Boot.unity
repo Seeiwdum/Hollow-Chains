@@ -7352,6 +7352,8 @@ GameObject:
   - component: {fileID: 1389938236}
   - component: {fileID: 1389938235}
   - component: {fileID: 1389938234}
+  - component: {fileID: 1389938238}
+  - component: {fileID: 1389938237}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -7435,6 +7437,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389938232}
   m_CullTransparentMesh: 1
+--- !u!114 &1389938237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389938232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8901effccc33194b869f42d844a8b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: HollowChains.UI::HollowChains.UI.Views.CanvasGroupGate
+  _onStateChanged: {fileID: 0}
+  _hiddenInStates: []
+  _hiddenInScenes:
+  - S00_ComicIntro_Placeholder
+--- !u!225 &1389938238
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389938232}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1439793002
 GameObject:
   m_ObjectHideFlags: 0

@@ -731,6 +731,13 @@ classDiagram
     UIView <|-- GameStateView
     UIView <|-- SettingsView
     class HealthBarView
+    class CanvasGroupGate {
+        -StringEventChannelSO _onStateChanged
+        -string[] _hiddenInStates
+        -string[] _hiddenInScenes
+        +IsListed(string[] list, string value)$ bool
+    }
+    GameFlowService ..> CanvasGroupGate : EVT_GameStateChanged
     class ChannelButton {
         -VoidEventChannelSO _onClick
     }
