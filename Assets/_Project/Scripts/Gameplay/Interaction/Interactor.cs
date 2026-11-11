@@ -21,6 +21,7 @@ namespace HollowChains.Gameplay.Interaction
         private readonly Collider[] _hits = new Collider[16];
         private float _nextScan;
         private IInteractable _focused;
+        private bool _quitting;
 
         public PlayerController Player => _player;
 
@@ -65,6 +66,14 @@ namespace HollowChains.Gameplay.Interaction
         private void Start()
         {
             if (_player != null && _player.Input != null) _player.Input.InteractPressed += TryInteract;
+        }
+
+        private void OnApplicationQuit() => _quitting = true;
+
+        private void OnDisable()
+        {
+            // The HUD lives in _Boot and outlives this Interactor: hide the prompt (BUG-606). Re-enabling re-scans in Update.
+            if (!_quitting) SetFocus(null);
         }
 
         private void OnDestroy()
